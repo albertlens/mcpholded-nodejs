@@ -1382,17 +1382,7 @@ if (process.env.NODE_ENV === 'production') {
     console.error('SSE connection request from Claude.ai');
     
     try {
-      // Configurar headers SSE
-      res.writeHead(200, {
-        'Content-Type': 'text/event-stream',
-        'Cache-Control': 'no-cache',
-        'Connection': 'keep-alive',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type'
-      });
-
-      // Crear transporte SSE
+      // Crear transporte SSE (él se encarga de los headers)
       const transport = new SSEServerTransport('/sse', res);
       
       // Conectar el servidor MCP al transporte SSE
@@ -1402,6 +1392,14 @@ if (process.env.NODE_ENV === 'production') {
       
     } catch (error) {
       console.error('SSE connection error:', error);
+      if (!res.headersSent) {
+        res.writeHead(200, {
+          'Content-Type': 'text/event-stream',
+          'Cache-Control': 'no-cache',
+          'Connection': 'keep-alive',
+          'Access-Control-Allow-Origin': '*'
+        });
+      }
       res.write(`event: error\ndata: ${JSON.stringify({ error: error instanceof Error ? error.message : 'Unknown error' })}\n\n`);
       res.end();
     }

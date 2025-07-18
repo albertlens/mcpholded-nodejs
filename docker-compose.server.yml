@@ -34,9 +34,6 @@ services:
       - traefik.http.middlewares.holded-mcp.headers.STSIncludeSubdomains=true
       - traefik.http.middlewares.holded-mcp.headers.STSPreload=true
       - traefik.http.routers.holded-mcp.middlewares=holded-mcp@docker
-      
-      # Service
-      - traefik.http.services.holded-mcp.loadbalancer.server.port=3001
     
     # Conectar a la red externa donde está Traefik
     networks:
