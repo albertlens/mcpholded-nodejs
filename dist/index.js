@@ -1255,6 +1255,21 @@ if (process.env.NODE_ENV === 'production') {
         }
         next();
     });
+    // Middleware para parsear JSON
+    app.use(express.json());
+    // Middleware para timeout de requests
+    app.use((req, res, next) => {
+        // Solo aplicar timeout a endpoints que no sean SSE
+        if (!req.path.includes('/sse')) {
+            res.setTimeout(30000, () => {
+                console.error('Request timeout');
+                if (!res.headersSent) {
+                    res.status(408).json({ error: 'Request timeout' });
+                }
+            });
+        }
+        next();
+    });
     // Health check endpoint
     app.get('/health', (req, res) => {
         res.json({
@@ -1267,24 +1282,35 @@ if (process.env.NODE_ENV === 'production') {
     app.post('/sse', async (req, res) => {
         console.error('SSE connection request from Claude.ai');
         try {
-            // Crear transporte SSE (él se encarga de los headers)
+            // Crear transporte SSE
             const transport = new SSEServerTransport('/sse', res);
+            // Manejar desconexión del cliente
+            req.on('close', () => {
+                console.error('SSE client disconnected');
+                transport.close?.();
+            });
+            req.on('error', (error) => {
+                console.error('SSE request error:', error);
+                transport.close?.();
+            });
             // Conectar el servidor MCP al transporte SSE
             await server.connect(transport);
             console.error('SSE transport connected successfully for Claude.ai');
+            // Mantener la conexión viva hasta que se cierre
+            // El transporte SSE maneja automáticamente los mensajes MCP
         }
         catch (error) {
             console.error('SSE connection error:', error);
+            // Solo enviar respuesta de error si no se han enviado headers
             if (!res.headersSent) {
-                res.writeHead(200, {
-                    'Content-Type': 'text/event-stream',
-                    'Cache-Control': 'no-cache',
-                    'Connection': 'keep-alive',
+                res.writeHead(500, {
+                    'Content-Type': 'application/json',
                     'Access-Control-Allow-Origin': '*'
                 });
+                res.end(JSON.stringify({
+                    error: error instanceof Error ? error.message : 'Unknown error'
+                }));
             }
-            res.write(`event: error\ndata: ${JSON.stringify({ error: error instanceof Error ? error.message : 'Unknown error' })}\n\n`);
-            res.end();
         }
     });
     const port = process.env.PORT || 3001;
