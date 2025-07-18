@@ -1421,16 +1421,35 @@ if (process.env.NODE_ENV === 'production') {
     if (req.method === 'POST') {
       console.error(`[SSE] POST request detected, reading body...`);
       let body = '';
-      req.on('data', (chunk: any) => {
-        body += chunk.toString();
-      });
       
-      await new Promise((resolve) => {
-        req.on('end', () => {
-          console.error(`[SSE] POST body received: ${body}`);
-          resolve(void 0);
+      // Usar Promise con timeout para evitar colgarse
+      try {
+        await new Promise((resolve, reject) => {
+          const timeout = setTimeout(() => {
+            console.error(`[SSE] Body read timeout, proceeding without body`);
+            resolve(void 0);
+          }, 2000); // 2 segundos timeout
+          
+          req.on('data', (chunk: any) => {
+            body += chunk.toString();
+            console.error(`[SSE] Received chunk: ${chunk.length} bytes`);
+          });
+          
+          req.on('end', () => {
+            clearTimeout(timeout);
+            console.error(`[SSE] POST body received: ${body}`);
+            resolve(void 0);
+          });
+          
+          req.on('error', (error: any) => {
+            clearTimeout(timeout);
+            console.error(`[SSE] Error reading body:`, error);
+            resolve(void 0); // Continuar aunque haya error
+          });
         });
-      });
+      } catch (error) {
+        console.error(`[SSE] Body processing error:`, error);
+      }
     }
     
     try {
