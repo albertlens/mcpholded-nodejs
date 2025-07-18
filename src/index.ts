@@ -1431,11 +1431,12 @@ if (process.env.NODE_ENV === 'production') {
         }
       );
 
-      // Configurar handlers para este servidor específico
+      // Configurar handlers para este servidor específico - incluir TODAS las herramientas
       mcpServer.setRequestHandler(ListToolsRequestSchema, async () => {
         console.error('Tools list requested via SSE');
         return {
           tools: [
+            // Contact tools
             {
               name: 'get_contacts',
               description: 'Get all contacts from Holded',
@@ -1482,8 +1483,272 @@ if (process.env.NODE_ENV === 'production') {
                     type: 'string',
                     description: 'Contact phone',
                   },
+                  address: {
+                    type: 'string',
+                    description: 'Contact address',
+                  },
+                  vatNumber: {
+                    type: 'string',
+                    description: 'VAT number',
+                  },
                 },
                 required: ['name'],
+              },
+            },
+            {
+              name: 'update_contact',
+              description: 'Update an existing contact',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  contactId: {
+                    type: 'string',
+                    description: 'Contact ID',
+                  },
+                  name: {
+                    type: 'string',
+                    description: 'Contact name',
+                  },
+                  email: {
+                    type: 'string',
+                    description: 'Contact email',
+                  },
+                  phone: {
+                    type: 'string',
+                    description: 'Contact phone',
+                  },
+                  address: {
+                    type: 'string',
+                    description: 'Contact address',
+                  },
+                  vatNumber: {
+                    type: 'string',
+                    description: 'VAT number',
+                  },
+                },
+                required: ['contactId'],
+              },
+            },
+            {
+              name: 'delete_contact',
+              description: 'Delete a contact',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  contactId: {
+                    type: 'string',
+                    description: 'Contact ID',
+                  },
+                },
+                required: ['contactId'],
+              },
+            },
+            
+            // Product tools
+            {
+              name: 'get_products',
+              description: 'Get all products from Holded',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  page: {
+                    type: 'number',
+                    description: 'Page number for pagination',
+                    default: 1,
+                  },
+                },
+              },
+            },
+            {
+              name: 'get_product',
+              description: 'Get a specific product by ID',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  productId: {
+                    type: 'string',
+                    description: 'Product ID',
+                  },
+                },
+                required: ['productId'],
+              },
+            },
+            {
+              name: 'create_product',
+              description: 'Create a new product',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  name: {
+                    type: 'string',
+                    description: 'Product name',
+                  },
+                  sku: {
+                    type: 'string',
+                    description: 'Product SKU',
+                  },
+                  price: {
+                    type: 'number',
+                    description: 'Product price',
+                  },
+                  tax: {
+                    type: 'number',
+                    description: 'Tax percentage',
+                  },
+                  description: {
+                    type: 'string',
+                    description: 'Product description',
+                  },
+                },
+                required: ['name'],
+              },
+            },
+
+            // Invoice tools
+            {
+              name: 'get_invoices',
+              description: 'Get all invoices from Holded',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  page: {
+                    type: 'number',
+                    description: 'Page number for pagination',
+                    default: 1,
+                  },
+                },
+              },
+            },
+            {
+              name: 'get_invoice',
+              description: 'Get a specific invoice by ID',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  invoiceId: {
+                    type: 'string',
+                    description: 'Invoice ID',
+                  },
+                },
+                required: ['invoiceId'],
+              },
+            },
+            {
+              name: 'create_invoice',
+              description: 'Create a new invoice',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  contactId: {
+                    type: 'string',
+                    description: 'Contact ID',
+                  },
+                  items: {
+                    type: 'array',
+                    description: 'Invoice items',
+                    items: {
+                      type: 'object',
+                      properties: {
+                        name: { type: 'string' },
+                        units: { type: 'number' },
+                        price: { type: 'number' },
+                        tax: { type: 'number' },
+                        sku: { type: 'string' },
+                      },
+                    },
+                  },
+                  date: {
+                    type: 'string',
+                    description: 'Invoice date (YYYY-MM-DD)',
+                  },
+                  dueDate: {
+                    type: 'string',
+                    description: 'Due date (YYYY-MM-DD)',
+                  },
+                  notes: {
+                    type: 'string',
+                    description: 'Invoice notes',
+                  },
+                },
+                required: ['contactId', 'items'],
+              },
+            },
+
+            // Booking tools
+            {
+              name: 'get_booking_locations',
+              description: 'Get all booking locations from Holded',
+              inputSchema: {
+                type: 'object',
+                properties: {},
+              },
+            },
+            {
+              name: 'get_bookings',
+              description: 'Get all bookings from Holded',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  page: {
+                    type: 'number',
+                    description: 'Page number for pagination',
+                    default: 1,
+                  },
+                },
+              },
+            },
+            {
+              name: 'create_booking',
+              description: 'Create a new booking',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  locationId: {
+                    type: 'string',
+                    description: 'Location ID for the booking',
+                  },
+                  contactId: {
+                    type: 'string',
+                    description: 'Contact ID for the booking',
+                  },
+                  serviceId: {
+                    type: 'string',
+                    description: 'Service ID for the booking',
+                  },
+                  startDate: {
+                    type: 'string',
+                    description: 'Start date and time (ISO format)',
+                  },
+                  endDate: {
+                    type: 'string',
+                    description: 'End date and time (ISO format)',
+                  },
+                  notes: {
+                    type: 'string',
+                    description: 'Booking notes',
+                  },
+                  status: {
+                    type: 'string',
+                    description: 'Booking status (confirmed, pending, cancelled)',
+                  },
+                },
+                required: ['locationId', 'contactId', 'serviceId', 'startDate', 'endDate'],
+              },
+            },
+
+            // Service tools
+            {
+              name: 'get_services',
+              description: 'Get all services from Holded',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  page: {
+                    type: 'number',
+                    description: 'Page number for pagination',
+                    default: 1,
+                  },
+                },
               },
             },
           ],
@@ -1496,6 +1761,7 @@ if (process.env.NODE_ENV === 'production') {
 
         try {
           switch (name) {
+            // Contact operations
             case 'get_contacts':
               const contacts = await holdedClient.getContacts((args as any)?.page || 1);
               return {
@@ -1525,6 +1791,143 @@ if (process.env.NODE_ENV === 'production') {
                   {
                     type: 'text',
                     text: JSON.stringify(newContact, null, 2),
+                  },
+                ],
+              };
+
+            case 'update_contact':
+              const { contactId, ...updateData } = args as any;
+              const updatedContact = await holdedClient.updateContact(contactId, updateData);
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(updatedContact, null, 2),
+                  },
+                ],
+              };
+
+            case 'delete_contact':
+              const deletedContact = await holdedClient.deleteContact((args as any)?.contactId);
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(deletedContact, null, 2),
+                  },
+                ],
+              };
+
+            // Product operations
+            case 'get_products':
+              const products = await holdedClient.getProducts((args as any)?.page || 1);
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(products, null, 2),
+                  },
+                ],
+              };
+
+            case 'get_product':
+              const product = await holdedClient.getProduct((args as any)?.productId);
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(product, null, 2),
+                  },
+                ],
+              };
+
+            case 'create_product':
+              const newProduct = await holdedClient.createProduct(args);
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(newProduct, null, 2),
+                  },
+                ],
+              };
+
+            // Invoice operations
+            case 'get_invoices':
+              const invoices = await holdedClient.getInvoices((args as any)?.page || 1);
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(invoices, null, 2),
+                  },
+                ],
+              };
+
+            case 'get_invoice':
+              const invoice = await holdedClient.getInvoice((args as any)?.invoiceId);
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(invoice, null, 2),
+                  },
+                ],
+              };
+
+            case 'create_invoice':
+              const newInvoice = await holdedClient.createInvoice(args);
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(newInvoice, null, 2),
+                  },
+                ],
+              };
+
+            // Booking operations
+            case 'get_booking_locations':
+              const locations = await holdedClient.getBookingLocations();
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(locations, null, 2),
+                  },
+                ],
+              };
+
+            case 'get_bookings':
+              const bookings = await holdedClient.getBookings((args as any)?.page || 1);
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(bookings, null, 2),
+                  },
+                ],
+              };
+
+            case 'create_booking':
+              const newBooking = await holdedClient.createBooking(args);
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(newBooking, null, 2),
+                  },
+                ],
+              };
+
+            // Service operations
+            case 'get_services':
+              const services = await holdedClient.getServices((args as any)?.page || 1);
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(services, null, 2),
                   },
                 ],
               };
