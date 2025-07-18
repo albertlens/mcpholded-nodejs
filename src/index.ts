@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
-import { SSEServerTransport } from '@modelcontextprotocol/sdk/server/sse.js';
+import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
 import {
   CallToolRequestSchema,
   ErrorCode,
@@ -13,6 +13,7 @@ import {
 } from '@modelcontextprotocol/sdk/types.js';
 import axios, { AxiosInstance } from 'axios';
 import express from 'express';
+import { randomUUID } from 'node:crypto';
 
 // Obtener el directorio del archivo actual y buscar .env en el directorio padre
 const __filename = fileURLToPath(import.meta.url);
@@ -1399,79 +1400,41 @@ if (process.env.NODE_ENV === 'production') {
     res.json({
       service: 'holded-mcp-server',
       version: '1.0.0',
+      protocol: 'MCP Streamable HTTP (2025-06-18)',
       endpoints: {
         health: '/health',
-        sse: '/sse (GET/POST)',
+        mcp: '/mcp (GET/POST/HEAD)',
         test: '/test'
       },
       mcp: {
         status: 'ready',
-        tools: 'Available via SSE connection'
+        tools: 'Available via Streamable HTTP connection'
       }
     });
   });
 
-  // SSE endpoint para Claude.ai - Soporta tanto GET como POST
-  const handleSSE = async (req: any, res: any) => {
-    console.error(`[SSE] Connection request from Claude.ai - Method: ${req.method}`);
-    console.error(`[SSE] Headers:`, req.headers);
-    console.error(`[SSE] User-Agent: ${req.headers['user-agent']}`);
-    
-    // Manejar HEAD requests para health checks de MCP
-    if (req.method === 'HEAD') {
-      console.error(`[SSE] HEAD request detected - responding with SSE headers`);
-      res.writeHead(200, {
-        'Content-Type': 'text/event-stream',
-        'Cache-Control': 'no-cache',
-        'Connection': 'keep-alive',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, HEAD, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization, mcp-protocol-version',
-        'mcp-protocol-version': '2025-06-18'
-      });
-      res.end();
-      return;
-    }
-    
-    // Si es POST, leer el body antes de proceder
-    if (req.method === 'POST') {
-      console.error(`[SSE] POST request detected, reading body...`);
-      let body = '';
-      
-      // Usar Promise con timeout para evitar colgarse
-      try {
-        await new Promise((resolve, reject) => {
-          const timeout = setTimeout(() => {
-            console.error(`[SSE] Body read timeout, proceeding without body`);
-            resolve(void 0);
-          }, 2000); // 2 segundos timeout
-          
-          req.on('data', (chunk: any) => {
-            body += chunk.toString();
-            console.error(`[SSE] Received chunk: ${chunk.length} bytes`);
-          });
-          
-          req.on('end', () => {
-            clearTimeout(timeout);
-            console.error(`[SSE] POST body received: ${body}`);
-            resolve(void 0);
-          });
-          
-          req.on('error', (error: any) => {
-            clearTimeout(timeout);
-            console.error(`[SSE] Error reading body:`, error);
-            resolve(void 0); // Continuar aunque haya error
-          });
-        });
-      } catch (error) {
-        console.error(`[SSE] Body processing error:`, error);
-      }
-    }
+  // Endpoint único para Streamable HTTP - soporta GET, POST y HEAD según el protocolo MCP 2025-06-18
+  const handleStreamableHTTP = async (req: any, res: any) => {
+    console.error(`[MCP] ${req.method} request from Claude.ai`);
+    console.error(`[MCP] Headers:`, req.headers);
+    console.error(`[MCP] User-Agent: ${req.headers['user-agent']}`);
     
     try {
-      console.error(`[SSE] Creating new MCP server instance...`);
+      // Crear un transporte Streamable HTTP para cada conexión
+      const transport = new StreamableHTTPServerTransport({
+        sessionIdGenerator: () => randomUUID(),
+        enableJsonResponse: true,
+        onsessioninitialized: (sessionId: string) => {
+          console.error(`[MCP] Session initialized: ${sessionId}`);
+        },
+        onsessionclosed: (sessionId: string) => {
+          console.error(`[MCP] Session closed: ${sessionId}`);
+        }
+      });
+
+      console.error(`[MCP] Creating new MCP server instance...`);
       
-      // Crear un nuevo servidor MCP para cada conexión SSE
+      // Crear un nuevo servidor MCP para cada conexión
       const mcpServer = new Server(
         {
           name: 'holded-mcp-server',
@@ -1484,11 +1447,11 @@ if (process.env.NODE_ENV === 'production') {
         }
       );
 
-      console.error(`[SSE] Configuring MCP server handlers...`);
+      console.error(`[MCP] Configuring MCP server handlers...`);
       
       // Configurar handlers para este servidor específico - incluir TODAS las herramientas
       mcpServer.setRequestHandler(ListToolsRequestSchema, async () => {
-        console.error('[SSE] Tools list requested via SSE');
+        console.error('[MCP] Tools list requested');
         return {
           tools: [
             // Contact tools
@@ -1810,10 +1773,10 @@ if (process.env.NODE_ENV === 'production') {
         };
       });
 
-      console.error(`[SSE] Configuring CallTool handler...`);
+      console.error(`[MCP] Configuring CallTool handler...`);
 
       mcpServer.setRequestHandler(CallToolRequestSchema, async (request) => {
-        console.error(`[SSE] Tool called: ${request.params.name}`);
+        console.error(`[MCP] Tool called: ${request.params.name}`);
         const { name, arguments: args } = request.params;
 
         try {
@@ -2005,37 +1968,20 @@ if (process.env.NODE_ENV === 'production') {
         }
       });
       
-      console.error(`[SSE] Creating SSE transport...`);
+      console.error(`[MCP] Connecting MCP server to transport...`);
       
-      // Crear transporte SSE
-      const transport = new SSEServerTransport('/sse', res);
-      
-      console.error(`[SSE] Setting up connection handlers...`);
-      
-      // Manejar desconexión del cliente
-      req.on('close', () => {
-        console.error('[SSE] Client disconnected');
-        transport.close?.();
-      });
-      
-      req.on('error', (error: any) => {
-        console.error('[SSE] Request error:', error);
-        transport.close?.();
-      });
-      
-      console.error(`[SSE] Connecting MCP server to transport...`);
-      
-      // Conectar el servidor MCP al transporte SSE
+      // Conectar el servidor MCP al transporte
       await mcpServer.connect(transport);
       
-      console.error('[SSE] Transport connected successfully for Claude.ai');
-      console.error('[SSE] MCP server is now ready to receive messages');
+      console.error(`[MCP] Handling request with Streamable HTTP transport...`);
       
-      // Mantener la conexión viva hasta que se cierre
-      // El transporte SSE maneja automáticamente los mensajes MCP
+      // Manejar la request usando el protocolo Streamable HTTP
+      await transport.handleRequest(req, res, req.body);
+      
+      console.error('[MCP] Request handled successfully with Streamable HTTP protocol');
       
     } catch (error) {
-      console.error('SSE connection error:', error);
+      console.error('[MCP] Streamable HTTP error:', error);
       
       // Solo enviar respuesta de error si no se han enviado headers
       if (!res.headersSent) {
@@ -2050,16 +1996,16 @@ if (process.env.NODE_ENV === 'production') {
     }
   };
 
-  // Soportar tanto GET como POST para el endpoint SSE
-  app.get('/sse', handleSSE);
-  app.post('/sse', handleSSE);
-  app.head('/sse', handleSSE);
+  // Endpoint único para el protocolo MCP Streamable HTTP (2025-06-18)
+  // Soporta GET, POST y HEAD según las especificaciones oficiales
+  app.all('/mcp', handleStreamableHTTP);
 
   const port = process.env.PORT || 3001;
   app.listen(port, () => {
-    console.error(`Health check and SSE server running on port ${port}`);
+    console.error(`MCP Streamable HTTP server running on port ${port}`);
     console.error(`Health endpoint: http://localhost:${port}/health`);
-    console.error(`SSE endpoint: http://localhost:${port}/sse`);
+    console.error(`MCP endpoint: http://localhost:${port}/mcp`);
+    console.error(`Protocol: MCP Streamable HTTP (2025-06-18)`);
   });
 }
 
