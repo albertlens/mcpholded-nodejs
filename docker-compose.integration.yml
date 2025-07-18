@@ -1,0 +1,68 @@
+# Configuración para integrar con stack Docker existente
+# Copia este contenido a tu docker-compose.yml principal o úsalo como referencia
+
+version: '3.8'
+
+services:
+  # Tu servicio MCP de Holded
+  holded-mcp:
+    build: ./holded-mcp-server  # Ajusta la ruta según tu estructura
+    container_name: holded-mcp-server
+    restart: unless-stopped
+    
+    environment:
+      - HOLDED_API_KEY=${HOLDED_API_KEY}
+      - PORT=3001
+      - NODE_ENV=production
+    
+    # Puerto diferente si tienes conflictos
+    ports:
+      - "3001:3001"  # Cambia por 3002, 3003, etc. si hay conflictos
+    
+    # Conectar a red existente si tienes una
+    networks:
+      - your-existing-network  # Reemplaza por tu red existente
+      - holded-internal
+    
+    # Límites de recursos (ajusta según tu servidor)
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    
+    # Si usas Traefik o nginx-proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.holded-mcp.rule=Host(`holded-mcp.tu-dominio.com`)"
+      - "traefik.http.routers.holded-mcp.tls=true"
+      - "traefik.http.routers.holded-mcp.tls.certresolver=letsencrypt"
+      - "traefik.http.services.holded-mcp.loadbalancer.server.port=3001"
+    
+    # O si usas nginx-proxy
+    # environment:
+    #   - VIRTUAL_HOST=holded-mcp.tu-dominio.com
+    #   - VIRTUAL_PORT=3001
+    #   - LETSENCRYPT_HOST=holded-mcp.tu-dominio.com
+    #   - LETSENCRYPT_EMAIL=tu-email@dominio.com
+
+networks:
+  your-existing-network:
+    external: true
+  holded-internal:
+    driver: bridge
+
+# Ejemplo de integración con otros servicios
+  # redis:  # Si necesitas cache
+  #   image: redis:alpine
+  #   networks:
+  #     - holded-internal
+  
+  # nginx:  # Si necesitas proxy
+  #   image: nginx:alpine
+  #   networks:
+  #     - your-existing-network
+  #     - holded-internal

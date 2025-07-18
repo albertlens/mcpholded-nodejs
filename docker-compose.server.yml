@@ -1,0 +1,65 @@
+version: '3.9'
+
+services:
+  holded-mcp:
+    image: ghcr.io/tu-usuario/holded-mcp-server:latest  # Cambiaremos por tu repo
+    container_name: holded-mcp-server
+    restart: always
+    
+    environment:
+      - HOLDED_API_KEY=${HOLDED_API_KEY}
+      - PORT=3001
+      - NODE_ENV=production
+    
+    # Solo puerto interno, Traefik manejará el routing
+    expose:
+      - "3001"
+    
+    # Configuración para Traefik (igual que tu n8n)
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.holded-mcp.rule=Host(`mcpholded.robustdatasolutions.com`)
+      - traefik.http.routers.holded-mcp.tls=true
+      - traefik.http.routers.holded-mcp.entrypoints=web,websecure
+      - traefik.http.routers.holded-mcp.tls.certresolver=mytlschallenge
+      
+      # Middlewares de seguridad (igual que n8n)
+      - traefik.http.middlewares.holded-mcp.headers.SSLRedirect=true
+      - traefik.http.middlewares.holded-mcp.headers.STSSeconds=315360000
+      - traefik.http.middlewares.holded-mcp.headers.browserXSSFilter=true
+      - traefik.http.middlewares.holded-mcp.headers.contentTypeNosniff=true
+      - traefik.http.middlewares.holded-mcp.headers.forceSTSHeader=true
+      - traefik.http.middlewares.holded-mcp.headers.SSLHost=robustdatasolutions.com
+      - traefik.http.middlewares.holded-mcp.headers.STSIncludeSubdomains=true
+      - traefik.http.middlewares.holded-mcp.headers.STSPreload=true
+      - traefik.http.routers.holded-mcp.middlewares=holded-mcp@docker
+      
+      # Service
+      - traefik.http.services.holded-mcp.loadbalancer.server.port=3001
+    
+    # Conectar a la red externa donde está Traefik
+    networks:
+      - traefik_default  # Red del docker-compose principal
+    
+    # Límites de recursos (ligero)
+    deploy:
+      resources:
+        limits:
+          cpus: '0.3'
+          memory: 256M
+        reservations:
+          cpus: '0.1'
+          memory: 64M
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+# Conectar a la red del docker-compose principal
+networks:
+  traefik_default:
+    external: true

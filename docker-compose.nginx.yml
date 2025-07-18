@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  holded-mcp:
+    image: ghcr.io/tu-usuario/holded-mcp-server:latest
+    container_name: holded-mcp-server
+    restart: unless-stopped
+    
+    environment:
+      - HOLDED_API_KEY=${HOLDED_API_KEY}
+      - PORT=3001
+      - NODE_ENV=production
+      
+      # Variables para nginx-proxy
+      - VIRTUAL_HOST=mcpholded.robustdatasolutions.com
+      - VIRTUAL_PORT=3001
+      - LETSENCRYPT_HOST=mcpholded.robustdatasolutions.com
+      - LETSENCRYPT_EMAIL=admin@robustdatasolutions.com
+    
+    expose:
+      - "3001"
+    
+    networks:
+      - nginx-proxy
+    
+    deploy:
+      resources:
+        limits:
+          cpus: '0.3'
+          memory: 256M
+        reservations:
+          cpus: '0.1'
+          memory: 64M
+
+networks:
+  nginx-proxy:
+    external: true

@@ -1,0 +1,114 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm: build",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build"],
+      "group": "build",
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "Docker: Build Image",
+      "type": "shell",
+      "command": "docker",
+      "args": [
+        "build",
+        "-t", "holded-mcp-server:latest",
+        "."
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker: Build and Push to GitHub",
+      "type": "shell",
+      "command": "docker",
+      "args": [
+        "buildx", "build",
+        "--platform", "linux/amd64,linux/arm64", 
+        "--tag", "ghcr.io/${input:githubUsername}/holded-mcp-server:latest",
+        "--tag", "ghcr.io/${input:githubUsername}/holded-mcp-server:${input:version}",
+        "--push",
+        "."
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Deploy to Server (SSH)",
+      "type": "shell",
+      "command": "ssh",
+      "args": [
+        "${input:serverHost}",
+        "cd ~/mcpholded && docker-compose pull && docker-compose up -d"
+      ],
+      "group": "build",
+      "dependsOn": "Docker: Build and Push to GitHub"
+    },
+    {
+      "label": "Deploy: Full Pipeline",
+      "type": "shell",
+      "command": "echo",
+      "args": ["✅ Full deployment pipeline completed!"],
+      "group": "build",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "npm: build",
+        "Docker: Build and Push to GitHub", 
+        "Deploy to Server (SSH)"
+      ]
+    },
+    {
+      "label": "Server: View Logs",
+      "type": "shell",
+      "command": "ssh",
+      "args": [
+        "${input:serverHost}",
+        "cd ~/mcpholded && docker-compose logs -f"
+      ],
+      "group": "test"
+    },
+    {
+      "label": "Server: Restart Service", 
+      "type": "shell",
+      "command": "ssh",
+      "args": [
+        "${input:serverHost}",
+        "cd ~/mcpholded && docker-compose restart"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "Local: Test MCP Server",
+      "type": "shell", 
+      "command": "npm",
+      "args": ["start"],
+      "group": "test",
+      "dependsOn": "npm: build",
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "githubUsername",
+      "description": "GitHub Username",
+      "default": "tu-usuario",
+      "type": "promptString"
+    },
+    {
+      "id": "version", 
+      "description": "Version tag",
+      "default": "latest",
+      "type": "promptString"
+    },
+    {
+      "id": "serverHost",
+      "description": "Server SSH host", 
+      "default": "user@robustdatasolutions.com",
+      "type": "promptString"
+    }
+  ]
+}

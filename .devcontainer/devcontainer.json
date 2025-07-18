@@ -1,0 +1,30 @@
+{
+  "dockerComposeFile": [
+    "docker-compose.yml",
+    "docker-compose.server.yml"
+  ],
+  "service": "holded-mcp",
+  "workspaceFolder": "/app",
+  "shutdownAction": "stopCompose",
+  "postCreateCommand": "npm install",
+  "postStartCommand": "npm run build",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "ms-azuretools.vscode-docker",
+        "GitHub.copilot"
+      ],
+      "settings": {
+        "typescript.preferences.importModuleSpecifier": "relative"
+      }
+    }
+  },
+  "forwardPorts": [3001],
+  "portsAttributes": {
+    "3001": {
+      "label": "Holded MCP Server",
+      "onAutoForward": "notify"
+    }
+  }
+}
