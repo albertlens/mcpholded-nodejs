@@ -1394,9 +1394,27 @@ if (process.env.NODE_ENV === 'production') {
     });
   });
 
-  // SSE endpoint para Claude.ai
-  app.post('/sse', async (req, res) => {
-    console.error('SSE connection request from Claude.ai');
+  // Endpoint de test para verificar conectividad MCP
+  app.get('/test', (req, res) => {
+    res.json({
+      service: 'holded-mcp-server',
+      version: '1.0.0',
+      endpoints: {
+        health: '/health',
+        sse: '/sse (GET/POST)',
+        test: '/test'
+      },
+      mcp: {
+        status: 'ready',
+        tools: 'Available via SSE connection'
+      }
+    });
+  });
+
+  // SSE endpoint para Claude.ai - Soporta tanto GET como POST
+  const handleSSE = async (req: any, res: any) => {
+    console.error(`SSE connection request from Claude.ai - Method: ${req.method}`);
+    console.error(`Headers:`, req.headers);
     
     try {
       // Crear transporte SSE
@@ -1408,7 +1426,7 @@ if (process.env.NODE_ENV === 'production') {
         transport.close?.();
       });
       
-      req.on('error', (error) => {
+      req.on('error', (error: any) => {
         console.error('SSE request error:', error);
         transport.close?.();
       });
@@ -1435,7 +1453,11 @@ if (process.env.NODE_ENV === 'production') {
         }));
       }
     }
-  });
+  };
+
+  // Soportar tanto GET como POST para el endpoint SSE
+  app.get('/sse', handleSSE);
+  app.post('/sse', handleSSE);
 
   const port = process.env.PORT || 3001;
   app.listen(port, () => {
