@@ -34,7 +34,7 @@ fi
 # Descargar archivos si no existen
 if [ ! -f "docker-compose.yml" ]; then
     echo "📥 Descargando docker-compose.yml..."
-    curl -s -o docker-compose.yml https://raw.githubusercontent.com/TU-USUARIO/holded-mcp-server/main/docker-compose.server.yml
+    curl -s -o docker-compose.yml https://raw.githubusercontent.com/albertlens/mcpholded-nodejs/main/docker-compose.server.yml
 fi
 
 if [ ! -f ".env" ]; then
@@ -52,7 +52,7 @@ fi
 
 # Verificar que la imagen esté disponible
 echo "🔍 Verificando imagen Docker..."
-docker pull ghcr.io/tu-usuario/holded-mcp-server:latest
+docker pull ghcr.io/albertlens/mcpholded-nodejs:latest
 
 # Parar contenedor existente si existe
 echo "🛑 Parando contenedor existente..."

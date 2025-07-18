@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   holded-mcp:
-    image: ghcr.io/tu-usuario/holded-mcp-server:latest  # Cambiaremos por tu repo
+    image: ghcr.io/albertlens/mcpholded-nodejs:latest
     container_name: holded-mcp-server
     restart: always
     
