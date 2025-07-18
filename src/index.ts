@@ -1415,8 +1415,136 @@ if (process.env.NODE_ENV === 'production') {
   const handleSSE = async (req: any, res: any) => {
     console.error(`SSE connection request from Claude.ai - Method: ${req.method}`);
     console.error(`Headers:`, req.headers);
+    console.error(`User-Agent: ${req.headers['user-agent']}`);
     
     try {
+      // Crear un nuevo servidor MCP para cada conexión SSE
+      const mcpServer = new Server(
+        {
+          name: 'holded-mcp-server',
+          version: '1.0.0',
+        },
+        {
+          capabilities: {
+            tools: {},
+          },
+        }
+      );
+
+      // Configurar handlers para este servidor específico
+      mcpServer.setRequestHandler(ListToolsRequestSchema, async () => {
+        console.error('Tools list requested via SSE');
+        return {
+          tools: [
+            {
+              name: 'get_contacts',
+              description: 'Get all contacts from Holded',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  page: {
+                    type: 'number',
+                    description: 'Page number for pagination',
+                    default: 1,
+                  },
+                },
+              },
+            },
+            {
+              name: 'get_contact',
+              description: 'Get a specific contact by ID',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  contactId: {
+                    type: 'string',
+                    description: 'Contact ID',
+                  },
+                },
+                required: ['contactId'],
+              },
+            },
+            {
+              name: 'create_contact',
+              description: 'Create a new contact',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  name: {
+                    type: 'string',
+                    description: 'Contact name',
+                  },
+                  email: {
+                    type: 'string',
+                    description: 'Contact email',
+                  },
+                  phone: {
+                    type: 'string',
+                    description: 'Contact phone',
+                  },
+                },
+                required: ['name'],
+              },
+            },
+          ],
+        };
+      });
+
+      mcpServer.setRequestHandler(CallToolRequestSchema, async (request) => {
+        console.error(`Tool called via SSE: ${request.params.name}`);
+        const { name, arguments: args } = request.params;
+
+        try {
+          switch (name) {
+            case 'get_contacts':
+              const contacts = await holdedClient.getContacts((args as any)?.page || 1);
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(contacts, null, 2),
+                  },
+                ],
+              };
+
+            case 'get_contact':
+              const contact = await holdedClient.getContact((args as any)?.contactId);
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(contact, null, 2),
+                  },
+                ],
+              };
+
+            case 'create_contact':
+              const newContact = await holdedClient.createContact(args);
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(newContact, null, 2),
+                  },
+                ],
+              };
+
+            default:
+              throw new McpError(
+                ErrorCode.MethodNotFound,
+                `Unknown tool: ${name}`
+              );
+          }
+        } catch (error) {
+          console.error(`Tool execution error: ${error}`);
+          const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+          throw new McpError(
+            ErrorCode.InternalError,
+            `Holded API error: ${errorMessage}`
+          );
+        }
+      });
+      
       // Crear transporte SSE
       const transport = new SSEServerTransport('/sse', res);
       
@@ -1432,7 +1560,7 @@ if (process.env.NODE_ENV === 'production') {
       });
       
       // Conectar el servidor MCP al transporte SSE
-      await server.connect(transport);
+      await mcpServer.connect(transport);
       
       console.error('SSE transport connected successfully for Claude.ai');
       
