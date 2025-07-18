@@ -1417,6 +1417,22 @@ if (process.env.NODE_ENV === 'production') {
     console.error(`[SSE] Headers:`, req.headers);
     console.error(`[SSE] User-Agent: ${req.headers['user-agent']}`);
     
+    // Manejar HEAD requests para health checks de MCP
+    if (req.method === 'HEAD') {
+      console.error(`[SSE] HEAD request detected - responding with SSE headers`);
+      res.writeHead(200, {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, HEAD, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization, mcp-protocol-version',
+        'mcp-protocol-version': '2025-06-18'
+      });
+      res.end();
+      return;
+    }
+    
     // Si es POST, leer el body antes de proceder
     if (req.method === 'POST') {
       console.error(`[SSE] POST request detected, reading body...`);
@@ -2036,6 +2052,7 @@ if (process.env.NODE_ENV === 'production') {
   // Soportar tanto GET como POST para el endpoint SSE
   app.get('/sse', handleSSE);
   app.post('/sse', handleSSE);
+  app.head('/sse', handleSSE);
 
   const port = process.env.PORT || 3001;
   app.listen(port, () => {
