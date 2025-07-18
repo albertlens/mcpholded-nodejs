@@ -1413,11 +1413,13 @@ if (process.env.NODE_ENV === 'production') {
 
   // SSE endpoint para Claude.ai - Soporta tanto GET como POST
   const handleSSE = async (req: any, res: any) => {
-    console.error(`SSE connection request from Claude.ai - Method: ${req.method}`);
-    console.error(`Headers:`, req.headers);
-    console.error(`User-Agent: ${req.headers['user-agent']}`);
+    console.error(`[SSE] Connection request from Claude.ai - Method: ${req.method}`);
+    console.error(`[SSE] Headers:`, req.headers);
+    console.error(`[SSE] User-Agent: ${req.headers['user-agent']}`);
     
     try {
+      console.error(`[SSE] Creating new MCP server instance...`);
+      
       // Crear un nuevo servidor MCP para cada conexión SSE
       const mcpServer = new Server(
         {
@@ -1431,9 +1433,11 @@ if (process.env.NODE_ENV === 'production') {
         }
       );
 
+      console.error(`[SSE] Configuring MCP server handlers...`);
+      
       // Configurar handlers para este servidor específico - incluir TODAS las herramientas
       mcpServer.setRequestHandler(ListToolsRequestSchema, async () => {
-        console.error('Tools list requested via SSE');
+        console.error('[SSE] Tools list requested via SSE');
         return {
           tools: [
             // Contact tools
@@ -1755,8 +1759,10 @@ if (process.env.NODE_ENV === 'production') {
         };
       });
 
+      console.error(`[SSE] Configuring CallTool handler...`);
+
       mcpServer.setRequestHandler(CallToolRequestSchema, async (request) => {
-        console.error(`Tool called via SSE: ${request.params.name}`);
+        console.error(`[SSE] Tool called: ${request.params.name}`);
         const { name, arguments: args } = request.params;
 
         try {
@@ -1948,24 +1954,30 @@ if (process.env.NODE_ENV === 'production') {
         }
       });
       
+      console.error(`[SSE] Creating SSE transport...`);
+      
       // Crear transporte SSE
       const transport = new SSEServerTransport('/sse', res);
       
+      console.error(`[SSE] Setting up connection handlers...`);
+      
       // Manejar desconexión del cliente
       req.on('close', () => {
-        console.error('SSE client disconnected');
+        console.error('[SSE] Client disconnected');
         transport.close?.();
       });
       
       req.on('error', (error: any) => {
-        console.error('SSE request error:', error);
+        console.error('[SSE] Request error:', error);
         transport.close?.();
       });
+      
+      console.error(`[SSE] Connecting MCP server to transport...`);
       
       // Conectar el servidor MCP al transporte SSE
       await mcpServer.connect(transport);
       
-      console.error('SSE transport connected successfully for Claude.ai');
+      console.error('[SSE] Transport connected successfully for Claude.ai');
       
       // Mantener la conexión viva hasta que se cierre
       // El transporte SSE maneja automáticamente los mensajes MCP
