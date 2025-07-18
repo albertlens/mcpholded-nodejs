@@ -2029,6 +2029,7 @@ if (process.env.NODE_ENV === 'production') {
       await mcpServer.connect(transport);
       
       console.error('[SSE] Transport connected successfully for Claude.ai');
+      console.error('[SSE] MCP server is now ready to receive messages');
       
       // Mantener la conexión viva hasta que se cierre
       // El transporte SSE maneja automáticamente los mensajes MCP
