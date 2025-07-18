@@ -1417,6 +1417,22 @@ if (process.env.NODE_ENV === 'production') {
     console.error(`[SSE] Headers:`, req.headers);
     console.error(`[SSE] User-Agent: ${req.headers['user-agent']}`);
     
+    // Si es POST, leer el body antes de proceder
+    if (req.method === 'POST') {
+      console.error(`[SSE] POST request detected, reading body...`);
+      let body = '';
+      req.on('data', (chunk: any) => {
+        body += chunk.toString();
+      });
+      
+      await new Promise((resolve) => {
+        req.on('end', () => {
+          console.error(`[SSE] POST body received: ${body}`);
+          resolve(void 0);
+        });
+      });
+    }
+    
     try {
       console.error(`[SSE] Creating new MCP server instance...`);
       
