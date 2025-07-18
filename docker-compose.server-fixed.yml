@@ -1,0 +1,58 @@
+version: '3.9'
+
+services:
+  holded-mcp:
+    image: ghcr.io/albertlens/mcpholded-nodejs:latest
+    container_name: holded-mcp-server
+    restart: always
+    
+    environment:
+      - HOLDED_API_KEY=${HOLDED_API_KEY}
+      - PORT=3001
+      - NODE_ENV=production
+    
+    # Solo puerto interno, Traefik manejará el routing
+    expose:
+      - "3001"
+    
+    # Configuración para Traefik (igual que tu n8n)
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.holded-mcp.rule=Host(`mcpholded.robustdatasolutions.com`)
+      - traefik.http.routers.holded-mcp.tls=true
+      - traefik.http.routers.holded-mcp.entrypoints=web,websecure
+      - traefik.http.routers.holded-mcp.tls.certresolver=mytlschallenge
+      - traefik.http.services.holded-mcp.loadbalancer.server.port=3001
+      
+      # Middlewares de seguridad (igual que n8n)
+      - traefik.http.middlewares.holded-mcp.headers.SSLRedirect=true
+      - traefik.http.middlewares.holded-mcp.headers.STSSeconds=315360000
+      - traefik.http.middlewares.holded-mcp.headers.browserXSSFilter=true
+      - traefik.http.middlewares.holded-mcp.headers.contentTypeNosniff=true
+      - traefik.http.middlewares.holded-mcp.headers.forceSTSHeader=true
+      - traefik.http.middlewares.holded-mcp.headers.SSLHost=robustdatasolutions.com
+      - traefik.http.middlewares.holded-mcp.headers.STSIncludeSubdomains=true
+      - traefik.http.middlewares.holded-mcp.headers.STSPreload=true
+      - traefik.http.routers.holded-mcp.middlewares=holded-mcp@docker
+    
+    # Conectar a la red externa donde está Traefik
+    networks:
+      - root_default  # Red del docker-compose principal
+    
+    # Límites de recursos usando la sintaxis estándar de Docker Compose
+    mem_limit: 256m
+    memswap_limit: 256m
+    cpus: 0.3
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+# Conectar a la red del docker-compose principal
+networks:
+  root_default:
+    external: true
