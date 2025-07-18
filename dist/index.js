@@ -4,8 +4,10 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { SSEServerTransport } from '@modelcontextprotocol/sdk/server/sse.js';
 import { CallToolRequestSchema, ErrorCode, ListToolsRequestSchema, McpError, } from '@modelcontextprotocol/sdk/types.js';
 import axios from 'axios';
+import express from 'express';
 // Obtener el directorio del archivo actual y buscar .env en el directorio padre
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -1240,7 +1242,60 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         throw new McpError(ErrorCode.InternalError, `Holded API error: ${errorMessage}`);
     }
 });
-// Start server
+if (process.env.NODE_ENV === 'production') {
+    const app = express();
+    // Middleware CORS
+    app.use((req, res, next) => {
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+        res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+        if (req.method === 'OPTIONS') {
+            res.sendStatus(200);
+            return;
+        }
+        next();
+    });
+    // Health check endpoint
+    app.get('/health', (req, res) => {
+        res.json({
+            status: 'healthy',
+            timestamp: new Date().toISOString(),
+            service: 'holded-mcp-server'
+        });
+    });
+    // SSE endpoint para Claude.ai
+    app.post('/sse', async (req, res) => {
+        console.error('SSE connection request from Claude.ai');
+        try {
+            // Configurar headers SSE
+            res.writeHead(200, {
+                'Content-Type': 'text/event-stream',
+                'Cache-Control': 'no-cache',
+                'Connection': 'keep-alive',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type'
+            });
+            // Crear transporte SSE
+            const transport = new SSEServerTransport('/sse', res);
+            // Conectar el servidor MCP al transporte SSE
+            await server.connect(transport);
+            console.error('SSE transport connected successfully for Claude.ai');
+        }
+        catch (error) {
+            console.error('SSE connection error:', error);
+            res.write(`event: error\ndata: ${JSON.stringify({ error: error instanceof Error ? error.message : 'Unknown error' })}\n\n`);
+            res.end();
+        }
+    });
+    const port = process.env.PORT || 3001;
+    app.listen(port, () => {
+        console.error(`Health check and SSE server running on port ${port}`);
+        console.error(`Health endpoint: http://localhost:${port}/health`);
+        console.error(`SSE endpoint: http://localhost:${port}/sse`);
+    });
+}
+// Start server for stdio (Claude Desktop, VS Code)
 async function runServer() {
     const transport = new StdioServerTransport();
     await server.connect(transport);
