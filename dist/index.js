@@ -1815,42 +1815,44 @@ if (process.env.NODE_ENV === 'production') {
             if (sessionId && transports.has(sessionId)) {
                 // Reutilizar transporte existente
                 transport = transports.get(sessionId);
-                console.error(`[MCP] Reusing transport for session: ${sessionId}`);
+                console.error(`[MCP] Reusing existing transport for session: ${sessionId}`);
+                // Manejar request con transporte existente - no need to reconnect
+                await transport.handleRequest(req, res);
             }
             else if (!sessionId) {
-                // Nueva solicitud de inicialización - crear servidor MCP fresh
+                // Nueva solicitud de inicialización - crear servidor MCP fresh  
                 const { server: mcpServer, cleanup } = createServer();
                 console.error(`[MCP] Creating new transport for initialization...`);
-                // Crear nuevo transporte con store de eventos en memoria - EXACTAMENTE como el servidor "everything"
+                // Crear nuevo transporte con store de eventos en memoria
                 const { InMemoryEventStore } = await import('@modelcontextprotocol/sdk/examples/shared/inMemoryEventStore.js');
                 const eventStore = new InMemoryEventStore();
                 transport = new StreamableHTTPServerTransport({
                     sessionIdGenerator: () => randomUUID(),
                     eventStore, // Habilitar resumabilidad
                     onsessioninitialized: (sessionId) => {
+                        // Store the transport by session ID when session is initialized
+                        // This avoids race conditions where requests might come in before the session is stored
                         console.error(`Session initialized with ID: ${sessionId}`);
-                        // Almacenar el transporte inmediatamente cuando la sesión se inicializa
                         transports.set(sessionId, transport);
                     }
                 });
-                // Configurar handler de cierre para limpiar transporte
+                // Set up onclose handler to clean up transport when closed
                 mcpServer.onclose = async () => {
                     const sid = transport.sessionId;
                     if (sid && transports.has(sid)) {
                         console.error(`Transport closed for session ${sid}, removing from transports map`);
                         transports.delete(sid);
-                        await cleanup(); // Llamar cleanup del servidor
+                        await cleanup();
                     }
                 };
-                // Conectar el transporte al servidor MCP ANTES de manejar la request
-                // Esto es crítico para que el flow de inicialización funcione
+                // Connect the transport to the MCP server BEFORE handling the request
+                // so responses can flow back through the same transport
                 await mcpServer.connect(transport);
-                // Manejar la request inmediatamente y retornar - el transport maneja todo
                 await transport.handleRequest(req, res);
-                return;
+                return; // Already handled
             }
             else {
-                // Request inválida - sin ID de sesión o no inicialización  
+                // Invalid request - no session ID or not initialization request
                 console.error(`[MCP] Invalid request: sessionId=${sessionId}, has transport=${sessionId ? transports.has(sessionId) : false}`);
                 res.status(400).json({
                     jsonrpc: '2.0',
@@ -1862,8 +1864,6 @@ if (process.env.NODE_ENV === 'production') {
                 });
                 return;
             }
-            // Manejar request con transporte existente
-            await transport.handleRequest(req, res);
         }
         catch (error) {
             console.error('Error handling MCP request:', error);
