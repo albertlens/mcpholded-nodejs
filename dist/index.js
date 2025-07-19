@@ -1816,34 +1816,58 @@ if (process.env.NODE_ENV === 'production') {
         const pathSessionId = req.params.path;
         let sessionId = pathSessionId; // Usar path directamente como sessionId
         console.error(`[MCP] SSE request for path-based session: ${sessionId}`);
-        // Buscar sesión existente o usar la única disponible
+        // Si no hay sesión para este path, crear una nueva automáticamente
         if (!transports.has(sessionId)) {
-            const knownSessionIds = Array.from(transports.keys());
-            if (knownSessionIds.length === 1) {
-                sessionId = knownSessionIds[0];
-                console.error(`[MCP] Path session not found, using available session: ${sessionId}`);
-            }
-            else if (knownSessionIds.length > 1) {
-                // Usar la más reciente
-                const sortedSessions = knownSessionIds.sort((a, b) => {
-                    const timestampA = sessionTimestamps.get(a) || 0;
-                    const timestampB = sessionTimestamps.get(b) || 0;
-                    return timestampB - timestampA;
+            console.error(`[MCP] No session found for path ${pathSessionId}, creating new session automatically...`);
+            try {
+                // Crear servidor MCP fresh para esta nueva sesión
+                const { server: mcpServer, cleanup } = createServer();
+                // Crear nuevo transporte con store de eventos en memoria
+                const { InMemoryEventStore } = await import('@modelcontextprotocol/sdk/examples/shared/inMemoryEventStore.js');
+                const eventStore = new InMemoryEventStore();
+                const transport = new StreamableHTTPServerTransport({
+                    sessionIdGenerator: () => sessionId, // Usar el path como sessionId
+                    eventStore,
+                    onsessioninitialized: (sid) => {
+                        console.error(`[MCP] Auto-created session initialized: ${sid}`);
+                        transports.set(sid, transport);
+                        sessionTimestamps.set(sid, Date.now());
+                    }
                 });
-                sessionId = sortedSessions[0];
-                console.error(`[MCP] Multiple sessions found, using most recent: ${sessionId}`);
+                // Asignar manualmente el sessionId
+                transport.sessionId = sessionId;
+                console.error(`[MCP] Auto-created transport sessionId: ${sessionId}`);
+                // Set up onclose handler
+                mcpServer.onclose = async () => {
+                    const sid = transport.sessionId;
+                    if (sid && transports.has(sid)) {
+                        console.error(`Auto-created transport closed for session ${sid}`);
+                        transports.delete(sid);
+                        sessionTimestamps.delete(sid);
+                        await cleanup();
+                    }
+                };
+                // Conectar el transporte al servidor MCP
+                console.error(`[MCP] Connecting auto-created transport to MCP server...`);
+                await mcpServer.connect(transport);
+                console.error(`[MCP] Auto-created transport connected successfully`);
+                // Almacenar el transporte inmediatamente
+                transports.set(sessionId, transport);
+                sessionTimestamps.set(sessionId, Date.now());
+                console.error(`[MCP] Auto-created transport stored for session: ${sessionId}`);
+                // Ahora podemos proceder con el SSE stream
             }
-        }
-        if (!sessionId || !transports.has(sessionId)) {
-            console.error(`[MCP] SSE - No valid session found for path: ${pathSessionId}`);
-            res.status(400).json({
-                jsonrpc: '2.0',
-                error: {
-                    code: -32000,
-                    message: `Bad Request: No session for path ${pathSessionId}`,
-                },
-            });
-            return;
+            catch (error) {
+                console.error(`[MCP] Error creating auto session for path ${pathSessionId}:`, error);
+                res.status(500).json({
+                    jsonrpc: '2.0',
+                    error: {
+                        code: -32603,
+                        message: `Failed to create session for path ${pathSessionId}`,
+                    },
+                });
+                return;
+            }
         }
         // Establecer SSE stream
         console.error(`[MCP] Establishing SSE stream for path ${pathSessionId} using session ${sessionId}`);
