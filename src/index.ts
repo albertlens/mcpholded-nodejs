@@ -1965,6 +1965,72 @@ if (process.env.NODE_ENV === 'production') {
   const transports: Map<string, StreamableHTTPServerTransport> = new Map();
   const sessionTimestamps: Map<string, number> = new Map(); // Para trackear cuándo se creó cada sesión
   
+  // Handler para GET requests con path - SSE endpoint para n8n/Claude compatibility
+  app.get('/mcp/:path/sse', async (req: any, res: any) => {
+    console.error('Received MCP SSE GET request with path');
+    console.error('Path param:', req.params.path);
+    console.error('SSE Headers:', JSON.stringify(req.headers, null, 2));
+    
+    // Usar el path como sessionId para compatibilidad con n8n/Claude
+    const pathSessionId = req.params.path;
+    let sessionId = pathSessionId; // Usar path directamente como sessionId
+    
+    console.error(`[MCP] SSE request for path-based session: ${sessionId}`);
+    
+    // Buscar sesión existente o usar la única disponible
+    if (!transports.has(sessionId)) {
+      const knownSessionIds = Array.from(transports.keys());
+      if (knownSessionIds.length === 1) {
+        sessionId = knownSessionIds[0];
+        console.error(`[MCP] Path session not found, using available session: ${sessionId}`);
+      } else if (knownSessionIds.length > 1) {
+        // Usar la más reciente
+        const sortedSessions = knownSessionIds.sort((a, b) => {
+          const timestampA = sessionTimestamps.get(a) || 0;
+          const timestampB = sessionTimestamps.get(b) || 0;
+          return timestampB - timestampA;
+        });
+        sessionId = sortedSessions[0];
+        console.error(`[MCP] Multiple sessions found, using most recent: ${sessionId}`);
+      }
+    }
+    
+    if (!sessionId || !transports.has(sessionId)) {
+      console.error(`[MCP] SSE - No valid session found for path: ${pathSessionId}`);
+      res.status(400).json({
+        jsonrpc: '2.0',
+        error: {
+          code: -32000,
+          message: `Bad Request: No session for path ${pathSessionId}`,
+        },
+      });
+      return;
+    }
+
+    // Establecer SSE stream
+    console.error(`[MCP] Establishing SSE stream for path ${pathSessionId} using session ${sessionId}`);
+    const transport = transports.get(sessionId);
+    await transport!.handleRequest(req, res);
+    console.error(`[MCP] SSE stream established successfully`);
+  });
+
+  // Handler para POST requests con path - inicialización con path para n8n/Claude
+  app.post('/mcp/:path', async (req: any, res: any) => {
+    console.error('Received MCP POST request with path');
+    console.error('Path param:', req.params.path);
+    console.error('Headers:', JSON.stringify(req.headers, null, 2));
+    console.error('Body:', req.body ? JSON.stringify(req.body, null, 2) : 'No body');
+    
+    // Usar path como parte del sessionId
+    const pathSessionId = `${req.params.path}_session`;
+    
+    // Redirigir a la lógica normal usando el path como sessionId
+    req.headers['mcp-session-id'] = pathSessionId;
+    
+    // Llamar al handler normal
+    return app._router.handle({ ...req, url: '/mcp' }, res, () => {});
+  });
+
   // Handler para POST requests - inicialización y comunicación MCP
   app.post('/mcp', async (req: any, res: any) => {
     console.error('Received MCP POST request');
