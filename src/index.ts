@@ -63,63 +63,63 @@ class HoldedClient {
 
   // Contact operations
   async getContacts(page = 1) {
-    return this.request('GET', `/contacts?page=${page}`);
+    return this.request('GET', `/invoicing/v1/contacts?page=${page}`);
   }
 
   async getContact(contactId: string) {
-    return this.request('GET', `/contacts/${contactId}`);
+    return this.request('GET', `/invoicing/v1/contacts/${contactId}`);
   }
 
   async createContact(contactData: any) {
-    return this.request('POST', '/contacts', contactData);
+    return this.request('POST', '/invoicing/v1/contacts', contactData);
   }
 
   async updateContact(contactId: string, contactData: any) {
-    return this.request('PUT', `/contacts/${contactId}`, contactData);
+    return this.request('PUT', `/invoicing/v1/contacts/${contactId}`, contactData);
   }
 
   async deleteContact(contactId: string) {
-    return this.request('DELETE', `/contacts/${contactId}`);
+    return this.request('DELETE', `/invoicing/v1/contacts/${contactId}`);
   }
 
   // Product operations
   async getProducts(page = 1) {
-    return this.request('GET', `/products?page=${page}`);
+    return this.request('GET', `/catalog/v1/products?page=${page}`);
   }
 
   async getProduct(productId: string) {
-    return this.request('GET', `/products/${productId}`);
+    return this.request('GET', `/catalog/v1/products/${productId}`);
   }
 
   async createProduct(productData: any) {
-    return this.request('POST', '/products', productData);
+    return this.request('POST', '/catalog/v1/products', productData);
   }
 
   // Invoice operations
   async getInvoices(page = 1) {
-    return this.request('GET', `/invoices?page=${page}`);
+    return this.request('GET', `/invoicing/v1/documents/invoice?page=${page}`);
   }
 
   async getInvoice(invoiceId: string) {
-    return this.request('GET', `/invoices/${invoiceId}`);
+    return this.request('GET', `/invoicing/v1/documents/invoice/${invoiceId}`);
   }
 
   async createInvoice(invoiceData: any) {
-    return this.request('POST', '/invoices', invoiceData);
+    return this.request('POST', '/invoicing/v1/documents/invoice', invoiceData);
   }
 
-  // Booking operations
+  // Booking operations (usando appointments ya que bookings no existe en API v1)
   async getBookings(page = 1) {
-    return this.request('GET', `/bookings?page=${page}`);
+    return this.request('GET', `/calendar/v1/appointments?page=${page}`);
   }
 
   async createBooking(bookingData: any) {
-    return this.request('POST', '/bookings', bookingData);
+    return this.request('POST', '/calendar/v1/appointments', bookingData);
   }
 
   // Service operations
   async getServices(page = 1) {
-    return this.request('GET', `/services?page=${page}`);
+    return this.request('GET', `/catalog/v1/services?page=${page}`);
   }
 }
 
