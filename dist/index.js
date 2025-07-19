@@ -1803,6 +1803,7 @@ if (process.env.NODE_ENV === 'production') {
     };
     // Mapas para manejar transportes por sesión - igual que el servidor "everything" oficial
     const transports = new Map();
+    const sessionTimestamps = new Map(); // Para trackear cuándo se creó cada sesión
     // Handler para POST requests - inicialización y comunicación MCP
     app.post('/mcp', async (req, res) => {
         console.error('Received MCP POST request');
@@ -1845,6 +1846,7 @@ if (process.env.NODE_ENV === 'production') {
                     if (sid && transports.has(sid)) {
                         console.error(`Transport closed for session ${sid}, removing from transports map`);
                         transports.delete(sid);
+                        sessionTimestamps.delete(sid); // También limpiar timestamp
                         await cleanup();
                     }
                 };
@@ -1855,6 +1857,7 @@ if (process.env.NODE_ENV === 'production') {
                 // No esperar al callback onsessioninitialized que puede no ejecutarse
                 console.error(`[MCP] Force storing transport with sessionId: ${newSessionId}`);
                 transports.set(newSessionId, transport);
+                sessionTimestamps.set(newSessionId, Date.now()); // Trackear timestamp de creación
                 console.error(`[MCP] Transport stored successfully for session: ${newSessionId}`);
                 // Añadir el session ID al header de respuesta para que Claude.ai lo use en requests futuros
                 res.setHeader('MCP-Session-Id', newSessionId);
@@ -1921,6 +1924,17 @@ if (process.env.NODE_ENV === 'production') {
                 sessionId = knownSessionIds[0];
                 console.error(`[MCP] No sessionId in headers, but exactly one active session found. Using: ${sessionId}`);
             }
+            else if (!sessionId && knownSessionIds.length > 1) {
+                // Si hay múltiples sesiones, usar la más reciente
+                const sortedSessions = knownSessionIds.sort((a, b) => {
+                    const timestampA = sessionTimestamps.get(a) || 0;
+                    const timestampB = sessionTimestamps.get(b) || 0;
+                    return timestampB - timestampA; // Más reciente primero
+                });
+                sessionId = sortedSessions[0];
+                console.error(`[MCP] Multiple sessions found (${knownSessionIds.length}), using most recent: ${sessionId}`);
+                console.error(`[MCP] All sessions: ${knownSessionIds.join(', ')}`);
+            }
         }
         if (!sessionId || !transports.has(sessionId)) {
             console.error(`[MCP] GET - Invalid session: sessionId=${sessionId}, available sessions=${Array.from(transports.keys()).join(', ')}`);
@@ -1959,6 +1973,16 @@ if (process.env.NODE_ENV === 'production') {
             if (knownSessionIds.length === 1) {
                 sessionId = knownSessionIds[0];
                 console.error(`[MCP] DELETE - No sessionId in headers, but exactly one active session found. Using: ${sessionId}`);
+            }
+            else if (knownSessionIds.length > 1) {
+                // Si hay múltiples sesiones, usar la más reciente
+                const sortedSessions = knownSessionIds.sort((a, b) => {
+                    const timestampA = sessionTimestamps.get(a) || 0;
+                    const timestampB = sessionTimestamps.get(b) || 0;
+                    return timestampB - timestampA; // Más reciente primero
+                });
+                sessionId = sortedSessions[0];
+                console.error(`[MCP] DELETE - Multiple sessions found (${knownSessionIds.length}), using most recent: ${sessionId}`);
             }
         }
         console.error(`[MCP] DELETE request - sessionId: ${sessionId}, has transport: ${sessionId ? transports.has(sessionId) : false}`);
@@ -2004,6 +2028,7 @@ if (process.env.NODE_ENV === 'production') {
                 console.error(`Closing transport for session ${sessionId}`);
                 await transport.close();
                 transports.delete(sessionId);
+                sessionTimestamps.delete(sessionId); // Limpiar timestamps
             }
             catch (error) {
                 console.error(`Error closing transport for session ${sessionId}:`, error);
