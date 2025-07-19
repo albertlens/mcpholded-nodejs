@@ -1404,12 +1404,29 @@ if (process.env.NODE_ENV === 'production') {
       endpoints: {
         health: '/health',
         mcp: '/mcp (GET/POST/HEAD)',
-        test: '/test'
+        test: '/test',
+        debug: '/debug'
       },
       mcp: {
         status: 'ready',
         tools: 'Available via Streamable HTTP connection'
       }
+    });
+  });
+
+  // Endpoint de debug para ver sesiones activas
+  app.get('/debug', (req, res) => {
+    const activeTransports = Array.from(transports.entries()).map(([sessionId, transport]) => ({
+      sessionId,
+      hasTransport: !!transport,
+      transportSessionId: transport.sessionId
+    }));
+    
+    res.json({
+      service: 'holded-mcp-server-debug',
+      activeSessions: activeTransports.length,
+      sessions: activeTransports,
+      timestamp: new Date().toISOString()
     });
   });
 
@@ -1951,6 +1968,8 @@ if (process.env.NODE_ENV === 'production') {
   // Handler para POST requests - inicialización y comunicación MCP
   app.post('/mcp', async (req: any, res: any) => {
     console.error('Received MCP POST request');
+    console.error('Headers:', JSON.stringify(req.headers, null, 2));
+    console.error('Body:', req.body ? JSON.stringify(req.body, null, 2) : 'No body');
     
     try {
       // Verificar ID de sesión existente
@@ -1998,6 +2017,7 @@ if (process.env.NODE_ENV === 'production') {
         
       } else {
         // Request inválida - sin ID de sesión o no inicialización  
+        console.error(`[MCP] Invalid request: sessionId=${sessionId}, has transport=${transports.has(sessionId)}`);
         res.status(400).json({
           jsonrpc: '2.0',
           error: {
@@ -2030,9 +2050,13 @@ if (process.env.NODE_ENV === 'production') {
   // Handler para GET requests - streams SSE (usando soporte integrado de StreamableHTTP)
   app.get('/mcp', async (req: any, res: any) => {
     console.error('Received MCP GET request');
+    console.error('GET Headers:', JSON.stringify(req.headers, null, 2));
     
     const sessionId = req.headers['mcp-session-id'] as string | undefined;
+    console.error(`[MCP] GET request - sessionId: ${sessionId}, has transport: ${sessionId ? transports.has(sessionId) : false}`);
+    
     if (!sessionId || !transports.has(sessionId)) {
+      console.error(`[MCP] GET - Invalid session: sessionId=${sessionId}, available sessions=${Array.from(transports.keys()).join(', ')}`);
       res.status(400).json({
         jsonrpc: '2.0',
         error: {
@@ -2058,8 +2082,14 @@ if (process.env.NODE_ENV === 'production') {
 
   // Handler para DELETE requests - terminación de sesión
   app.delete('/mcp', async (req: any, res: any) => {
+    console.error('Received MCP DELETE request');
+    console.error('DELETE Headers:', JSON.stringify(req.headers, null, 2));
+    
     const sessionId = req.headers['mcp-session-id'] as string | undefined;
+    console.error(`[MCP] DELETE request - sessionId: ${sessionId}, has transport: ${sessionId ? transports.has(sessionId) : false}`);
+    
     if (!sessionId || !transports.has(sessionId)) {
+      console.error(`[MCP] DELETE - Invalid session: sessionId=${sessionId}, available sessions=${Array.from(transports.keys()).join(', ')}`);
       res.status(400).json({
         jsonrpc: '2.0',
         error: {
@@ -2076,6 +2106,7 @@ if (process.env.NODE_ENV === 'production') {
     try {
       const transport = transports.get(sessionId);
       await transport!.handleRequest(req, res);
+      // No eliminamos el transporte aquí - se eliminará en el handler onclose
     } catch (error) {
       console.error('Error handling session termination:', error);
       if (!res.headersSent) {
