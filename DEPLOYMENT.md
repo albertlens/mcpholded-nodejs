@@ -19,11 +19,18 @@ ssh root@mcpholded.robustdatasolutions.com
 
 ### 2. Ejecutar el Script de Despliegue
 ```bash
-# Descargar y ejecutar script
-curl -o deploy.sh https://raw.githubusercontent.com/albertlens/mcpholded-nodejs/main/deploy-simple.sh
-chmod +x deploy.sh
-bash deploy.sh
+# Descargar y ejecutar script ROBUSTO (recomendado)
+curl -o deploy-robust.sh https://raw.githubusercontent.com/albertlens/mcpholded-nodejs/main/deploy-robust.sh
+chmod +x deploy-robust.sh
+bash deploy-robust.sh
+
+# O usar script simple (alternativa)
+curl -o deploy-simple.sh https://raw.githubusercontent.com/albertlens/mcpholded-nodejs/main/deploy-simple.sh
+chmod +x deploy-simple.sh
+bash deploy-simple.sh
 ```
+
+**⚠️ NOTA**: Si tienes error de ES modules, el fix ya está incluido en el código actualizado (package.json con "type": "module").
 
 ### 3. Verificar el Despliegue
 ```bash
@@ -134,3 +141,28 @@ El servidor está **técnicamente completo** y **listo para producción**.
 5. **Script Automatizado**: Despliegue con un solo comando
 
 ¡El proyecto está **listo para despliegue final**! 🎉
+
+## 🔧 Troubleshooting
+
+### Error: "Cannot use import statement outside a module"
+✅ **SOLUCIONADO**: El package.json ya incluye `"type": "module"` - solo ejecuta `bash deploy-robust.sh` para obtener la versión corregida.
+
+### Error: "address already in use"
+```bash
+# Parar contenedores anteriores
+docker stop mcpholded-server || true
+docker rm mcpholded-server || true
+# Luego ejecutar deploy-robust.sh nuevamente
+```
+
+### Error: Contenedor para después del despliegue
+```bash
+# Ver logs detallados
+docker logs mcpholded-server --tail 50
+
+# Verificar puertos
+docker port mcpholded-server
+
+# Reiniciar contenedor
+docker restart mcpholded-server
+```
