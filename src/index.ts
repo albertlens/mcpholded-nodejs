@@ -2024,8 +2024,36 @@ if (process.env.NODE_ENV === 'production') {
         sessionTimestamps.set(sessionId, Date.now());
         console.error(`[MCP] Auto-created transport stored for session: ${sessionId}`);
         
-        // En lugar de forzar mensajes mock, permitir que el protocolo SSE nativo funcione
-        // El StreamableHTTPTransport enviará automáticamente eventos al cliente cuando esté listo
+        // CRÍTICO: En MCP Streamable HTTP, el servidor debe enviar el primer evento
+        // para iniciar el handshake con el cliente
+        setTimeout(() => {
+          console.error(`[MCP] Sending initial server capabilities announcement to session: ${sessionId}`);
+          try {
+            // El servidor debe anunciar sus capacidades al cliente conectado via SSE
+            const serverAnnouncement = {
+              jsonrpc: '2.0',
+              method: 'notifications/initialized',
+              params: {
+                protocolVersion: '2025-06-18',
+                capabilities: {
+                  tools: {},
+                },
+                serverInfo: {
+                  name: 'holded-mcp-server',
+                  version: '1.0.0'
+                }
+              }
+            };
+            
+            // Enviar el anuncio a través del event store del transporte
+            if (transport.sessionId && (transport as any).eventStore) {
+              console.error(`[MCP] Sending server announcement via SSE transport`);
+              (transport as any).eventStore.addEvent(transport.sessionId, serverAnnouncement);
+            }
+          } catch (error) {
+            console.error(`[MCP] Error sending server announcement:`, error);
+          }
+        }, 100); // Pequeño delay para asegurar que el SSE stream esté completamente establecido
         
       } catch (error) {
         console.error(`[MCP] Error creating auto session for path ${pathSessionId}:`, error);
