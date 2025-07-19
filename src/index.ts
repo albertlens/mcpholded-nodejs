@@ -2045,64 +2045,101 @@ if (process.env.NODE_ENV === 'production') {
             
             console.error(`[MCP] Sending auto-initialization message:`, JSON.stringify(initMessage, null, 2));
             
-            // Crear un mock request/response para la inicialización
+            // Crear un mock request/response más completo para la inicialización
             const mockReq = {
               method: 'POST',
               url: '/mcp',
-              headers: { 'content-type': 'application/json' },
-              body: initMessage
+              headers: { 
+                'content-type': 'application/json',
+                'accept': 'application/json'
+              },
+              body: initMessage,
+              on: () => {},
+              pipe: () => {},
+              socket: { remoteAddress: '127.0.0.1' }
             };
             
+            let responseData = '';
             const mockRes = {
-              writeHead: (status: number, headers: any) => {
+              writeHead: (status: number, headers?: any) => {
                 console.error(`[MCP] Auto-init response status: ${status}`);
+                if (headers) console.error(`[MCP] Auto-init response headers:`, headers);
               },
               write: (data: string) => {
-                console.error(`[MCP] Auto-init response data: ${data}`);
+                responseData += data;
+                console.error(`[MCP] Auto-init response chunk: ${data}`);
               },
               end: (data?: string) => {
-                if (data) console.error(`[MCP] Auto-init response end: ${data}`);
-                console.error(`[MCP] Auto-initialization completed`);
+                if (data) {
+                  responseData += data;
+                  console.error(`[MCP] Auto-init response final: ${data}`);
+                }
+                console.error(`[MCP] Auto-initialization completed. Full response: ${responseData}`);
+                
+                // Después de completar initialize, ejecutar list_tools
+                setTimeout(async () => {
+                  console.error(`[MCP] Auto-triggering list_tools for session: ${sessionId}`);
+                  const listToolsMessage = {
+                    jsonrpc: '2.0',
+                    id: 2,
+                    method: 'tools/list',
+                    params: {}
+                  };
+                  
+                  const mockListReq = {
+                    method: 'POST',
+                    url: '/mcp',
+                    headers: { 
+                      'content-type': 'application/json',
+                      'accept': 'application/json'
+                    },
+                    body: listToolsMessage,
+                    on: () => {},
+                    pipe: () => {},
+                    socket: { remoteAddress: '127.0.0.1' }
+                  };
+                  
+                  let listResponseData = '';
+                  const mockListRes = {
+                    writeHead: (status: number, headers?: any) => {
+                      console.error(`[MCP] Auto-list_tools response status: ${status}`);
+                    },
+                    write: (data: string) => {
+                      listResponseData += data;
+                      console.error(`[MCP] Auto-list_tools response chunk: ${data.length > 200 ? data.substring(0, 200) + '...' : data}`);
+                    },
+                    end: (data?: string) => {
+                      if (data) {
+                        listResponseData += data;
+                      }
+                      console.error(`[MCP] Auto list_tools completed - tools should now be available to Claude.ai`);
+                      console.error(`[MCP] Tools response length: ${listResponseData.length} characters`);
+                    },
+                    setHeader: () => {},
+                    getHeader: () => undefined,
+                    removeHeader: () => {},
+                    headersSent: false,
+                    statusCode: 200,
+                    statusMessage: 'OK'
+                  };
+                  
+                  try {
+                    await transport.handleRequest(mockListReq as any, mockListRes as any);
+                  } catch (error) {
+                    console.error(`[MCP] Error in auto list_tools:`, error);
+                  }
+                }, 100);
               },
-              setHeader: () => {}
+              setHeader: () => {},
+              getHeader: () => undefined,
+              removeHeader: () => {},
+              headersSent: false,
+              statusCode: 200,
+              statusMessage: 'OK'
             };
             
             // Ejecutar la inicialización a través del transporte
             await transport.handleRequest(mockReq as any, mockRes as any);
-            
-            // Inmediatamente después, ejecutar list_tools
-            setTimeout(async () => {
-              console.error(`[MCP] Auto-triggering list_tools for session: ${sessionId}`);
-              const listToolsMessage = {
-                jsonrpc: '2.0',
-                id: 2,
-                method: 'tools/list',
-                params: {}
-              };
-              
-              const mockListReq = {
-                method: 'POST',
-                url: '/mcp',
-                headers: { 'content-type': 'application/json' },
-                body: listToolsMessage
-              };
-              
-              const mockListRes = {
-                writeHead: (status: number, headers: any) => {
-                  console.error(`[MCP] Auto-list_tools response status: ${status}`);
-                },
-                write: (data: string) => {
-                  console.error(`[MCP] Auto-list_tools response: ${data}`);
-                },
-                end: (data?: string) => {
-                  if (data) console.error(`[MCP] Auto-list_tools end: ${data}`);
-                  console.error(`[MCP] Auto list_tools completed - tools should now be available`);
-                },
-                setHeader: () => {}
-              };
-              
-              await transport.handleRequest(mockListReq as any, mockListRes as any);
-            }, 100);
             
           } catch (error) {
             console.error(`[MCP] Error in auto-initialization:`, error);
