@@ -23,6 +23,21 @@ mkdir -p /var/www/mcpholded
 cd /var/www/mcpholded
 git clone https://github.com/albertlens/mcpholded-nodejs.git .
 
+# 2.5. Configurar archivo .env
+echo "🔑 Configurando archivo .env..."
+if [ ! -f ".env" ]; then
+    cat > .env << EOF
+NODE_ENV=production
+PORT=3000
+HOLDED_API_KEY=TU_API_KEY_AQUI
+EOF
+    echo "⚠️  IMPORTANTE: Edita el archivo .env con tu API Key real de Holded:"
+    echo "   nano .env"
+    echo "   Cambia 'TU_API_KEY_AQUI' por tu API Key real"
+    echo ""
+    read -p "Presiona Enter cuando hayas editado el archivo .env..."
+fi
+
 # 3. Construir desde cero
 echo "🔨 Construyendo imagen desde cero..."
 docker build --no-cache -t $IMAGE_NAME .
@@ -33,7 +48,7 @@ docker run -d \
     --name $CONTAINER_NAME \
     --restart unless-stopped \
     -p 3000:3000 \
-    -e NODE_ENV=production \
+    --env-file .env \
     $IMAGE_NAME
 
 # 5. Verificar
