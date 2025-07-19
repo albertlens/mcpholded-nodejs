@@ -9,13 +9,21 @@ services:
     
     # Variables de entorno
     environment:
-      - HOLDED_API_KEY=${HOLDED_API_KEY}
-      - PORT=3001
+      - HOLDED_API_KEY=${HOLDED_API_KEY:-YOUR_HOLDED_API_KEY}
+      - PORT=3000
       - NODE_ENV=production
     
-    # Puerto (opcional, para health checks o API REST)
+    # Puerto para el servidor MCP
     ports:
-      - "3001:3001"
+      - "3000:3000"
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
     
     # Límites de recursos
     deploy:
@@ -26,8 +34,6 @@ services:
         reservations:
           cpus: '0.1'
           memory: 128M
-    
-    # Volúmenes para logs (opcional)
     volumes:
       - holded-logs:/app/logs
     
