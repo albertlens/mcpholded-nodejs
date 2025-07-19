@@ -1314,7 +1314,8 @@ if (process.env.NODE_ENV === 'production') {
         });
         console.error(`[MCP] Configuring MCP server handlers...`);
         mcpServerInstance.setRequestHandler(ListToolsRequestSchema, async () => {
-            console.error(`[MCP] ListTools request received`);
+            console.error(`[MCP] *** ListTools request received ***`);
+            console.error(`[MCP] Returning ${13} tools to Claude.ai`);
             return {
                 tools: [
                     // Contact tools
@@ -1794,6 +1795,10 @@ if (process.env.NODE_ENV === 'production') {
         console.error(`[MCP] ${req.method} request from Claude.ai`);
         console.error(`[MCP] Headers:`, req.headers);
         console.error(`[MCP] User-Agent: ${req.headers['user-agent']}`);
+        // Log del body para ver qué está enviando Claude.ai
+        if (req.body && Object.keys(req.body).length > 0) {
+            console.error(`[MCP] Request body:`, JSON.stringify(req.body, null, 2));
+        }
         try {
             // Obtener la instancia singleton del servidor MCP
             const mcpServer = getMCPServer();
@@ -1812,6 +1817,7 @@ if (process.env.NODE_ENV === 'production') {
             // Conectar el servidor MCP al transporte
             await mcpServer.connect(transport);
             console.error(`[MCP] Handling request with Streamable HTTP transport...`);
+            console.error(`[MCP] Request method: ${req.method}, URL: ${req.url}, Body keys: ${req.body ? Object.keys(req.body) : 'none'}`);
             // Manejar la request usando el protocolo Streamable HTTP
             await transport.handleRequest(req, res, req.body);
             console.error('[MCP] Request handled successfully with Streamable HTTP protocol');
