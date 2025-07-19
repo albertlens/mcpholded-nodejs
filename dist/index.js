@@ -1817,6 +1817,7 @@ if (process.env.NODE_ENV === 'production') {
                 // Reutilizar transporte existente
                 transport = transports.get(sessionId);
                 console.error(`[MCP] Reusing existing transport for session: ${sessionId}`);
+                console.error(`[MCP] Request method: ${req.body?.method || 'unknown'}`);
                 // Manejar request con transporte existente - no need to reconnect
                 await transport.handleRequest(req, res);
             }
@@ -1865,7 +1866,9 @@ if (process.env.NODE_ENV === 'production') {
                 console.error(`[MCP] Set response headers:`);
                 console.error(`[MCP]   MCP-Session-Id: ${newSessionId}`);
                 console.error(`[MCP]   X-MCP-Session-Id: ${newSessionId}`);
+                console.error(`[MCP] About to handle initialization request for session: ${newSessionId}`);
                 await transport.handleRequest(req, res);
+                console.error(`[MCP] Initialization request handled successfully for session: ${newSessionId}`);
                 return; // Already handled
             }
             else {
@@ -1956,8 +1959,10 @@ if (process.env.NODE_ENV === 'production') {
         else {
             console.error(`Establishing new SSE stream for session ${sessionId}`);
         }
+        console.error(`[MCP] About to call transport.handleRequest for SSE stream session: ${sessionId}`);
         const transport = transports.get(sessionId);
         await transport.handleRequest(req, res);
+        console.error(`[MCP] SSE stream established successfully for session: ${sessionId}`);
     });
     // Handler para DELETE requests - terminación de sesión
     app.delete('/mcp', async (req, res) => {
