@@ -1858,7 +1858,10 @@ if (process.env.NODE_ENV === 'production') {
                 console.error(`[MCP] Transport stored successfully for session: ${newSessionId}`);
                 // Añadir el session ID al header de respuesta para que Claude.ai lo use en requests futuros
                 res.setHeader('MCP-Session-Id', newSessionId);
-                console.error(`[MCP] Set response header MCP-Session-Id: ${newSessionId}`);
+                res.setHeader('X-MCP-Session-Id', newSessionId); // Alternativo por si Claude usa X- prefix
+                console.error(`[MCP] Set response headers:`);
+                console.error(`[MCP]   MCP-Session-Id: ${newSessionId}`);
+                console.error(`[MCP]   X-MCP-Session-Id: ${newSessionId}`);
                 await transport.handleRequest(req, res);
                 return; // Already handled
             }
@@ -1894,8 +1897,24 @@ if (process.env.NODE_ENV === 'production') {
     app.get('/mcp', async (req, res) => {
         console.error('Received MCP GET request');
         console.error('GET Headers:', JSON.stringify(req.headers, null, 2));
-        const sessionId = req.headers['mcp-session-id'];
+        // Verificar múltiples posibles nombres de header para sessionId
+        const sessionId = req.headers['mcp-session-id'] ||
+            req.headers['x-mcp-session-id'] ||
+            req.headers['session-id'] ||
+            req.headers['x-session-id'];
         console.error(`[MCP] GET request - sessionId: ${sessionId}, has transport: ${sessionId ? transports.has(sessionId) : false}`);
+        console.error(`[MCP] Available sessions: ${Array.from(transports.keys()).join(', ')}`);
+        // Buscar por cualquier header que contenga el sessionId conocido
+        if (!sessionId) {
+            const knownSessionIds = Array.from(transports.keys());
+            console.error(`[MCP] No sessionId found in headers, checking for known sessions in header values...`);
+            for (const [headerName, headerValue] of Object.entries(req.headers)) {
+                console.error(`[MCP] Checking header ${headerName}: ${headerValue}`);
+                if (typeof headerValue === 'string' && knownSessionIds.some(id => headerValue.includes(id))) {
+                    console.error(`[MCP] Found sessionId in header ${headerName}: ${headerValue}`);
+                }
+            }
+        }
         if (!sessionId || !transports.has(sessionId)) {
             console.error(`[MCP] GET - Invalid session: sessionId=${sessionId}, available sessions=${Array.from(transports.keys()).join(', ')}`);
             res.status(400).json({
