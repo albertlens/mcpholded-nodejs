@@ -1898,7 +1898,7 @@ if (process.env.NODE_ENV === 'production') {
         console.error('Received MCP GET request');
         console.error('GET Headers:', JSON.stringify(req.headers, null, 2));
         // Verificar múltiples posibles nombres de header para sessionId
-        const sessionId = req.headers['mcp-session-id'] ||
+        let sessionId = req.headers['mcp-session-id'] ||
             req.headers['x-mcp-session-id'] ||
             req.headers['session-id'] ||
             req.headers['x-session-id'];
@@ -1912,7 +1912,14 @@ if (process.env.NODE_ENV === 'production') {
                 console.error(`[MCP] Checking header ${headerName}: ${headerValue}`);
                 if (typeof headerValue === 'string' && knownSessionIds.some(id => headerValue.includes(id))) {
                     console.error(`[MCP] Found sessionId in header ${headerName}: ${headerValue}`);
+                    sessionId = knownSessionIds.find(id => headerValue.includes(id));
+                    break;
                 }
+            }
+            // Si aún no hay sessionId pero hay exactamente una sesión activa, usarla
+            if (!sessionId && knownSessionIds.length === 1) {
+                sessionId = knownSessionIds[0];
+                console.error(`[MCP] No sessionId in headers, but exactly one active session found. Using: ${sessionId}`);
             }
         }
         if (!sessionId || !transports.has(sessionId)) {
@@ -1942,7 +1949,18 @@ if (process.env.NODE_ENV === 'production') {
     app.delete('/mcp', async (req, res) => {
         console.error('Received MCP DELETE request');
         console.error('DELETE Headers:', JSON.stringify(req.headers, null, 2));
-        const sessionId = req.headers['mcp-session-id'];
+        let sessionId = req.headers['mcp-session-id'] ||
+            req.headers['x-mcp-session-id'] ||
+            req.headers['session-id'] ||
+            req.headers['x-session-id'];
+        // Si no hay sessionId pero hay exactamente una sesión activa, usarla
+        if (!sessionId) {
+            const knownSessionIds = Array.from(transports.keys());
+            if (knownSessionIds.length === 1) {
+                sessionId = knownSessionIds[0];
+                console.error(`[MCP] DELETE - No sessionId in headers, but exactly one active session found. Using: ${sessionId}`);
+            }
+        }
         console.error(`[MCP] DELETE request - sessionId: ${sessionId}, has transport: ${sessionId ? transports.has(sessionId) : false}`);
         if (!sessionId || !transports.has(sessionId)) {
             console.error(`[MCP] DELETE - Invalid session: sessionId=${sessionId}, available sessions=${Array.from(transports.keys()).join(', ')}`);
