@@ -30,7 +30,10 @@ wget $GITHUB_ZIP_URL -O main.zip
 if ! command -v unzip &> /dev/null; then
     echo "📦 Instalando unzip..."
     if command -v apt-get &> /dev/null; then
-        sudo apt-get update && sudo apt-get install -y unzip
+        # Usar variables de entorno para evitar pantallas interactivas
+        export DEBIAN_FRONTEND=noninteractive
+        sudo -E apt-get update -qq
+        sudo -E apt-get install -y -qq unzip
     elif command -v yum &> /dev/null; then
         sudo yum install -y unzip
     elif command -v dnf &> /dev/null; then
@@ -53,8 +56,10 @@ cd $PROJECT_DIR
 echo "🔍 Verificando Node.js..."
 if ! command -v node &> /dev/null; then
     echo "❌ Node.js no está instalado. Instalando..."
+    # Configurar variables para evitar pantallas interactivas
+    export DEBIAN_FRONTEND=noninteractive
     curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-    sudo apt-get install -y nodejs
+    sudo -E apt-get install -y -qq nodejs
 fi
 
 NODE_VERSION=$(node --version)
