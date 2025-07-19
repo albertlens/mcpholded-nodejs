@@ -1,33 +1,46 @@
-# Holded MCP Server
+# Servidor MCP Holded
 
-Servidor MCP (Model Context Protocol) para integración con la API de Holded.
+Servidor MCP (Model Context Protocol) para integrar las APIs de Holded con Claude.ai, basado en el ejemplo oficial `simpleStreamableHttp.ts` del SDK de TypeScript.
 
-## 🚀 Despliegue con Docker
+## 🚀 Características
 
-### Opción A: Usar imagen pre-construida desde GitHub Registry
+- **13 herramientas de Holded API**:
+  - 📞 **Contactos**: get, create, update, delete
+  - 📦 **Productos**: get, create, update, delete  
+  - 🧾 **Facturas**: get, create, update
+  - 📅 **Citas**: get, create
+  - 🔧 **Servicios**: get
 
+- **Protocolo MCP Streamable HTTP** con compatibilidad completa con Claude.ai
+- **Arquitectura basada en ejemplo oficial** del SDK de TypeScript
+- **Gestión de sesiones** automática
+- **Validación de esquemas** con Zod
+- **Dockerización** para despliegue sencillo
+
+## 🛠 Instalación Local
+
+### Prerrequisitos
+- Node.js 18+
+- NPM o Yarn
+- Git
+
+### Pasos
 ```bash
-# 1. Crear directorio y archivo de variables
-mkdir holded-mcp && cd holded-mcp
-echo "HOLDED_API_KEY=tu_api_key_aqui" > .env
+# Clonar repositorio
+git clone https://github.com/albertlens/mcpholded-nodejs.git
+cd mcpholded-nodejs
 
-# 2. Descargar docker-compose
-curl -O https://raw.githubusercontent.com/tu-usuario/holded-mcp-server/main/docker-compose.server.yml
+# Instalar dependencias
+npm install
 
-# 3. Ejecutar
-docker-compose -f docker-compose.server.yml up -d
+# Construir proyecto
+npm run build
+
+# Iniciar servidor
+npm start
 ```
 
-### Opción B: Construir localmente
-
-```bash
-# 1. Clonar repositorio
-git clone https://github.com/tu-usuario/holded-mcp-server.git
-cd holded-mcp-server
-
-# 2. Configurar variables de entorno
-cp .env.example .env
-# Editar .env con tu HOLDED_API_KEY
+El servidor estará disponible en: http://localhost:3000
 
 # 3. Construir y ejecutar
 docker-compose up -d
