@@ -1311,15 +1311,11 @@ if (process.env.NODE_ENV === 'production') {
             timestamp: new Date().toISOString()
         });
     });
-    // Crear única instancia del servidor MCP que será reutilizada
-    let mcpServerInstance = null;
-    const getMCPServer = () => {
-        if (mcpServerInstance) {
-            return mcpServerInstance;
-        }
-        console.error(`[MCP] Creating MCP server instance (singleton)...`);
-        // Crear única instancia del servidor MCP
-        mcpServerInstance = new Server({
+    // Función para crear una nueva instancia del servidor MCP - NO SINGLETON
+    const createServer = () => {
+        console.error(`[MCP] Creating new MCP server instance...`);
+        // Crear nueva instancia del servidor MCP para cada conexión
+        const server = new Server({
             name: 'holded-mcp-server',
             version: '1.0.0',
         }, {
@@ -1328,7 +1324,7 @@ if (process.env.NODE_ENV === 'production') {
             },
         });
         console.error(`[MCP] Configuring MCP server handlers...`);
-        mcpServerInstance.setRequestHandler(ListToolsRequestSchema, async () => {
+        server.setRequestHandler(ListToolsRequestSchema, async () => {
             console.error(`[MCP] *** ListTools request received ***`);
             console.error(`[MCP] Returning ${13} tools to Claude.ai`);
             return {
@@ -1642,7 +1638,7 @@ if (process.env.NODE_ENV === 'production') {
                 ],
             };
         });
-        mcpServerInstance.setRequestHandler(CallToolRequestSchema, async (request) => {
+        server.setRequestHandler(CallToolRequestSchema, async (request) => {
             console.error(`[MCP] Tool called: ${request.params.name}`);
             const { name, arguments: args } = request.params;
             try {
@@ -1803,7 +1799,7 @@ if (process.env.NODE_ENV === 'production') {
             }
         });
         console.error(`[MCP] MCP server configured successfully`);
-        return mcpServerInstance;
+        return { server, cleanup: () => { } }; // Añadir cleanup como en el servidor oficial
     };
     // Mapas para manejar transportes por sesión - igual que el servidor "everything" oficial
     const transports = new Map();
@@ -1823,9 +1819,9 @@ if (process.env.NODE_ENV === 'production') {
             }
             else if (!sessionId) {
                 // Nueva solicitud de inicialización - crear servidor MCP fresh
-                const mcpServer = getMCPServer();
+                const { server: mcpServer, cleanup } = createServer();
                 console.error(`[MCP] Creating new transport for initialization...`);
-                // Crear nuevo transporte con store de eventos en memoria
+                // Crear nuevo transporte con store de eventos en memoria - EXACTAMENTE como el servidor "everything"
                 const { InMemoryEventStore } = await import('@modelcontextprotocol/sdk/examples/shared/inMemoryEventStore.js');
                 const eventStore = new InMemoryEventStore();
                 transport = new StreamableHTTPServerTransport({
@@ -1833,6 +1829,7 @@ if (process.env.NODE_ENV === 'production') {
                     eventStore, // Habilitar resumabilidad
                     onsessioninitialized: (sessionId) => {
                         console.error(`Session initialized with ID: ${sessionId}`);
+                        // Almacenar el transporte inmediatamente cuando la sesión se inicializa
                         transports.set(sessionId, transport);
                     }
                 });
@@ -1842,17 +1839,19 @@ if (process.env.NODE_ENV === 'production') {
                     if (sid && transports.has(sid)) {
                         console.error(`Transport closed for session ${sid}, removing from transports map`);
                         transports.delete(sid);
+                        await cleanup(); // Llamar cleanup del servidor
                     }
                 };
                 // Conectar el transporte al servidor MCP ANTES de manejar la request
+                // Esto es crítico para que el flow de inicialización funcione
                 await mcpServer.connect(transport);
-                // Manejar la request inmediatamente y retornar
+                // Manejar la request inmediatamente y retornar - el transport maneja todo
                 await transport.handleRequest(req, res);
                 return;
             }
             else {
                 // Request inválida - sin ID de sesión o no inicialización  
-                console.error(`[MCP] Invalid request: sessionId=${sessionId}, has transport=${transports.has(sessionId)}`);
+                console.error(`[MCP] Invalid request: sessionId=${sessionId}, has transport=${sessionId ? transports.has(sessionId) : false}`);
                 res.status(400).json({
                     jsonrpc: '2.0',
                     error: {
