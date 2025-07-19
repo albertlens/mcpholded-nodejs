@@ -2024,7 +2024,90 @@ if (process.env.NODE_ENV === 'production') {
         sessionTimestamps.set(sessionId, Date.now());
         console.error(`[MCP] Auto-created transport stored for session: ${sessionId}`);
         
-        // Ahora podemos proceder con el SSE stream
+        // CRÍTICO: Forzar inicialización automática después de la conexión
+        setTimeout(async () => {
+          console.error(`[MCP] Auto-triggering initialization for session: ${sessionId}`);
+          try {
+            // Simular un mensaje de inicialización desde Claude.ai
+            const initMessage = {
+              jsonrpc: '2.0',
+              id: 1,
+              method: 'initialize',
+              params: {
+                protocolVersion: '2025-06-18',
+                capabilities: { sampling: {} },
+                clientInfo: {
+                  name: 'claude-ai-auto',
+                  version: '1.0.0'
+                }
+              }
+            };
+            
+            console.error(`[MCP] Sending auto-initialization message:`, JSON.stringify(initMessage, null, 2));
+            
+            // Crear un mock request/response para la inicialización
+            const mockReq = {
+              method: 'POST',
+              url: '/mcp',
+              headers: { 'content-type': 'application/json' },
+              body: initMessage
+            };
+            
+            const mockRes = {
+              writeHead: (status: number, headers: any) => {
+                console.error(`[MCP] Auto-init response status: ${status}`);
+              },
+              write: (data: string) => {
+                console.error(`[MCP] Auto-init response data: ${data}`);
+              },
+              end: (data?: string) => {
+                if (data) console.error(`[MCP] Auto-init response end: ${data}`);
+                console.error(`[MCP] Auto-initialization completed`);
+              },
+              setHeader: () => {}
+            };
+            
+            // Ejecutar la inicialización a través del transporte
+            await transport.handleRequest(mockReq as any, mockRes as any);
+            
+            // Inmediatamente después, ejecutar list_tools
+            setTimeout(async () => {
+              console.error(`[MCP] Auto-triggering list_tools for session: ${sessionId}`);
+              const listToolsMessage = {
+                jsonrpc: '2.0',
+                id: 2,
+                method: 'tools/list',
+                params: {}
+              };
+              
+              const mockListReq = {
+                method: 'POST',
+                url: '/mcp',
+                headers: { 'content-type': 'application/json' },
+                body: listToolsMessage
+              };
+              
+              const mockListRes = {
+                writeHead: (status: number, headers: any) => {
+                  console.error(`[MCP] Auto-list_tools response status: ${status}`);
+                },
+                write: (data: string) => {
+                  console.error(`[MCP] Auto-list_tools response: ${data}`);
+                },
+                end: (data?: string) => {
+                  if (data) console.error(`[MCP] Auto-list_tools end: ${data}`);
+                  console.error(`[MCP] Auto list_tools completed - tools should now be available`);
+                },
+                setHeader: () => {}
+              };
+              
+              await transport.handleRequest(mockListReq as any, mockListRes as any);
+            }, 100);
+            
+          } catch (error) {
+            console.error(`[MCP] Error in auto-initialization:`, error);
+          }
+        }, 50); // Muy rápido después de crear la sesión
         
       } catch (error) {
         console.error(`[MCP] Error creating auto session for path ${pathSessionId}:`, error);
