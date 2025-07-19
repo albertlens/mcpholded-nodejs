@@ -1945,77 +1945,179 @@ if (process.env.NODE_ENV === 'production') {
     return mcpServerInstance;
   };
 
-  // Endpoint único para Streamable HTTP - soporta GET, POST y HEAD según el protocolo MCP 2025-06-18
-  const handleStreamableHTTP = async (req: any, res: any) => {
-    console.error(`[MCP] ${req.method} request from Claude.ai`);
-    console.error(`[MCP] Headers:`, req.headers);
-    console.error(`[MCP] User-Agent: ${req.headers['user-agent']}`);
-    
-    // Log del body para ver qué está enviando Claude.ai
-    if (req.body && Object.keys(req.body).length > 0) {
-      console.error(`[MCP] Request body:`, JSON.stringify(req.body, null, 2));
-    }
+  // Mapas para manejar transportes por sesión - igual que el servidor "everything" oficial
+  const transports: Map<string, StreamableHTTPServerTransport> = new Map();
+  
+  // Handler para POST requests - inicialización y comunicación MCP
+  app.post('/mcp', async (req: any, res: any) => {
+    console.error('Received MCP POST request');
     
     try {
-      // Forzar el header Accept para que sea compatible con MCP Streamable HTTP
-      if (req.headers.accept && !req.headers.accept.includes('text/event-stream')) {
-        req.headers.accept = 'text/event-stream, application/json';
+      // Verificar ID de sesión existente
+      const sessionId = req.headers['mcp-session-id'] as string | undefined;
+      let transport: StreamableHTTPServerTransport;
+
+      if (sessionId && transports.has(sessionId)) {
+        // Reutilizar transporte existente
+        transport = transports.get(sessionId)!;
+        console.error(`[MCP] Reusing transport for session: ${sessionId}`);
+      } else if (!sessionId) {
+        // Nueva solicitud de inicialización - crear servidor MCP fresh
+        const mcpServer = getMCPServer();
+        
+        console.error(`[MCP] Creating new transport for initialization...`);
+        
+        // Crear nuevo transporte con store de eventos en memoria
+        const { InMemoryEventStore } = await import('@modelcontextprotocol/sdk/examples/shared/inMemoryEventStore.js');
+        const eventStore = new InMemoryEventStore();
+        
+        transport = new StreamableHTTPServerTransport({
+          sessionIdGenerator: () => randomUUID(),
+          eventStore, // Habilitar resumabilidad
+          onsessioninitialized: (sessionId: string) => {
+            console.error(`Session initialized with ID: ${sessionId}`);
+            transports.set(sessionId, transport);
+          }
+        });
+
+        // Configurar handler de cierre para limpiar transporte
+        mcpServer.onclose = async () => {
+          const sid = transport.sessionId;
+          if (sid && transports.has(sid)) {
+            console.error(`Transport closed for session ${sid}, removing from transports map`);
+            transports.delete(sid);
+          }
+        };
+
+        // Conectar el transporte al servidor MCP ANTES de manejar la request
+        await mcpServer.connect(transport);
+        
+        // Manejar la request inmediatamente y retornar
+        await transport.handleRequest(req, res);
+        return;
+        
+      } else {
+        // Request inválida - sin ID de sesión o no inicialización  
+        res.status(400).json({
+          jsonrpc: '2.0',
+          error: {
+            code: -32000,
+            message: 'Bad Request: No valid session ID provided',
+          },
+          id: req?.body?.id,
+        });
+        return;
       }
-      
-      // Obtener la instancia singleton del servidor MCP
-      const mcpServer = getMCPServer();
-      
-      // Crear un transporte Streamable HTTP para cada conexión
-      const transport = new StreamableHTTPServerTransport({
-        sessionIdGenerator: () => randomUUID(),
-        enableJsonResponse: true,
-        onsessioninitialized: (sessionId: string) => {
-          console.error(`[MCP] Session initialized: ${sessionId}`);
-        },
-        onsessionclosed: (sessionId: string) => {
-          console.error(`[MCP] Session closed: ${sessionId}`);
-        }
-      });
-      
-      console.error(`[MCP] Connecting MCP server to transport...`);
-      
-      // Conectar el servidor MCP al transporte
-      await mcpServer.connect(transport);
-      
-      console.error(`[MCP] Handling request with Streamable HTTP transport...`);
-      console.error(`[MCP] Request method: ${req.method}, URL: ${req.url}, Body keys: ${req.body ? Object.keys(req.body) : 'none'}`);
-      
-      // Manejar la request usando el protocolo Streamable HTTP
-      await transport.handleRequest(req, res, req.body);
-      
-      console.error('[MCP] Request handled successfully with Streamable HTTP protocol');
+
+      // Manejar request con transporte existente
+      await transport.handleRequest(req, res);
       
     } catch (error) {
-      console.error('[MCP] Streamable HTTP error:', error);
-      
-      // Solo enviar respuesta de error si no se han enviado headers
+      console.error('Error handling MCP request:', error);
       if (!res.headersSent) {
-        res.writeHead(500, {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
+        res.status(500).json({
+          jsonrpc: '2.0',
+          error: {
+            code: -32603,
+            message: 'Internal server error',
+          },
+          id: req?.body?.id,
         });
-        res.end(JSON.stringify({ 
-          error: error instanceof Error ? error.message : 'Unknown error' 
-        }));
       }
     }
-  };
+  });
 
-  // Endpoint único para el protocolo MCP Streamable HTTP (2025-06-18)
-  // Soporta GET, POST y HEAD según las especificaciones oficiales
-  app.all('/mcp', handleStreamableHTTP);
+  // Handler para GET requests - streams SSE (usando soporte integrado de StreamableHTTP)
+  app.get('/mcp', async (req: any, res: any) => {
+    console.error('Received MCP GET request');
+    
+    const sessionId = req.headers['mcp-session-id'] as string | undefined;
+    if (!sessionId || !transports.has(sessionId)) {
+      res.status(400).json({
+        jsonrpc: '2.0',
+        error: {
+          code: -32000,
+          message: 'Bad Request: No valid session ID provided',
+        },
+        id: req?.body?.id,
+      });
+      return;
+    }
+
+    // Verificar Last-Event-ID para resumabilidad
+    const lastEventId = req.headers['last-event-id'] as string | undefined;
+    if (lastEventId) {
+      console.error(`Client reconnecting with Last-Event-ID: ${lastEventId}`);
+    } else {
+      console.error(`Establishing new SSE stream for session ${sessionId}`);
+    }
+
+    const transport = transports.get(sessionId);
+    await transport!.handleRequest(req, res);
+  });
+
+  // Handler para DELETE requests - terminación de sesión
+  app.delete('/mcp', async (req: any, res: any) => {
+    const sessionId = req.headers['mcp-session-id'] as string | undefined;
+    if (!sessionId || !transports.has(sessionId)) {
+      res.status(400).json({
+        jsonrpc: '2.0',
+        error: {
+          code: -32000,
+          message: 'Bad Request: No valid session ID provided',
+        },
+        id: req?.body?.id,
+      });
+      return;
+    }
+
+    console.error(`Received session termination request for session ${sessionId}`);
+
+    try {
+      const transport = transports.get(sessionId);
+      await transport!.handleRequest(req, res);
+    } catch (error) {
+      console.error('Error handling session termination:', error);
+      if (!res.headersSent) {
+        res.status(500).json({
+          jsonrpc: '2.0',
+          error: {
+            code: -32603,
+            message: 'Error handling session termination',
+          },
+          id: req?.body?.id,
+        });
+      }
+    }
+  });
 
   const port = process.env.PORT || 3001;
+  
+  // Manejar cierre del servidor
+  process.on('SIGINT', async () => {
+    console.error('Shutting down server...');
+
+    // Cerrar todos los transportes activos para limpiar recursos
+    for (const [sessionId, transport] of transports) {
+      try {
+        console.error(`Closing transport for session ${sessionId}`);
+        await transport.close();
+        transports.delete(sessionId);
+      } catch (error) {
+        console.error(`Error closing transport for session ${sessionId}:`, error);
+      }
+    }
+
+    console.error('Server shutdown complete');
+    process.exit(0);
+  });
+  
   app.listen(port, () => {
-    console.error(`MCP Streamable HTTP server running on port ${port}`);
+    console.error(`MCP Streamable HTTP Server listening on port ${port}`);
     console.error(`Health endpoint: http://localhost:${port}/health`);
     console.error(`MCP endpoint: http://localhost:${port}/mcp`);
-    console.error(`Protocol: MCP Streamable HTTP (2025-06-18)`);
+    console.error(`Test endpoint: http://localhost:${port}/test`);
+    console.error(`Protocol: MCP Streamable HTTP (2025-06-18) - Compatible with Claude.ai`);
   });
 }
 
