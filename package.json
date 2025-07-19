@@ -1,6 +1,7 @@
 {
   "name": "holded-mcp-server",
   "version": "1.0.0",
+  "type": "module",
   "description": "MCP server for Holded API integration using working official example",
   "main": "build/index.js",
   "scripts": {
