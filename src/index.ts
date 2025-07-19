@@ -1453,7 +1453,8 @@ if (process.env.NODE_ENV === 'production') {
       console.error(`[MCP] *** ListTools request received ***`);
       console.error(`[MCP] Request details:`, JSON.stringify(request, null, 2));
       console.error(`[MCP] Returning ${13} tools to Claude.ai`);
-      return {
+      
+      const toolsResponse = {
         tools: [
           // Contact tools
           {
@@ -1767,6 +1768,9 @@ if (process.env.NODE_ENV === 'production') {
           },
         ],
       };
+      
+      console.error(`[MCP] Tools response:`, JSON.stringify(toolsResponse, null, 2));
+      return toolsResponse;
     });
 
     server.setRequestHandler(CallToolRequestSchema, async (request) => {
@@ -2021,8 +2025,26 @@ if (process.env.NODE_ENV === 'production') {
         transport.handleRequest = async (req: any, res: any) => {
           console.error(`[MCP] Transport handling request: ${req.method} ${req.url}`);
           console.error(`[MCP] Request body:`, req.body ? JSON.stringify(req.body, null, 2) : 'No body');
+          
+          // Interceptar específicamente el método initialize
+          if (req.body?.method === 'initialize') {
+            console.error(`[MCP] *** DETECTED INITIALIZE METHOD IN TRANSPORT ***`);
+            console.error(`[MCP] Initialize params:`, JSON.stringify(req.body.params, null, 2));
+          }
+          
+          // Interceptar específicamente list_tools
+          if (req.body?.method === 'tools/list') {
+            console.error(`[MCP] *** DETECTED TOOLS/LIST METHOD IN TRANSPORT ***`);
+          }
+          
           const result = await originalHandleRequest(req, res);
           console.error(`[MCP] Transport request handled`);
+          
+          // Log después del manejo para ver si generó alguna respuesta específica
+          if (req.body?.method === 'initialize') {
+            console.error(`[MCP] Initialize response completed - should trigger list_tools next`);
+          }
+          
           return result;
         };
 
@@ -2071,6 +2093,35 @@ if (process.env.NODE_ENV === 'production') {
         console.error(`[MCP] About to handle initialization request for session: ${newSessionId}`);
         await transport.handleRequest(req, res);
         console.error(`[MCP] Initialization request handled successfully for session: ${newSessionId}`);
+
+        // EXPERIMENTAL: Probar enviar list_tools request para forzar la inicialización
+        setTimeout(async () => {
+          console.error(`[MCP] EXPERIMENTAL: Attempting to trigger list_tools discovery...`);
+          try {
+            // Simular una request list_tools para test
+            const testListToolsReq = {
+              method: 'POST',
+              url: '/mcp',
+              headers: {
+                'content-type': 'application/json',
+                'mcp-session-id': newSessionId
+              },
+              body: {
+                jsonrpc: '2.0',
+                id: 999,
+                method: 'tools/list',
+                params: {}
+              }
+            };
+            
+            console.error(`[MCP] Simulating list_tools request for testing...`);
+            // No ejecutar realmente, solo log para debug
+            // await transport.handleRequest(testListToolsReq as any, res);
+          } catch (error) {
+            console.error(`[MCP] Test list_tools simulation error:`, error);
+          }
+        }, 2000); // 2 seconds after init
+
         return; // Already handled
         
       } else {
