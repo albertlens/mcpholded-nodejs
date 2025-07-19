@@ -1826,8 +1826,11 @@ if (process.env.NODE_ENV === 'production') {
                 // Crear nuevo transporte con store de eventos en memoria
                 const { InMemoryEventStore } = await import('@modelcontextprotocol/sdk/examples/shared/inMemoryEventStore.js');
                 const eventStore = new InMemoryEventStore();
+                // Generar sessionId manualmente antes de crear el transporte
+                const newSessionId = randomUUID();
+                console.error(`[MCP] Generated new session ID: ${newSessionId}`);
                 transport = new StreamableHTTPServerTransport({
-                    sessionIdGenerator: () => randomUUID(),
+                    sessionIdGenerator: () => newSessionId, // Usar el ID generado
                     eventStore, // Habilitar resumabilidad
                     onsessioninitialized: (sessionId) => {
                         // Store the transport by session ID when session is initialized
@@ -1848,13 +1851,14 @@ if (process.env.NODE_ENV === 'production') {
                 // Connect the transport to the MCP server BEFORE handling the request
                 // so responses can flow back through the same transport
                 await mcpServer.connect(transport);
-                // CRÍTICO: Inmediatamente después de connect, almacenar el transporte
+                // CRÍTICO: Inmediatamente después de connect, almacenar el transporte con el ID generado
                 // No esperar al callback onsessioninitialized que puede no ejecutarse
-                console.error(`[MCP] Force storing transport with sessionId: ${transport.sessionId}`);
-                if (transport.sessionId) {
-                    transports.set(transport.sessionId, transport);
-                    console.error(`[MCP] Transport stored successfully for session: ${transport.sessionId}`);
-                }
+                console.error(`[MCP] Force storing transport with sessionId: ${newSessionId}`);
+                transports.set(newSessionId, transport);
+                console.error(`[MCP] Transport stored successfully for session: ${newSessionId}`);
+                // Añadir el session ID al header de respuesta para que Claude.ai lo use en requests futuros
+                res.setHeader('MCP-Session-Id', newSessionId);
+                console.error(`[MCP] Set response header MCP-Session-Id: ${newSessionId}`);
                 await transport.handleRequest(req, res);
                 return; // Already handled
             }
