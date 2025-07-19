@@ -40,11 +40,24 @@ class HoldedClient {
         data
       });
       
+      // Logging detallado de la respuesta
+      const responseText = JSON.stringify(response.data);
+      const itemCount = Array.isArray(response.data) ? response.data.length : 'N/A';
+      
       console.log(`✅ HOLDED API RESPONSE:`, {
         status: response.status,
         statusText: response.statusText,
         dataType: typeof response.data,
-        dataLength: JSON.stringify(response.data).length
+        dataLength: responseText.length,
+        isArray: Array.isArray(response.data),
+        itemCount: itemCount,
+        headers: {
+          'content-length': response.headers['content-length'],
+          'content-type': response.headers['content-type'],
+          'x-total-count': response.headers['x-total-count'], // Posible header de paginación
+          'x-page-count': response.headers['x-page-count'], // Posible header de paginación
+          'link': response.headers['link'] // Header estándar RFC 5988
+        }
       });
       
       return response.data;
@@ -62,8 +75,54 @@ class HoldedClient {
   }
 
   // Contact operations
-  async getContacts(page = 1) {
-    return this.request('GET', `/invoicing/v1/contacts?page=${page}`);
+  async getContacts(page = 1, perPage = 50) {
+    const endpoint = `/invoicing/v1/contacts?page=${page}&per_page=${perPage}`;
+    console.log(`📄 PAGINATION REQUEST:`, {
+      page,
+      perPage,
+      endpoint,
+      timestamp: new Date().toISOString()
+    });
+    return this.request('GET', endpoint);
+  }
+
+  // Método para obtener todos los contactos con paginación automática
+  async getAllContacts(maxPerPage = 50) {
+    console.log(`🔄 STARTING getAllContacts with maxPerPage=${maxPerPage}`);
+    let allContacts: any[] = [];
+    let page = 1;
+    let totalFetched = 0;
+    let hasMorePages = true;
+    
+    while (hasMorePages) {
+      try {
+        const pageContacts = await this.getContacts(page, maxPerPage);
+        
+        if (Array.isArray(pageContacts) && pageContacts.length > 0) {
+          allContacts.push(...pageContacts);
+          totalFetched += pageContacts.length;
+          
+          console.log(`📄 Page ${page} fetched: ${pageContacts.length} contacts (Total: ${totalFetched})`);
+          
+          // Si recibimos menos contactos de los solicitados, probablemente es la última página
+          if (pageContacts.length < maxPerPage) {
+            hasMorePages = false;
+            console.log(`🏁 Last page detected: received ${pageContacts.length} < ${maxPerPage}`);
+          } else {
+            page++;
+          }
+        } else {
+          hasMorePages = false;
+          console.log(`🏁 No more contacts found on page ${page}`);
+        }
+      } catch (error: any) {
+        console.error(`❌ Error fetching page ${page}:`, error.message);
+        hasMorePages = false;
+      }
+    }
+    
+    console.log(`✅ getAllContacts COMPLETED: ${totalFetched} total contacts fetched`);
+    return allContacts;
   }
 
   async getContact(contactId: string) {
@@ -139,13 +198,34 @@ const getServer = () => {
   });
 
   // Contact tools
-  server.tool('get_contacts', 'Get all contacts from Holded', {
-    page: z.number().optional().describe('Page number for pagination')
-  }, async ({ page = 1 }): Promise<CallToolResult> => {
-    console.log(`🔧 MCP TOOL CALLED: get_contacts with page=${page}`);
+  server.tool('get_contacts', 'Get contacts from Holded with pagination support', {
+    page: z.number().optional().describe('Page number for pagination (default: 1)'),
+    perPage: z.number().optional().describe('Number of items per page (default: 50, max recommended: 100)')
+  }, async ({ page = 1, perPage = 50 }): Promise<CallToolResult> => {
+    console.log(`🔧 MCP TOOL CALLED: get_contacts`, {
+      page,
+      perPage,
+      timestamp: new Date().toISOString()
+    });
+    
     try {
-      const contacts = await holdedClient.getContacts(page);
-      console.log(`✅ get_contacts SUCCESS: Got ${Array.isArray(contacts) ? contacts.length : 'unknown'} items`);
+      const contacts = await holdedClient.getContacts(page, perPage);
+      
+      // Logging detallado del resultado
+      const isArray = Array.isArray(contacts);
+      const contactCount = isArray ? contacts.length : 0;
+      const responseSize = JSON.stringify(contacts).length;
+      
+      console.log(`✅ get_contacts SUCCESS:`, {
+        isArray,
+        contactCount,
+        responseSize,
+        responseSizeKB: Math.round(responseSize / 1024 * 100) / 100,
+        firstContact: isArray && contacts.length > 0 ? contacts[0].name : 'N/A',
+        lastContact: isArray && contacts.length > 0 ? contacts[contacts.length - 1].name : 'N/A',
+        truncated: responseSize > 90000 // Indicador de posible truncamiento
+      });
+      
       return {
         content: [{
           type: 'text',
@@ -153,11 +233,87 @@ const getServer = () => {
         }]
       };
     } catch (error: any) {
-      console.error(`❌ get_contacts FAILED: ${error.message}`);
+      console.error(`❌ get_contacts FAILED:`, {
+        error: error.message,
+        page,
+        perPage,
+        timestamp: new Date().toISOString()
+      });
       return {
         content: [{
           type: 'text',
           text: `Error fetching contacts: ${error.message}`
+        }],
+        isError: true
+      };
+    }
+  });
+
+  server.tool('get_all_contacts', 'Get ALL contacts from Holded using automatic pagination', {
+    maxPerPage: z.number().optional().describe('Maximum items per page for pagination (default: 50)')
+  }, async ({ maxPerPage = 50 }): Promise<CallToolResult> => {
+    console.log(`🔧 MCP TOOL CALLED: get_all_contacts`, {
+      maxPerPage,
+      timestamp: new Date().toISOString()
+    });
+    
+    try {
+      const allContacts = await holdedClient.getAllContacts(maxPerPage);
+      
+      // Logging detallado del resultado
+      const contactCount = allContacts.length;
+      const responseSize = JSON.stringify(allContacts).length;
+      
+      console.log(`✅ get_all_contacts SUCCESS:`, {
+        contactCount,
+        responseSize,
+        responseSizeKB: Math.round(responseSize / 1024 * 100) / 100,
+        responseSizeMB: Math.round(responseSize / (1024 * 1024) * 100) / 100,
+        firstContact: contactCount > 0 ? allContacts[0].name : 'N/A',
+        lastContact: contactCount > 0 ? allContacts[contactCount - 1].name : 'N/A',
+        willTruncate: responseSize > 90000 // Indicador de posible truncamiento MCP
+      });
+      
+      // Si la respuesta es muy grande, devolvemos solo un resumen
+      if (responseSize > 100000) {
+        console.log(`⚠️ Response too large (${responseSize} chars), returning summary`);
+        
+        const summary = allContacts.map(contact => ({
+          id: contact.id,
+          name: contact.name,
+          code: contact.code,
+          email: contact.email,
+          type: contact.type
+        }));
+        
+        return {
+          content: [{
+            type: 'text',
+            text: JSON.stringify({
+              totalContacts: contactCount,
+              message: "Response truncated due to size. Showing summary with id, name, code, email, type only.",
+              contacts: summary
+            }, null, 2)
+          }]
+        };
+      }
+      
+      return {
+        content: [{
+          type: 'text',
+          text: JSON.stringify(allContacts, null, 2)
+        }]
+      };
+    } catch (error: any) {
+      console.error(`❌ get_all_contacts FAILED:`, {
+        error: error.message,
+        maxPerPage,
+        timestamp: new Date().toISOString()
+      });
+      return {
+        content: [{
+          type: 'text',
+          text: `Error fetching all contacts: ${error.message}`
         }],
         isError: true
       };

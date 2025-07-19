@@ -1,0 +1,7145 @@
+[
+  {
+    "id": "6492a9513d41037b380e1ab6",
+    "customId": null,
+    "name": "Arquitectura y Konstrucción de Obras Barcelona, SL",
+    "code": "B64921299",
+    "vatnumber": "",
+    "tradeName": "ARKO",
+    "email": "facturas@arkobcn.com",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000001,
+      "name": "Arquitectura y Konstrucción de Obras Barcelona, SL"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "C/ Muntaner 267, 3º-2ªA",
+      "city": "Barcelona",
+      "postalCode": "08036",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 15,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1687333201,
+    "updatedAt": 1752107816,
+    "updatedHash": "e8b8867a956b9ef904fe04b600d53c85"
+  },
+  {
+    "id": "64931ab67c976d394c0d5afa",
+    "customId": null,
+    "name": "NO_USAR_Crystal Food Ingredients (Thailand) Co. Ltd.",
+    "code": "0745563000269",
+    "vatnumber": "",
+    "tradeName": "Crystal",
+    "email": "jantonio@crystal-cfi.com",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000002,
+      "name": "Crystal Food Ingredients (Thailand) Co. Ltd."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "54/14, Muban Prueksa Village",
+      "city": "Na Di Subd. Mueang - Samut Sakhon Distr.",
+      "postalCode": "Mu 4",
+      "province": "Samut Sakhon Province",
+      "country": "Tailandia",
+      "countryCode": "TH",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 7,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_nosujeto"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1687362230,
+    "updatedAt": 1752107820,
+    "updatedHash": "340f2c01bf16e0244d678b83b5bd74eb"
+  },
+  {
+    "id": "649335f68976d212200d58e5",
+    "customId": null,
+    "name": "Asesoría Geslem, S.L.",
+    "code": "B63678510",
+    "vatnumber": "",
+    "tradeName": "Geslem",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000003,
+      "name": "Asesoría Geslem, S.L."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Turó de la Trinitat, 2",
+      "city": "Barcelona",
+      "postalCode": "08033",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 28,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1687369206,
+    "updatedAt": 1752107821,
+    "updatedHash": "845521159091c0cc2ba0d5200ee01a20"
+  },
+  {
+    "id": "64933e5e057351ec3a09f844",
+    "customId": null,
+    "name": "Distrito K, SL",
+    "code": "B15577141",
+    "vatnumber": "",
+    "tradeName": "DistritoK",
+    "email": "distritok@distritok.com",
+    "mobile": null,
+    "phone": "981168070",
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000004,
+      "name": "Distrito K, SL"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "C/ Juan Flórez 129 BJ",
+      "city": "La Coruña",
+      "postalCode": "15005",
+      "province": "La Coruña",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": "6492a7ad95f67083dd0588ee",
+      "expensesAccount": 0,
+      "dueDays": 7,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1687371358,
+    "updatedAt": 1752107827,
+    "updatedHash": "741cd7f924925eb759c6fff30059d4a1"
+  },
+  {
+    "id": "649ff9a67f8246de8d0f643a",
+    "customId": null,
+    "name": "Holded Technologies S.L.",
+    "code": "ESB66543778",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000001,
+      "name": "Holded Technologies S.L."
+    },
+    "billAddress": {
+      "address": "C/ Provença 275",
+      "city": "Barcelona",
+      "postalCode": "08037",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7ac95f67083dd0588d7",
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1688205734,
+    "updatedAt": 1752108001,
+    "updatedHash": "0240154fce4321ebba762ecdf98c9062"
+  },
+  {
+    "id": "649ffbc6a96314df6e04ba6c",
+    "customId": null,
+    "name": "360imprimir, SL",
+    "code": "B87625489",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000002,
+      "name": "360imprimir, SL"
+    },
+    "billAddress": {
+      "address": "Paseo La Habana, num. 9",
+      "city": "Madrid",
+      "postalCode": "28036",
+      "province": "Madrid",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7aa95f67083dd05889d",
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1688206278,
+    "updatedAt": 1752107997,
+    "updatedHash": "754a10a02df4f4913ba85ab34d68935d"
+  },
+  {
+    "id": "649fff2f673dbe8c1a06a9fb",
+    "customId": null,
+    "name": "SKY BCN MANAGEMENT 2008, SL",
+    "code": "B64539158",
+    "vatnumber": "",
+    "tradeName": "susociedadlimitada.com",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000003,
+      "name": "SKY BCN MANAGEMENT 2008, SL"
+    },
+    "billAddress": {
+      "address": "Calle Mallorca 1, Pl 1ª, Desp 7B",
+      "city": "BARCELONA",
+      "postalCode": "08014",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1688207151,
+    "updatedAt": 1752107946,
+    "updatedHash": "8b66d3fc4fb8c673124b236cb9dc5dcd"
+  },
+  {
+    "id": "64a01f7bc02a2200880a7479",
+    "customId": null,
+    "name": "NOTARIA VALLS GONZALEZ MOLINOS S.C.P.",
+    "code": "J59999565",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": "934670191",
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000004,
+      "name": "NOTARIA VALLS GONZALEZ MOLINOS S.C.P."
+    },
+    "billAddress": {
+      "address": "CALLE CONSELL DE CENT, 357 - AT 2",
+      "city": "BARCELONA",
+      "postalCode": "08007",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1688215419,
+    "updatedAt": 1752107998,
+    "updatedHash": "e220414eaff3c4bf0348ed6c2cdefd4d"
+  },
+  {
+    "id": "64a6f05f7b5ac985570c0c1e",
+    "customId": null,
+    "name": "Peri Computer Systems SL",
+    "code": "B63485841",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000007,
+      "name": "Peri Computer Systems SL"
+    },
+    "supplierRecord": {
+      "num": 40000005,
+      "name": "Peri Computer Systems SL"
+    },
+    "billAddress": {
+      "address": "C/Valencia 565",
+      "city": "Barcelona",
+      "postalCode": "08026",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1688662111,
+    "updatedAt": 1752108109,
+    "updatedHash": "426fb9dcb26e66229e6acc4bbe41d527"
+  },
+  {
+    "id": "64b4ff318a21a2e82f04a882",
+    "customId": null,
+    "name": "ARGA SL",
+    "code": "B58686122",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000006,
+      "name": "ARGA SL"
+    },
+    "billAddress": {
+      "address": "Avda. Canaletas, 39",
+      "city": "Jorba",
+      "postalCode": "08719",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1689583409,
+    "updatedAt": 1752108232,
+    "updatedHash": "0efadf27683850208a8f8a64b399275a"
+  },
+  {
+    "id": "64b68da22c82aac145052be3",
+    "customId": null,
+    "name": "Minimo Solutions Corporation SL",
+    "code": "B67176453",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "albertlensmend@gmail.com",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000005,
+      "name": "Minimo Solutions Corporation SL"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Urgell, 13, 1º",
+      "city": "El Prat de Llobregat",
+      "postalCode": "08820",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1689685410,
+    "updatedAt": 1752108256,
+    "updatedHash": "463376e6fbca918e8aced72c9634ebb4"
+  },
+  {
+    "id": "64b96dc392e7343c520ddebc",
+    "customId": null,
+    "name": "Canva Pty. Ltd  ABN 80 158 929 938",
+    "code": "",
+    "vatnumber": "EU372042198",
+    "tradeName": "Canva",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000007,
+      "name": "Canva Pty. Ltd  ABN 80 158 929 938"
+    },
+    "billAddress": {
+      "address": "110 Kippax St. Surry Hills",
+      "city": "NSW 2010",
+      "postalCode": "NSW 2010",
+      "province": null,
+      "country": "Australia",
+      "countryCode": "AU",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1689873859,
+    "updatedAt": 1752108295,
+    "updatedHash": "dfb801d75ac62a72f86a9eed7bc705a5"
+  },
+  {
+    "id": "64b96f561d0f12d75404d7d5",
+    "customId": null,
+    "name": "OpenAI, LLC",
+    "code": "",
+    "vatnumber": "EU372041333",
+    "tradeName": "ChatGPT",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000008,
+      "name": "OpenAI, LLC"
+    },
+    "billAddress": {
+      "address": "548 Market Street",
+      "city": "San Francisco",
+      "postalCode": "PMB 97273",
+      "province": "California",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_imp_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1689874262,
+    "updatedAt": 1752108298,
+    "updatedHash": "03754d18821cb842a428895aee56fcf7"
+  },
+  {
+    "id": "64bbc83b796e10393b095710",
+    "customId": null,
+    "name": "Tracker Software Products Ltd",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": "PDF Xchange",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000009,
+      "name": "Tracker Software Products Ltd"
+    },
+    "billAddress": {
+      "address": "PO Box 79",
+      "city": "Chemainus",
+      "postalCode": "V0R 1K0 Canada",
+      "province": "British Columbia",
+      "country": "Canadá",
+      "countryCode": "CA",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_nosujeto"
+      ],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1690028091,
+    "updatedAt": 1752108317,
+    "updatedHash": "29b052212631291e4d8b86aa37a9f820"
+  },
+  {
+    "id": "64bf787652ef31decb00a4dc",
+    "customId": null,
+    "name": "Arsys Internet S.L.U.",
+    "code": "B85294916",
+    "vatnumber": "",
+    "tradeName": "Arsys",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000010,
+      "name": "Arsys Internet S.L.U."
+    },
+    "billAddress": {
+      "address": "C/ Madre de Dios, 21",
+      "city": "Logroño",
+      "postalCode": "26004",
+      "province": "La Rioja",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1690269814,
+    "updatedAt": 1752108341,
+    "updatedHash": "ebd8ee8f486b76a3b636bcf60f1d9853"
+  },
+  {
+    "id": "64c8bde753bcd558760eaa32",
+    "customId": null,
+    "name": "Chatbase.co Inc.",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": "Chatbase",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000011,
+      "name": "Chatbase.co Inc."
+    },
+    "billAddress": {
+      "address": null,
+      "city": "Milton",
+      "postalCode": "728540147RT0001",
+      "province": "Ontario",
+      "country": "Canadá",
+      "countryCode": "CA",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_exento"
+      ],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1690877415,
+    "updatedAt": 1752108300,
+    "updatedHash": "f39d7008cce23268754695164255987a"
+  },
+  {
+    "id": "64c8c0caaf0a9c59340f3392",
+    "customId": null,
+    "name": "SABA FORTUÑO, S.L.",
+    "code": "B63656987",
+    "vatnumber": "",
+    "tradeName": "SABA FORTUÑO",
+    "email": "sergi@geslem.com",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000006,
+      "name": "SABA FORTUÑO, S.L."
+    },
+    "supplierRecord": {
+      "num": 40000053,
+      "name": "SABA FORTUÑO, S.L."
+    },
+    "billAddress": {
+      "address": "C/ Turó de la Trinitat, 2",
+      "city": "Barcelona",
+      "postalCode": "08033",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": "6492a7ad95f67083dd0588eb",
+      "expensesAccount": 0,
+      "dueDays": 7,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1690878154,
+    "updatedAt": 1752108420,
+    "updatedHash": "6e9beb1c51925d71e497ae33264728ac"
+  },
+  {
+    "id": "64ccbc872586d5105402ef76",
+    "customId": null,
+    "name": "Contabo GmbH",
+    "code": "DE267602842",
+    "vatnumber": "DE267602842",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000012,
+      "name": "Contabo GmbH"
+    },
+    "billAddress": {
+      "address": "Aschauer Straße 32a",
+      "city": "Munich",
+      "postalCode": "81549",
+      "province": "Munich",
+      "country": "Alemania",
+      "countryCode": "DE",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_adqintras_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1691139207,
+    "updatedAt": 1752108470,
+    "updatedHash": "262ff144491181d1ed936857d188ddce"
+  },
+  {
+    "id": "64ccbd4929cae952590a9b1e",
+    "customId": null,
+    "name": "Zapier Inc.",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000013,
+      "name": "Zapier Inc."
+    },
+    "billAddress": {
+      "address": "548 Market St. #62411",
+      "city": "San Francisco",
+      "postalCode": "CA 94104-5401",
+      "province": "Condado San Francisco",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1691139401,
+    "updatedAt": 1752108457,
+    "updatedHash": "389ba5b4a326d69405018dd2bb9eb982"
+  },
+  {
+    "id": "64ccbf74d7f23ee5c30a62ec",
+    "customId": null,
+    "name": "Google Cloud EMEA Limited",
+    "code": "IE3668997OH",
+    "vatnumber": "IE3668997OH",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000014,
+      "name": "Google Cloud EMEA Limited"
+    },
+    "billAddress": {
+      "address": "Velasco",
+      "city": "Clanwilliam Place",
+      "postalCode": "",
+      "province": "Dublin 2",
+      "country": "Irlanda",
+      "countryCode": "IE",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_adqintras_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1691139956,
+    "updatedAt": 1752108471,
+    "updatedHash": "99c3b348feaac74e8ef5dbf4606bde47"
+  },
+  {
+    "id": "64ccc073bd63ebb3d506f211",
+    "customId": null,
+    "name": "Mailchimp Group LLC",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000015,
+      "name": "Mailchimp Group LLC"
+    },
+    "billAddress": {
+      "address": "675, Ponce de Leon Ave, ne",
+      "city": "Atlanta",
+      "postalCode": "30308",
+      "province": "Georgia",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1691140211,
+    "updatedAt": 1752108460,
+    "updatedHash": "4572776034d6435e184b3bde5d6d5a54"
+  },
+  {
+    "id": "64cce0a10f81d7c0d10f1086",
+    "customId": null,
+    "name": "Cloudi NextGen S.L.",
+    "code": "B66356528",
+    "vatnumber": "",
+    "tradeName": "Clouding",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000016,
+      "name": "Cloudi NextGen S.L."
+    },
+    "billAddress": {
+      "address": "Ronda General Mitre 25, bajos",
+      "city": "Barcelona",
+      "postalCode": "08017",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_21"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1691148449,
+    "updatedAt": 1752108468,
+    "updatedHash": "92180516e043e071ec90256943ba3866"
+  },
+  {
+    "id": "64f57a0f6229bd8ddf001b1f",
+    "customId": null,
+    "name": "Webbrains Technologies Private Limited",
+    "code": "24AACCW5209Q1ZY",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000017,
+      "name": "Webbrains Technologies Private Limited"
+    },
+    "billAddress": {
+      "address": "4F-46 - Earth alpha, Vasna Bhayli Link Rd, Ashwamegh Nagar,",
+      "city": "Saiyed Vasna",
+      "postalCode": "GJ (24) 390012",
+      "province": "Vadodara",
+      "country": "India",
+      "countryCode": "IN",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1693809167,
+    "updatedAt": 1752108766,
+    "updatedHash": "caa9aec6ae8b42cf571dbcdd793b2af4"
+  },
+  {
+    "id": "6511d0fbddbab324830de13e",
+    "customId": null,
+    "name": "Amazon EU S.à r.l., Sucursal en España",
+    "code": "",
+    "vatnumber": "W0184081H",
+    "tradeName": "Amazon España",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000018,
+      "name": "Amazon"
+    },
+    "billAddress": {
+      "address": "Calle de Ramírez de Prado 5",
+      "city": "Madrid",
+      "postalCode": "28045",
+      "province": "Madrid",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_21"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1695666427,
+    "updatedAt": 1752109004,
+    "updatedHash": "93e345d4e7fa72a6e1eba947acf7f751"
+  },
+  {
+    "id": "6527d07352bc4e46d60c49dd",
+    "customId": null,
+    "name": "Forge Laravel LLC",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": "Forge Laravel",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000019,
+      "name": "Forge Laravel LLC"
+    },
+    "billAddress": {
+      "address": "PO Box 3280",
+      "city": "Benton",
+      "postalCode": "AR 72018",
+      "province": "Arkansas",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7ad95f67083dd0588e4",
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1697108083,
+    "updatedAt": 1752109259,
+    "updatedHash": "8f12d5ecd3bc7c41741dc999f87a1381"
+  },
+  {
+    "id": "6527d24a92484d896c0c4df0",
+    "customId": null,
+    "name": "GitHub inc.",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000020,
+      "name": "GitHub inc."
+    },
+    "billAddress": {
+      "address": "88 Colin P. Kelly Jr. Street",
+      "city": "San Francisco",
+      "postalCode": "CA 94107",
+      "province": "San Francisco",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1697108554,
+    "updatedAt": 1752109258,
+    "updatedHash": "90b467fb0cd95348f2de9dc4c4ed3186"
+  },
+  {
+    "id": "6527e2d2bb585227fa0bac20",
+    "customId": null,
+    "name": "Synthesia Limited",
+    "code": "GB280341523",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000021,
+      "name": "Synthesia Limited"
+    },
+    "billAddress": {
+      "address": "Kent House, 14/17 Market Place",
+      "city": "Londres",
+      "postalCode": "W1W 8AJ",
+      "province": null,
+      "country": "Reino Unido",
+      "countryCode": "GB",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1697112786,
+    "updatedAt": 1752109267,
+    "updatedHash": "2b5b6a61a1369057f7b02545c475ab7b"
+  },
+  {
+    "id": "6527e40a0b28d7501a0971db",
+    "customId": null,
+    "name": "Web Coder Pro Ltd",
+    "code": "09155483",
+    "vatnumber": "248 8777 41",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000022,
+      "name": "Web Coder Pro Ltd"
+    },
+    "billAddress": {
+      "address": "Unit A3, Gateway Tower, 32 Western Gateway",
+      "city": "Londres",
+      "postalCode": "E16 1YL",
+      "province": null,
+      "country": "Reino Unido",
+      "countryCode": "GB",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_imp_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1697113098,
+    "updatedAt": 1752109262,
+    "updatedHash": "d223f7992800165836ab5708a7e3f924"
+  },
+  {
+    "id": "6527e754041696f5010448b5",
+    "customId": null,
+    "name": "Zoom Video Communications Inc.",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000023,
+      "name": "Zoom Video Communications Inc."
+    },
+    "billAddress": {
+      "address": "55 Almaden Blvd, 6th Floor",
+      "city": "San Jose",
+      "postalCode": "CA 95113",
+      "province": "Santa Clara County",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1697113940,
+    "updatedAt": 1752109263,
+    "updatedHash": "60ef98378b69dffc53f912232b78b8dc"
+  },
+  {
+    "id": "6527e95e7ad768933b08d5c2",
+    "customId": null,
+    "name": "ORANGE ESPAÑA VIRTUAL SLU (Simyo)",
+    "code": "B85057974",
+    "vatnumber": "",
+    "tradeName": "Simyo",
+    "email": "hermes.es@orange.com",
+    "mobile": null,
+    "phone": "912521200",
+    "type": "creditor",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 41000001,
+      "name": "ORANGE ESPAÑA VIRTUAL SLU (Simyo)"
+    },
+    "billAddress": {
+      "address": "Paseo del Club Deportivo 1, Parque Empresarial La Finca, Edificio 8",
+      "city": "Pozuelo de Alarcón",
+      "postalCode": "28223",
+      "province": "Madrid",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7ad95f67083dd0588e3",
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.simyo.es"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1697114463,
+    "updatedAt": 1752109258,
+    "updatedHash": "e8d6cc7952438b7b011bd17e1a4e2bf1"
+  },
+  {
+    "id": "652e4469cb95638f930561f0",
+    "customId": null,
+    "name": "Balmore Atlantic, SLU",
+    "code": "B67035824",
+    "vatnumber": "",
+    "tradeName": "Xiaomi C.C. Gran Vía 2",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000024,
+      "name": "Balmore Atlantic, SLU"
+    },
+    "billAddress": {
+      "address": "Avda. Gran Vía, 75, Local B32-33",
+      "city": "L'Hospitalet de Llobregat",
+      "postalCode": "08908",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_21"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1697530985,
+    "updatedAt": 1752109279,
+    "updatedHash": "2a0b73fb46c0ba3c51ca150d30abdbe8"
+  },
+  {
+    "id": "652fd27f49748365cd05ac2b",
+    "customId": null,
+    "name": "Amazon Importación 0%",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000027,
+      "name": "Amazon Importación 0%"
+    },
+    "billAddress": {
+      "address": null,
+      "city": null,
+      "postalCode": "",
+      "province": null,
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1697632895,
+    "updatedAt": 1752109337,
+    "updatedHash": "a896a6f23bc42f951eff19e24b3bc6b7"
+  },
+  {
+    "id": "652fd2b28a87578bc002c10d",
+    "customId": null,
+    "name": "Amazon Importación 21%",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000025,
+      "name": "Amazon Importación 21%"
+    },
+    "billAddress": {
+      "address": null,
+      "city": null,
+      "postalCode": "",
+      "province": null,
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_imp_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1697632947,
+    "updatedAt": 1752109323,
+    "updatedHash": "5f1121c4a3127549ef34a6ed4b099e6b"
+  },
+  {
+    "id": "652fd379c0d6d14cdf082d70",
+    "customId": null,
+    "name": "Miquel Angel Muxí SL",
+    "code": "B58485392",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000026,
+      "name": "Miquel Angel Muxí SL"
+    },
+    "billAddress": {
+      "address": "Carrer Òdena, 32",
+      "city": "Igualada",
+      "postalCode": "08700",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7aa95f67083dd05889d",
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_21"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1697633145,
+    "updatedAt": 1752109335,
+    "updatedHash": "3bd5e6c8ddebbd34f57c9684045d57ef"
+  },
+  {
+    "id": "6530c2da72445c7fb2098391",
+    "customId": null,
+    "name": "METEOR TRANSPORT URGENT SL",
+    "code": "B59113415",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "meteor@meteor.es",
+    "mobile": null,
+    "phone": "933366666",
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000028,
+      "name": "METEOR TRANSPORT URGENT SL"
+    },
+    "billAddress": {
+      "address": "Carrer Motors, 364",
+      "city": "L'Hospitalet de Llobregat",
+      "postalCode": "08908",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7ac95f67083dd0588df",
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_21"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.meteor.es"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1697694426,
+    "updatedAt": 1752109338,
+    "updatedHash": "17522b5cd253e74115990d0ea6fed002"
+  },
+  {
+    "id": "65323bc25d72d47ef801b620",
+    "customId": null,
+    "name": "Venta Contado",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000008,
+      "name": "Venta Contado"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": null,
+      "city": null,
+      "postalCode": "",
+      "province": null,
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1697790914,
+    "updatedAt": 1752109357,
+    "updatedHash": "021529b664a22699ef90c5f35a795361"
+  },
+  {
+    "id": "6537782ac3d86b42ee0f96ca",
+    "customId": null,
+    "name": "BOXINGFISH SL.",
+    "code": "B64455512",
+    "vatnumber": "",
+    "tradeName": "Toni Ortiz",
+    "email": "",
+    "mobile": null,
+    "phone": "933754607",
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000009,
+      "name": "BOXINGFISH SL."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "C/. MOSSÉN JACINT VERDAGUER, 20",
+      "city": "Cornellà de Llobregat",
+      "postalCode": "08940",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 7,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.ortizpeix.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1698134058,
+    "updatedAt": 1752109391,
+    "updatedHash": "dfa4f8ea70d316fcc641023533256461"
+  },
+  {
+    "id": "653782cb54a2ac290f05b738",
+    "customId": null,
+    "name": "MADE OF WOOD SL.",
+    "code": "B65910283",
+    "vatnumber": "",
+    "tradeName": "Josep Ferrer",
+    "email": "jfcfusters@gmail.com",
+    "mobile": null,
+    "phone": "930013171",
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000010,
+      "name": "MADE OF WOOD SL."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Carrer Prat, 10, baixos",
+      "city": "El Prat de Llobregat",
+      "postalCode": "08820",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 7,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.madeofwood.es"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1698136779,
+    "updatedAt": 1752109393,
+    "updatedHash": "ffb96edcc2542fd54df72fcc7b575f4c"
+  },
+  {
+    "id": "653a0f7476d8eb3bfb015218",
+    "customId": null,
+    "name": "IBERMATICA, SA",
+    "code": "A20038915",
+    "vatnumber": "",
+    "tradeName": "IBERMATICA",
+    "email": "info@ibermatica.com",
+    "mobile": null,
+    "phone": "943413500",
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000011,
+      "name": "IBERMATICA, SA"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "PASEO DE MIKELETEGI, 5",
+      "city": "San Sebastián",
+      "postalCode": "20009",
+      "province": "Gipuzkoa",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.ibermatica.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1698303860,
+    "updatedAt": 1752109439,
+    "updatedHash": "ef386ea376991388e5880202bb790a48"
+  },
+  {
+    "id": "6595429a78f6ece4ca0879fa",
+    "customId": null,
+    "name": "DIGITAL LICENSE RETAILER AS",
+    "code": "NO 824 379 122 VAT",
+    "vatnumber": "",
+    "tradeName": "Buy-Keys.com",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000029,
+      "name": "DIGITAL LICENSE RETAILER AS"
+    },
+    "billAddress": {
+      "address": "Markens gate 8",
+      "city": "Kristiansand",
+      "postalCode": "4611",
+      "province": "Kristiansand",
+      "country": "Noruega",
+      "countryCode": "NO",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1704280730,
+    "updatedAt": 1752110583,
+    "updatedHash": "ec9d6daa71dd53e8f9e7e60503a264ae"
+  },
+  {
+    "id": "6596a13c78b74cd6ee09b216",
+    "customId": null,
+    "name": "Midjourney Inc",
+    "code": "EU372045196",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000030,
+      "name": "Midjourney Inc"
+    },
+    "billAddress": {
+      "address": "611 Gateway Blvd, Suite 120",
+      "city": "South San Francisco",
+      "postalCode": "94080",
+      "province": "California",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_imp_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1704370492,
+    "updatedAt": 1752110589,
+    "updatedHash": "74386615b9e191f8e495056f36321e3a"
+  },
+  {
+    "id": "65b7a966f12f77ca25068f19",
+    "customId": null,
+    "name": "Manzana Hidalgo Alejandro",
+    "code": "46594577G",
+    "vatnumber": "",
+    "tradeName": "ALEX",
+    "email": "alex.manzana@gmail.com",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000012,
+      "name": "Manzana Hidalgo Alejandro"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": null,
+      "city": null,
+      "postalCode": "",
+      "province": null,
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 1,
+    "createdAt": 1706535270,
+    "updatedAt": 1752111067,
+    "updatedHash": "662dc58ae8e72232463f1bf116b3581f"
+  },
+  {
+    "id": "65c1653cda892f0c820218e3",
+    "customId": null,
+    "name": "Arturo de la Maza",
+    "code": "35043733J",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "adelamaza@gmail.com",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000013,
+      "name": "Arturo de la Maza"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Carrer Laforja, 55, 4º-3ª",
+      "city": "Barcelona",
+      "postalCode": "08021",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 7,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 1,
+    "createdAt": 1707173181,
+    "updatedAt": 1752111165,
+    "updatedHash": "dfe31e02d867a69a8b5cc3ff219c3219"
+  },
+  {
+    "id": "65cb724445740d61b8068179",
+    "customId": null,
+    "name": "FRANCESC RAMON ESQUENAZI",
+    "code": "38557705E",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "francesc.ramon@abbvie.com",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000014,
+      "name": "FRANCESC RAMON ESQUENAZI"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Carrer Sòria, 108, Mirasol",
+      "city": "Sant Cugat del Vallés",
+      "postalCode": "08195",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 1,
+    "createdAt": 1707831876,
+    "updatedAt": 1752111292,
+    "updatedHash": "f246d949aa17c4a8521b501ae8fdcddd"
+  },
+  {
+    "id": "65e81e065aa6446eb60de94f",
+    "customId": null,
+    "name": "HENRIQUES DA CUNHA MANAGEMENT SL.",
+    "code": "B54777644",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "admin@bniespanaslc.com",
+    "mobile": null,
+    "phone": "935078081",
+    "type": "",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000031,
+      "name": "HENRIQUES DA CUNHA MANAGEMENT SL."
+    },
+    "billAddress": {
+      "address": "Avda. Cerdanyola, 75 2º 1ª Izquierda",
+      "city": "Sant Cugat del Vallès",
+      "postalCode": "08172",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7ad95f67083dd0588e2",
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_21"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.bniespanaslc-eventos.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1709710854,
+    "updatedAt": 1752111620,
+    "updatedHash": "b8d408da708a200d75a01c0137d97a27"
+  },
+  {
+    "id": "65e8204aee6da1bbbd0fd9b2",
+    "customId": null,
+    "name": "Informática Serrano Mas, S.L.",
+    "code": "B53947149",
+    "vatnumber": "",
+    "tradeName": "Qloudea",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000032,
+      "name": "Informática Serrano Mas, S.L."
+    },
+    "billAddress": {
+      "address": "C/ Hilarión Eslava, 178",
+      "city": "Elche",
+      "postalCode": "03204",
+      "province": "Alicante",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7ac95f67083dd0588d7",
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_21"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1709711434,
+    "updatedAt": 1752111628,
+    "updatedHash": "984e63d987f81211634b9a1dc448acf7"
+  },
+  {
+    "id": "6613af43531b5f5cf50c348d",
+    "customId": null,
+    "name": "SOCOPOFISH SL",
+    "code": "B65470452",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000015,
+      "name": "SOCOPOFISH SL"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "C/ Longitudinal ,6, Núm 32",
+      "city": "Mercabarna",
+      "postalCode": "08040",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": "6492a7ad95f67083dd0588eb",
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1712566083,
+    "updatedAt": 1752112126,
+    "updatedHash": "0390caecd8c918e3819fcf76ccbdb004"
+  },
+  {
+    "id": "661ad164c5eb17be52073073",
+    "customId": null,
+    "name": "PC COMPONENTES Y MULTIMEDIA SLU",
+    "code": "B73347494",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "info@pccomponenetes.com",
+    "mobile": null,
+    "phone": "968977977",
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000033,
+      "name": "PC COMPONENTES Y MULTIMEDIA SLU"
+    },
+    "billAddress": {
+      "address": "AVENIDA DE EUROPA, 2-3, Pol. Ind. Las Salinas",
+      "city": "Alhama de Murcia",
+      "postalCode": "30840",
+      "province": "Murcia",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [
+        "p_iva_21"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.pccomponentes.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1713033573,
+    "updatedAt": 1752112221,
+    "updatedHash": "48b8b57114f04351f43686213408f197"
+  },
+  {
+    "id": "661ad2fbcf3fa415f80f1c4b",
+    "customId": null,
+    "name": "FINDTHATLEAD INC",
+    "code": "EIN 38-4010027",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000034,
+      "name": "FINDTHATLEAD INC"
+    },
+    "billAddress": {
+      "address": "350 MIAMI AVE #3904",
+      "city": "Miami",
+      "postalCode": "33130",
+      "province": "Florida",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1713033979,
+    "updatedAt": 1752112220,
+    "updatedHash": "c6855d7df07bb6a808060d1917949bb2"
+  },
+  {
+    "id": "661ad5ccbc1ac20f470089dc",
+    "customId": null,
+    "name": "Paddle.com Market Ltd",
+    "code": "GB150848114",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000035,
+      "name": "Paddle.com Market Ltd"
+    },
+    "billAddress": {
+      "address": "Judd House 18 29 Mora Street",
+      "city": "London",
+      "postalCode": "EC1V 8BT",
+      "province": null,
+      "country": "Reino Unido",
+      "countryCode": "GB",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1713034700,
+    "updatedAt": 1752112221,
+    "updatedHash": "8947b3e6a1ab480bbbcc59a849efdc4a"
+  },
+  {
+    "id": "661ad75c348460eb020070c1",
+    "customId": null,
+    "name": "Cleverbridge GmbH",
+    "code": "DE244822460",
+    "vatnumber": "DE244822460",
+    "tradeName": "Plesk",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000036,
+      "name": "Cleverbridge GmbH"
+    },
+    "billAddress": {
+      "address": "Gereonstr. 43-65",
+      "city": "Colonia",
+      "postalCode": "50670",
+      "province": "Alemania",
+      "country": "Alemania",
+      "countryCode": "DE",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_adqintras_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1713035100,
+    "updatedAt": 1752112214,
+    "updatedHash": "c7d8b6bf202022541205a1d7959640b5"
+  },
+  {
+    "id": "663a74f28eb00235990dd72b",
+    "customId": null,
+    "name": "Pere J. Cabrera i Amorós",
+    "code": "21392650M",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "cncalp@hotmail.com",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000016,
+      "name": "Pere J. Cabrera i Amorós"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Pl. Constitución, 3, 2º",
+      "city": "Calp",
+      "postalCode": "03700",
+      "province": "Alicante",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 7,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 1,
+    "createdAt": 1715107058,
+    "updatedAt": 1752112626,
+    "updatedHash": "25e25fb32baf590fb4ca2b63fc975bfd"
+  },
+  {
+    "id": "663a7bdfefe5fabeb002f43e",
+    "customId": null,
+    "name": "CRYSTAL FOOD INGREDIENTS SL",
+    "code": "B88611546",
+    "vatnumber": "",
+    "tradeName": "CRYSTAL - ESPAÑA",
+    "email": "technical@crystal-cfi.com",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000017,
+      "name": "CRYSTAL FOOD INGREDIENTS SL"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "C/ Velázquez, 15, 1º-D",
+      "city": "Madrid",
+      "postalCode": "28001",
+      "province": "Madrid",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1715108832,
+    "updatedAt": 1752112624,
+    "updatedHash": "18be30a23dd3e2ee396a7a55f4619c95"
+  },
+  {
+    "id": "665ac335c7f36f3a9500dd5f",
+    "customId": null,
+    "name": "SILVIA MANZANA HIDALGO",
+    "code": "46599137X",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "smh@silviamanzana.net",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000018,
+      "name": "SILVIA MANZANA HIDALGO"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "C/ Manel Farres, nº 15 Local H",
+      "city": "Sant Cugat del Vallès",
+      "postalCode": "08172",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21",
+        "s_rec_52"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 1,
+    "createdAt": 1717224245,
+    "updatedAt": 1752112993,
+    "updatedHash": "d55569ff1c563e642a311647d2082c90"
+  },
+  {
+    "id": "6661592ee0263f307e0231ea",
+    "customId": null,
+    "name": "ANEXO SOLUCIONES 2015 S.L.",
+    "code": "B10644243",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "david.igea@anexosoluciones.com",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000019,
+      "name": "ANEXO SOLUCIONES 2015 S.L."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "CALLE HISTORIADOR CARDUS, 218 - P. 3",
+      "city": "TERRASSA",
+      "postalCode": "08226",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1717655854,
+    "updatedAt": 1752113065,
+    "updatedHash": "b284f684c3f54bbf7375442e60c3e224"
+  },
+  {
+    "id": "666ac51d65ce314127067b1f",
+    "customId": null,
+    "name": "Lluis Heras Castro",
+    "code": "47731458H",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": "+34 609 52 22 23",
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000020,
+      "name": "Lluis Heras Castro"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "C/ Beat Almató, 6-8, atic 1º 4º",
+      "city": "Barcelona",
+      "postalCode": "08023",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 7,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 1,
+    "createdAt": 1718273309,
+    "updatedAt": 1752113185,
+    "updatedHash": "e5e6060911881fcc94199763729aeebb"
+  },
+  {
+    "id": "666f4ef47badfa1a2f08716c",
+    "customId": null,
+    "name": "MORENO ASSESSORAMENT S.L.",
+    "code": "B72446479",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000021,
+      "name": "MORENO ASSESSORAMENT S.L."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "AVENIDA PLATJA, 56 - LOC 3",
+      "city": "Sant Adrià de Besòs",
+      "postalCode": "08930",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1718570740,
+    "updatedAt": 1752113219,
+    "updatedHash": "2b24ab0a14badd4f24f6d8aac80ed5d6"
+  },
+  {
+    "id": "669bf8fc67e251c5180e661e",
+    "customId": null,
+    "name": "aColor Software SLU",
+    "code": "B72518962",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000037,
+      "name": "aColor Software SLU"
+    },
+    "billAddress": {
+      "address": "Sant Llorenç 38",
+      "city": "Sant Feliu de Llobregat",
+      "postalCode": "08980",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_21"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1721497852,
+    "updatedAt": 1752113710,
+    "updatedHash": "13a0c3dd78538555f421f469b73e5c28"
+  },
+  {
+    "id": "669c0085bec79616840940d5",
+    "customId": null,
+    "name": "Diego Mora Cabello",
+    "code": "46701813Z",
+    "vatnumber": "",
+    "tradeName": "Diego Mora Fotógrafo",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000038,
+      "name": "Diego Mora Cabello"
+    },
+    "billAddress": {
+      "address": "Carrer Abat Escarré, 15",
+      "city": "Premià de Dalt",
+      "postalCode": "08338",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_21"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1721499781,
+    "updatedAt": 1752113705,
+    "updatedHash": "fd376c9f162301d13baa315cad6741ee"
+  },
+  {
+    "id": "669c014be7a69a7b4506d833",
+    "customId": null,
+    "name": "ECUACIONES LEGALES SL.",
+    "code": "B87690210",
+    "vatnumber": "",
+    "tradeName": "Miabogado.law",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000039,
+      "name": "ECUACIONES LEGALES SL."
+    },
+    "billAddress": {
+      "address": "AVENIDA PRUNOS, 1 - PTL I, PLT 1 B",
+      "city": "MADRID",
+      "postalCode": "28042",
+      "province": "Madrid",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_21"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1721499979,
+    "updatedAt": 1752113709,
+    "updatedHash": "8e933dd74eeaadc0c4527a4b574321d7"
+  },
+  {
+    "id": "669c1832e627855695060946",
+    "customId": null,
+    "name": "Celonis Inc.",
+    "code": "US EIN 61 1797223",
+    "vatnumber": "",
+    "tradeName": "Make",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000040,
+      "name": "Celonis Inc."
+    },
+    "billAddress": {
+      "address": "One World Trade Center, Celonis Inc., 87th Floor",
+      "city": "New York",
+      "postalCode": "10007",
+      "province": "New York",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1721505843,
+    "updatedAt": 1752113712,
+    "updatedHash": "267f385c88ac5f0a233b08305e9265da"
+  },
+  {
+    "id": "669c1a2b9369d092130a7317",
+    "customId": null,
+    "name": "ElevenLabs",
+    "code": "EU372062016",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000041,
+      "name": "ElevenLabs"
+    },
+    "billAddress": {
+      "address": "169 Madison Ave",
+      "city": "Nueva York",
+      "postalCode": "10016",
+      "province": "condado de Nueva York",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1721506347,
+    "updatedAt": 1752113705,
+    "updatedHash": "4719e6f2af3da5d8bb585b57c2907fe3"
+  },
+  {
+    "id": "669c1b41eca7e98a980f77f7",
+    "customId": null,
+    "name": "ORIGINALSOFT LTD",
+    "code": "20739 26719",
+    "vatnumber": "",
+    "tradeName": "G2A.COM",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000042,
+      "name": "ORIGINALSOFT LTD"
+    },
+    "billAddress": {
+      "address": "Shelton Street 71-75",
+      "city": "Londres",
+      "postalCode": "WC2H 9JQ",
+      "province": "Greater London",
+      "country": "Reino Unido",
+      "countryCode": "GB",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1721506625,
+    "updatedAt": 1752113710,
+    "updatedHash": "e6f329a6b1dcd81f3582025ed9faa5df"
+  },
+  {
+    "id": "669c1c51a5258a29d807089a",
+    "customId": null,
+    "name": "FastSpring",
+    "code": "EU372017645",
+    "vatnumber": "",
+    "tradeName": "1forAllSoftware",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000043,
+      "name": "FastSpring"
+    },
+    "billAddress": {
+      "address": "801 Garden Street, Suite 201",
+      "city": "Santa Bárbara",
+      "postalCode": "CA 93101",
+      "province": "Condado de Santa Bárbara",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_imp_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1721506897,
+    "updatedAt": 1752113701,
+    "updatedHash": "51f532dc77745358df4c59cf3228d324"
+  },
+  {
+    "id": "669c1d8c612626b05302434c",
+    "customId": null,
+    "name": "SC REFLECTION MEDIA SRL",
+    "code": "RO24728894",
+    "vatnumber": "",
+    "tradeName": "TranslatePress",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000044,
+      "name": "SC REFLECTION MEDIA SRL"
+    },
+    "billAddress": {
+      "address": "Armoniel, Nr 23 A, Et. 6, Ap. 46",
+      "city": "Timisoara",
+      "postalCode": "300291",
+      "province": "Timisoara",
+      "country": "Rumania",
+      "countryCode": "RO",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_adqintras_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1721507212,
+    "updatedAt": 1752113705,
+    "updatedHash": "8681928451ee2a3d5c143b5e0101bed2"
+  },
+  {
+    "id": "66a098f9619afa1cf8026e7a",
+    "customId": null,
+    "name": "QUILES ADVOCATS CONSULTING S.L.P.",
+    "code": "B10902377",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000022,
+      "name": "QUILES ADVOCATS CONSULTING S.L.P."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "CALLE MAS PUJOL, 14 - P. 1 PTA. 2",
+      "city": "BARCELONA",
+      "postalCode": "08032",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 7,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1721800953,
+    "updatedAt": 1752113802,
+    "updatedHash": "dfbe753b514c39a1c9c638fb0a80b644"
+  },
+  {
+    "id": "6704d6ee63bd4870b20c91f1",
+    "customId": null,
+    "name": "FUSTA APLICADA SLU",
+    "code": "B65924284",
+    "vatnumber": "",
+    "tradeName": "MELIZ",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000023,
+      "name": "FUSTA APLICADA SLU"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Carrer Orient, 19 - Baixos",
+      "city": "L'Hospitalet de Llobregat",
+      "postalCode": "08904",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1728370414,
+    "updatedAt": 1752114828,
+    "updatedHash": "d30e351a4087258493367390b8f17044"
+  },
+  {
+    "id": "67050c40106beb00cc06c48a",
+    "customId": null,
+    "name": "Viatges Sant Andreu, SL",
+    "code": "B60522299",
+    "vatnumber": "",
+    "tradeName": "Viatges Sant Andreu",
+    "email": "montse@viatgessantandreu.com",
+    "mobile": null,
+    "phone": "932740001",
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000024,
+      "name": "Viatges Sant Andreu, SL"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Carrer Malats, 19 -  Baixos",
+      "city": "BARCELONA",
+      "postalCode": "08030",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.viatgessantandreu.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1728384064,
+    "updatedAt": 1752114836,
+    "updatedHash": "51f84510d163b01c19f5d4bd9ca2fc53"
+  },
+  {
+    "id": "670a56a67783cd71030fab07",
+    "customId": null,
+    "name": "ANOIA AUTOMOCIO SL.",
+    "code": "B66498551",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "taller@toyotaigualada.com",
+    "mobile": null,
+    "phone": "938048230",
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000045,
+      "name": "ANOIA AUTOMOCIO SL."
+    },
+    "billAddress": {
+      "address": "AVENIDA EUROPA, 4",
+      "city": "IGUALADA",
+      "postalCode": "08700",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7ac95f67083dd0588dd",
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.toyotaigualada.toyota.es"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1728730790,
+    "updatedAt": 1752114918,
+    "updatedHash": "3b9601bedf51f5cb23398adde32accb9"
+  },
+  {
+    "id": "670a57e385852b75d3047391",
+    "customId": null,
+    "name": "ASSOCIACIO D EMPRESES D INFORMATICA I TECNOLOGIES DE LA COMUNICACIO DECATALUNYA",
+    "code": "G60529948",
+    "vatnumber": "",
+    "tradeName": "ASEITEC",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000046,
+      "name": "ASSOCIACIO D EMPRESES D INFORMATICA I TECNOLOGIES DE LA COMUNICACIO DECATALUNYA"
+    },
+    "billAddress": {
+      "address": "CALLE SANT PAU, 6",
+      "city": "TERRASSA",
+      "postalCode": "08221",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7ad95f67083dd0588e4",
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.aseitec.org"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1728731107,
+    "updatedAt": 1752114912,
+    "updatedHash": "5ed1dce782d33a65114c534a9d9e8d94"
+  },
+  {
+    "id": "670a58c827364445f40da62c",
+    "customId": null,
+    "name": "CORPORACION ALIMENTARIA GUISSONA, SOCIEDAD ANONIMA",
+    "code": "A25445131",
+    "vatnumber": "",
+    "tradeName": "BonArea",
+    "email": "info@bonarea-agrupa.com",
+    "mobile": null,
+    "phone": "973550100",
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000047,
+      "name": "CORPORACION ALIMENTARIA GUISSONA, SOCIEDAD ANONIMA"
+    },
+    "billAddress": {
+      "address": "TRAVESIA TRASPALAU, 8",
+      "city": "GUISSONA",
+      "postalCode": "25210",
+      "province": "Lleida",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7ad95f67083dd0588e3",
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_21"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.bonarea-agrupa.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1728731336,
+    "updatedAt": 1752114906,
+    "updatedHash": "89bf9c485938097ec08247ce726e5e6b"
+  },
+  {
+    "id": "670a774e7db35921080405ed",
+    "customId": null,
+    "name": "Discord",
+    "code": "EU528003307",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000048,
+      "name": "Discord"
+    },
+    "billAddress": {
+      "address": "444 De Haro St Suite 200",
+      "city": "San Francisco",
+      "postalCode": "94107 US",
+      "province": "San Francisco",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7ad95f67083dd0588e4",
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_imp_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1728739150,
+    "updatedAt": 1752114918,
+    "updatedHash": "b077083bda61b8873748764960ffaf98"
+  },
+  {
+    "id": "670a78e282e26c2b7a0feb00",
+    "customId": null,
+    "name": "LEONTIC INNOVA, SL",
+    "code": "B24713216",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "info@leontic.com",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000049,
+      "name": "LEONTIC INNOVA, SL"
+    },
+    "billAddress": {
+      "address": "CALLE LA UVA, 24 - 9",
+      "city": "La Vírgen del Camino",
+      "postalCode": "24198",
+      "province": "León",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7ad95f67083dd0588e4",
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_21"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.leontic.es"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1728739554,
+    "updatedAt": 1752114913,
+    "updatedHash": "836baa20ac3df433468a8abd07f1203d"
+  },
+  {
+    "id": "670b7c342804c3c08a098482",
+    "customId": null,
+    "name": "ONTINET COM SL",
+    "code": "B96840467",
+    "vatnumber": "",
+    "tradeName": "ESET",
+    "email": "ventas@eset.es",
+    "mobile": null,
+    "phone": "962913348",
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000050,
+      "name": "ONTINET COM SL"
+    },
+    "billAddress": {
+      "address": "C/ Martínez Valls, 56 - Bajos",
+      "city": "Ontinyent",
+      "postalCode": "46870",
+      "province": "Valencia",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7ad95f67083dd0588e4",
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_21"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.ontinet.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1728805940,
+    "updatedAt": 1752114920,
+    "updatedHash": "5cbf6baf8853d50b801956152771b952"
+  },
+  {
+    "id": "670b85703e86d5b1da09ffd2",
+    "customId": null,
+    "name": "Private Internet Access (CY) Ltd",
+    "code": "CY10327823Q",
+    "vatnumber": "CY10327823Q",
+    "tradeName": "PIA-VPN",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000051,
+      "name": "Private Internet Access (CY) Ltd"
+    },
+    "billAddress": {
+      "address": "Ioanni Stilianou 6, Floor 2, Flat 202",
+      "city": "Nicosia",
+      "postalCode": "2003",
+      "province": "Nicosia",
+      "country": "Chipre",
+      "countryCode": "CY",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_adqintras_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1728808304,
+    "updatedAt": 1752114917,
+    "updatedHash": "493346a8025446416499944d2e66365b"
+  },
+  {
+    "id": "670b8cb726f0efcc5202cff1",
+    "customId": null,
+    "name": "OpenBoxLab Inc.",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": "RaiDrive",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000052,
+      "name": "OpenBoxLab Inc."
+    },
+    "billAddress": {
+      "address": "765 Taejang-ro, Kumkwang Technovalley #715",
+      "city": "Gimpo-si",
+      "postalCode": "10090",
+      "province": "Gyeonggi-do",
+      "country": "Corea",
+      "countryCode": "KR",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": "6492a7ad95f67083dd0588e4",
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1728810167,
+    "updatedAt": 1752114910,
+    "updatedHash": "ba71399da65f613fdbcc5f08003474b4"
+  },
+  {
+    "id": "670cdf2e835de1834c0545b5",
+    "customId": null,
+    "name": "Atelier Juridic Advocats SLP",
+    "code": "B66881715",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "administracion@atelierjuridic.com",
+    "mobile": null,
+    "phone": "934871857",
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000025,
+      "name": "Atelier Juridic Advocats SLP"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "C. Casp 144 Ent-A",
+      "city": "Barcelona",
+      "postalCode": "08013",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_21"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.atelierjuridic.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1728896814,
+    "updatedAt": 1752114921,
+    "updatedHash": "1e419d84131be0ddc79c5415aad34cb2"
+  },
+  {
+    "id": "671b7f4d2337e53eea08c147",
+    "customId": null,
+    "name": "JSR MUNTATGES SBD S.L.",
+    "code": "B67597971",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000026,
+      "name": "JSR MUNTATGES SBD S.L."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "CARRETERA TERRASSA, BL.D NUM.401 P.5 PTA.1",
+      "city": "SABADELL",
+      "postalCode": "08205",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1729855309,
+    "updatedAt": 1752115169,
+    "updatedHash": "bfe06b2001c5e160e485fc0279f771c4"
+  },
+  {
+    "id": "672a0722a2b9995480021a7c",
+    "customId": null,
+    "name": "PESCADOS CLEOPATRA SL",
+    "code": "B62050232",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "direccion@pescleo.com",
+    "mobile": "679495109",
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000027,
+      "name": "PESCADOS CLEOPATRA SL"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "CALLE LONGITUDINAL 6, Edif. Frimercat, dpcho. 25",
+      "city": "BARCELONA",
+      "postalCode": "08040",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 7,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1730807586,
+    "updatedAt": 1752115336,
+    "updatedHash": "2a17d6549ab164ad8cd9b5170f069b2a"
+  },
+  {
+    "id": "6733b0e0f9ceb0b6440af5e3",
+    "customId": null,
+    "name": "AM ALQUILER E INVERSIONES S.L.",
+    "code": "B72540628",
+    "vatnumber": "",
+    "tradeName": "AM INVERSIONES",
+    "email": "armand@aminversiones.es",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000028,
+      "name": "AM ALQUILER E INVERSIONES S.L."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "AVENIDA SANT BERNAT CALBO, 29",
+      "city": "VIC",
+      "postalCode": "08500",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1731440864,
+    "updatedAt": 1752115459,
+    "updatedHash": "4d0669a1944715e3e3d8e66cf7c8510f"
+  },
+  {
+    "id": "67348cf44821ac1f2a09b457",
+    "customId": null,
+    "name": "SUMINISTROS APLICACIONES Y PROCESOS SL",
+    "code": "B65446866",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "d.tecnico@sumapro.net",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000029,
+      "name": "SUMINISTROS APLICACIONES Y PROCESOS SL"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Rambla Pompeu i Fabra, 71",
+      "city": "Mollet del Vallès",
+      "postalCode": "08100",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1731497204,
+    "updatedAt": 1752115462,
+    "updatedHash": "5d79591aec6544bc4f886fb72b1d5dea"
+  },
+  {
+    "id": "67407ae8ceb1659f9502cd39",
+    "customId": null,
+    "name": "COOP EIXARCOLANT S.C.C.L.",
+    "code": "F67478784",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "administracio@eixarcolant.cat",
+    "mobile": null,
+    "phone": "690373980",
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000030,
+      "name": "COOP EIXARCOLANT S.C.C.L."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "CALLE MAJOR (JORBA), 47",
+      "city": "JORBA",
+      "postalCode": "08719",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.eixarcolant.cat"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1732279016,
+    "updatedAt": 1752115637,
+    "updatedHash": "896ac387e4a8232b58b0b926ebbdb2d2"
+  },
+  {
+    "id": "677399eeb56292da9a0677fa",
+    "customId": null,
+    "name": "EUROSERVICES OFICINA SAL",
+    "code": "A65357105",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000054,
+      "name": "EUROSERVICES OFICINA SAL"
+    },
+    "billAddress": {
+      "address": "CALLE SANTANDER, 49-51 - NAV 24",
+      "city": "BARCELONA",
+      "postalCode": "08020",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1735629294,
+    "updatedAt": 1752116345,
+    "updatedHash": "784f1c5290ea3e31fa7e180b22f8f922"
+  },
+  {
+    "id": "67739ae15e10dc8dd40e4e73",
+    "customId": null,
+    "name": "David Sánchez García",
+    "code": "46782742Y",
+    "vatnumber": "",
+    "tradeName": "Automatizia",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000055,
+      "name": "David Sánchez García"
+    },
+    "billAddress": {
+      "address": "Carrer de la Sort, 8, bx.",
+      "city": "Jorba",
+      "postalCode": "08719",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1735629537,
+    "updatedAt": 1752116350,
+    "updatedHash": "b657ad31cf380193f092f04491387139"
+  },
+  {
+    "id": "67739e84ab5a824f61042660",
+    "customId": null,
+    "name": "MEDIA MARKT SATURN SA SANT BOI",
+    "code": "A82037292",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "atencionalcliente@mediamarkt.es",
+    "mobile": null,
+    "phone": "934753000",
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000056,
+      "name": "MEDIA MARKT SATURN SA SANT BOI"
+    },
+    "billAddress": {
+      "address": "CALLE SOLSONES, 2 - PTA C",
+      "city": "El Prat de Llobregat",
+      "postalCode": "08820",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.mediamarkt.es"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1735630468,
+    "updatedAt": 1752116346,
+    "updatedHash": "16b2244c25e1592982502dddf5961119"
+  },
+  {
+    "id": "6773a80ec9d38851f509603d",
+    "customId": null,
+    "name": "OCCIDENT GCO SAU DE SEGUROS Y REASEGUROS",
+    "code": "A28119220",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "creditor",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 41000002,
+      "name": "OCCIDENT GCO SAU DE SEGUROS Y REASEGUROS"
+    },
+    "billAddress": {
+      "address": "PASEO CASTELLANA, 4",
+      "city": "MADRID",
+      "postalCode": "28046",
+      "province": null,
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.occident.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1735632910,
+    "updatedAt": 1752116350,
+    "updatedHash": "42c518f59e67cc47a588d7d2ec7b9ee6"
+  },
+  {
+    "id": "6773ac0639363599ac0b33e1",
+    "customId": null,
+    "name": "SANTANDER MAPFRE SEGUROS Y REASEGUROS SA.",
+    "code": "A88256714",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "mapfre@mapfre.es",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000057,
+      "name": "SANTANDER MAPFRE SEGUROS Y REASEGUROS SA."
+    },
+    "billAddress": {
+      "address": "CARRETERA POZUELO DE ALARCON, 50",
+      "city": "MAJADAHONDA",
+      "postalCode": "28222",
+      "province": "Madrid",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.mapfre.es"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1735633926,
+    "updatedAt": 1752116344,
+    "updatedHash": "ef3e4f7343a3fa46761cff819d689aef"
+  },
+  {
+    "id": "6773c45a4c5b59f23d04edb6",
+    "customId": null,
+    "name": "Voiceflow Inc.",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000058,
+      "name": "Voiceflow Inc."
+    },
+    "billAddress": {
+      "address": "30 Duncan Street",
+      "city": "Toronto",
+      "postalCode": "M5V 2C3",
+      "province": "Ontario",
+      "country": "Canadá",
+      "countryCode": "CA",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1735640154,
+    "updatedAt": 1752116344,
+    "updatedHash": "4993f2dd4d339f51232f64a86a168918"
+  },
+  {
+    "id": "6773cf7c823f3f149104b613",
+    "customId": null,
+    "name": "Skool.com inc",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000059,
+      "name": "Skool.com inc"
+    },
+    "billAddress": {
+      "address": "111 Main Street",
+      "city": "California",
+      "postalCode": "",
+      "province": "California",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1735643004,
+    "updatedAt": 1752116345,
+    "updatedHash": "4474a3334f79670d932fd6e04f45e21d"
+  },
+  {
+    "id": "6773f389ac6552cf0909b660",
+    "customId": null,
+    "name": "Invideo Innovation Pte. Ltd.",
+    "code": "201931873E",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000060,
+      "name": "Invideo Innovation Pte. Ltd."
+    },
+    "billAddress": {
+      "address": "50 Raffles Place #19 00, Singapore Land Tower",
+      "city": "Singapore",
+      "postalCode": "048623",
+      "province": "Singapore",
+      "country": "Singapur",
+      "countryCode": "SG",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1735652233,
+    "updatedAt": 1752116356,
+    "updatedHash": "464ae2130236fd5cdb04035910f0c38d"
+  },
+  {
+    "id": "67741a995dd58a986b03d9d6",
+    "customId": null,
+    "name": "Hotmart BV",
+    "code": "NL853863751B01",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000061,
+      "name": "Hotmart BV"
+    },
+    "billAddress": {
+      "address": "Spuistraat 168D",
+      "city": "Amsterdam",
+      "postalCode": "1012 VT",
+      "province": "Amsterdam",
+      "country": "Países Bajos",
+      "countryCode": "NL",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058867",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_adqintras_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1735662233,
+    "updatedAt": 1752116354,
+    "updatedHash": "5d4346d98abcc2da628572ba2c9be422"
+  },
+  {
+    "id": "67802fc69c4b1e9d8f0f42b4",
+    "customId": null,
+    "name": "DISTRITO K SOFTWARE, S.L.",
+    "code": "B56430416",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": "981168070",
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000031,
+      "name": "DISTRITO K SOFTWARE, S.L."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "CALLE JUAN FLOREZ, 129 - bajos",
+      "city": "A Coruña",
+      "postalCode": "15005",
+      "province": "La Coruña",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.distritok.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1736454086,
+    "updatedAt": 1752116540,
+    "updatedHash": "dc8800207bc97a2742b6f708dfe41f76"
+  },
+  {
+    "id": "678f662e60c4a402f4005da1",
+    "customId": null,
+    "name": "Vonage Business Inc",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": "Nexmo Vonage",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000062,
+      "name": "Vonage Business Inc"
+    },
+    "billAddress": {
+      "address": "101 Crawfords Corner Road",
+      "city": "Holmdel",
+      "postalCode": "07733",
+      "province": "New Jersey",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1737451055,
+    "updatedAt": 1752116870,
+    "updatedHash": "b1e0f690ae24831e47bcc4785891e414"
+  },
+  {
+    "id": "678f67c1288bb314b50c2206",
+    "customId": null,
+    "name": "Retell Ai",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000063,
+      "name": "Retell Ai"
+    },
+    "billAddress": {
+      "address": "2674 Hasting Ave",
+      "city": "Redwood City",
+      "postalCode": "94061",
+      "province": "California",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1737451457,
+    "updatedAt": 1752116873,
+    "updatedHash": "e7716035d3509745a85c08190d6ec373"
+  },
+  {
+    "id": "678f6bc9d538d300200b0cb9",
+    "customId": null,
+    "name": "Nocode LTD",
+    "code": "CY10449108S",
+    "vatnumber": "CY10449108S",
+    "tradeName": "Latenode.com",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000064,
+      "name": "Latenode.com"
+    },
+    "billAddress": {
+      "address": "Griva Digeni, 51 - ATHINAION COURT, Flat/Office 202",
+      "city": "Pafos",
+      "postalCode": "8047",
+      "province": "Pafos",
+      "country": "Chipre",
+      "countryCode": "CY",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_adqintras_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1737452489,
+    "updatedAt": 1752116860,
+    "updatedHash": "5c4528a060c1147d178bb2b02dfeb342"
+  },
+  {
+    "id": "679bc92eb13150775404a648",
+    "customId": null,
+    "name": "ERGO PROFESO SLP",
+    "code": "B72678063",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "direccion@decorusabogados.com",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000032,
+      "name": "ERGO PROFESO SLP"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "AVENIDA DIAGONAL, 327 - P. ENT PTA. 2",
+      "city": "BARCELONA",
+      "postalCode": "08009",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1738262830,
+    "updatedAt": 1752117108,
+    "updatedHash": "8b81059b34ad5d1f51966f9eb9ceec40"
+  },
+  {
+    "id": "679bd1a1bdbb0013ed0c0610",
+    "customId": null,
+    "name": "Crystal Food Ingredients PTE LTD",
+    "code": "UEN202403641C",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000033,
+      "name": "Crystal Food Ingredients PTE LTD"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "36 ROBINSON ROAD, #20-01 CITY HOUSE",
+      "city": "Singapur",
+      "postalCode": "068877",
+      "province": null,
+      "country": "Singapur",
+      "countryCode": "SG",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 7,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [
+        "s_iva_exento"
+      ],
+      "purchasesTax": [],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1738264993,
+    "updatedAt": 1752117117,
+    "updatedHash": "3afc2488895a7091a9cdf9ebc174280f"
+  },
+  {
+    "id": "67a4be1c276a09c318056b18",
+    "customId": null,
+    "name": "Raúl Tena Alonso",
+    "code": "23816444J",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": "626685260",
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000034,
+      "name": "Raúl Tena Alonso"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "CALLE SEGRE 62",
+      "city": "Lliçà d'Amunt",
+      "postalCode": "08186",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 1,
+    "createdAt": 1738849820,
+    "updatedAt": 1752117261,
+    "updatedHash": "565871cf25551a0ca1cc8ec56ca7a5e0"
+  },
+  {
+    "id": "67ac4cff2a476f226d04e97a",
+    "customId": null,
+    "name": "ARTE FUNERARIO CATALANA DE MARMOLES SL",
+    "code": "B59112474",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "info@catalanademarmoles.com",
+    "mobile": null,
+    "phone": "93 593 04 87",
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Pol. Ind CAN MAGAROLA, Psje. Autopista, 13",
+      "city": "Mollet del Vallès",
+      "postalCode": "08100",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.catalanademarmoles.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1739345151,
+    "updatedAt": 1752117369,
+    "updatedHash": "1fd40f8d0d6b7c2c3e8e1344ba9746c4"
+  },
+  {
+    "id": "67bd79fbb7ddc599d9014c91",
+    "customId": null,
+    "name": "FORRELLAT CONSULTORS, SL",
+    "code": "B55137145",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000035,
+      "name": "FORRELLAT CONSULTORS, SL"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "CALLE GONZALEZ DE SOTO, 46 - 3 1",
+      "city": "Figueres",
+      "postalCode": "17600",
+      "province": "Girona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1740470779,
+    "updatedAt": 1752117635,
+    "updatedHash": "eac22103fba62ed79a1ed269aadddb6f"
+  },
+  {
+    "id": "67c5688e6aabf59c93009747",
+    "customId": null,
+    "name": "Susana de Sola Llopis",
+    "code": "46336673E",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000036,
+      "name": "Susana de Sola Llopis"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Carrer Consell de Cent, 373. 5º1ª",
+      "city": "Barcelona",
+      "postalCode": "08009",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 1,
+    "createdAt": 1740990606,
+    "updatedAt": 1752117755,
+    "updatedHash": "5394886dc87628a1d54ecb66b0544145"
+  },
+  {
+    "id": "67d28d497a7f9a2be20b905b",
+    "customId": null,
+    "name": "KOLTEK ENGINERING S.L.",
+    "code": "B67547968",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000037,
+      "name": "KOLTEK ENGINERING S.L."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "C/ Bofarull, 65 - At.-2ª",
+      "city": "BARCELONA",
+      "postalCode": "08027",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1741851977,
+    "updatedAt": 1752117990,
+    "updatedHash": "c8488cabfbc9b912327241c8c73ef135"
+  },
+  {
+    "id": "67d7cd60c9e44000670352a4",
+    "customId": null,
+    "name": "MDB PHARMA SOLUTIONS S.L.",
+    "code": "B72649403",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "m.massaguer@mdbpharmasolutions.com",
+    "mobile": "646706521",
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000038,
+      "name": "MDB PHARMA SOLUTIONS S.L."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Carrer Benet i Serra, 12",
+      "city": "Mataró",
+      "postalCode": "08302",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1742196064,
+    "updatedAt": 1752118055,
+    "updatedHash": "2fb12a27a9fd3445db9fc17fff14b4d9"
+  },
+  {
+    "id": "67dbc87eb284df96b303bdf1",
+    "customId": null,
+    "name": "EVALUA GESTORS ADMINISTRATIUS S.L.P.",
+    "code": "B16945818",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "jaumehombrado@gestoriaevalua.com",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000039,
+      "name": "EVALUA GESTORS ADMINISTRATIUS S.L.P."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Carrer Maragall, 3",
+      "city": "Vallirana",
+      "postalCode": "08759",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1742456958,
+    "updatedAt": 1752118130,
+    "updatedHash": "2240e0dd3fd9d37db3d49e2b19d5be22"
+  },
+  {
+    "id": "67e7b127ddb9a843d60bebb2",
+    "customId": null,
+    "name": "Nicebuild LLC",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": "PLAUD",
+    "email": "",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000065,
+      "name": "Nicebuild LLC"
+    },
+    "billAddress": {
+      "address": "30 North Gould Street",
+      "city": "Sheridan",
+      "postalCode": "82801",
+      "province": "Wyoming",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1743237415,
+    "updatedAt": 1752118318,
+    "updatedHash": "279d6392eaab5a834c9f90be3ad0a151"
+  },
+  {
+    "id": "67e7b2aa9788f7dd37035793",
+    "customId": null,
+    "name": "Read AI, Inc.",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": null,
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000066,
+      "name": "Read AI, Inc."
+    },
+    "billAddress": {
+      "address": "999 3rd Avenue, Suite 3300",
+      "city": "Seattle",
+      "postalCode": "98104",
+      "province": "Washington",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1743237802,
+    "updatedAt": 1752118315,
+    "updatedHash": "c35b4adfa1d0a502bbe5a17775e016a6"
+  },
+  {
+    "id": "67e7bd31bb3615641001dffa",
+    "customId": null,
+    "name": "APPLUS ITEUVE TECHNOLOGY SL",
+    "code": "B81041444",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "info@applus.com",
+    "mobile": null,
+    "phone": "902932200",
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000067,
+      "name": "APPLUS ITEUVE TECHNOLOGY SL"
+    },
+    "billAddress": {
+      "address": "Països Baixos",
+      "city": "Igualada",
+      "postalCode": "08700",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_0"
+      ],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.applus.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1743240497,
+    "updatedAt": 1752118314,
+    "updatedHash": "1e149ff8c3bb127d9d1134822e1a6a30"
+  },
+  {
+    "id": "67e7d0c23734b1342703ac2a",
+    "customId": null,
+    "name": "Elegant Themes, Inc.",
+    "code": "EU826015023",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": null,
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000068,
+      "name": "Elegant Themes, Inc."
+    },
+    "billAddress": {
+      "address": "977 West Napa Street #1002",
+      "city": "Sonoma",
+      "postalCode": "95476",
+      "province": "California",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1743245506,
+    "updatedAt": 1752118311,
+    "updatedHash": "613de3645cabc6d6769bc63a4add2925"
+  },
+  {
+    "id": "67fa11449ffe4d4a350dc36f",
+    "customId": null,
+    "name": "CAROLA MARCH RIBA",
+    "code": "46583657D",
+    "vatnumber": "46583657D",
+    "tradeName": "COPISTERIA RAMBLES",
+    "email": "copirambles@copirambles.com",
+    "mobile": null,
+    "phone": "93 803 07 77",
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000069,
+      "name": "CAROLA MARCH RIBA"
+    },
+    "billAddress": {
+      "address": "CARRER SANT JOSEP, 9",
+      "city": "Igualada",
+      "postalCode": "08700",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1744441668,
+    "updatedAt": 1752118654,
+    "updatedHash": "a63394a93cac64e9038f36cb142ae2ac"
+  },
+  {
+    "id": "67fa90bad7d5192eca04412d",
+    "customId": null,
+    "name": "ANTHROPIC",
+    "code": "",
+    "vatnumber": "",
+    "tradeName": "Claude",
+    "email": "support@anthropic.com",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000070,
+      "name": "ANTHROPIC"
+    },
+    "billAddress": {
+      "address": "548 Market Street PMB 90375 , California 94104 United States",
+      "city": "San Francisco",
+      "postalCode": "94104 5401",
+      "province": "San Francisco County",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_imp_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1744474298,
+    "updatedAt": 1752118656,
+    "updatedHash": "654dc71f162d08b318465fee097e9b08"
+  },
+  {
+    "id": "67fa953091a60bd5620105d8",
+    "customId": null,
+    "name": "VERIFONE PAYMENTS BV DBA 2CHECKOUT",
+    "code": "NL815605468B01",
+    "vatnumber": "NL815605468B01",
+    "tradeName": null,
+    "email": "info@2checkout.com",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000071,
+      "name": "VERIFONE PAYMENTS BV DBA 2CHECKOUT"
+    },
+    "billAddress": {
+      "address": "P.O. Box 11334, 1001 GH ] Singel 250, 4th floor, 1016AB,  | Netherlands",
+      "city": "Amsterdam",
+      "postalCode": "1016 AB",
+      "province": "Amsterdam",
+      "country": "Países Bajos",
+      "countryCode": "NL",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_adqintras_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": "www.2co.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1744475440,
+    "updatedAt": 1752118655,
+    "updatedHash": "00531f1b117fb2bd6e717ab2095758be"
+  },
+  {
+    "id": "67fb82bc026cf921a9093639",
+    "customId": null,
+    "name": "NETWORKING EMPRESARIAL IBERICO S.L.",
+    "code": "B67074823",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": null,
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000072,
+      "name": "NETWORKING EMPRESARIAL IBERICO S.L."
+    },
+    "billAddress": {
+      "address": "CALLE FLORIDABLANCA, 146 - P. 2",
+      "city": "BARCELONA",
+      "postalCode": "08011",
+      "province": null,
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1744536252,
+    "updatedAt": 1752118661,
+    "updatedHash": "6ccd1801d85a6f7b5fa02bd27f7c8f6d"
+  },
+  {
+    "id": "67fb86fc0c3fd585ac0f1a03",
+    "customId": null,
+    "name": "WONDERSHARE GLOBAL LIMITED",
+    "code": "HKEU372029950",
+    "vatnumber": "HKEU372029950",
+    "tradeName": null,
+    "email": null,
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000073,
+      "name": "WONDERSHARE GLOBAL LIMITED"
+    },
+    "billAddress": {
+      "address": "Unit D, 16/F, One Capital Place, 18 Luard Road, , Hong Kong",
+      "city": "Wan Chai",
+      "postalCode": "",
+      "province": "Wan Chai",
+      "country": "Hong Kong",
+      "countryCode": "HK",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_imp_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1744537340,
+    "updatedAt": 1752118672,
+    "updatedHash": "7c8751c2883afb134edefeb676395946"
+  },
+  {
+    "id": "68278e66d743e27b410d0820",
+    "customId": null,
+    "name": "CIGEAC SOLUCIONES S.L.",
+    "code": "B75899807",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": null,
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000040,
+      "name": "CIGEAC SOLUCIONES S.L."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "CALLE GRAN VIA DE LES CORTS CATALANES, 645 - P. 1",
+      "city": "BARCELONA",
+      "postalCode": "08010",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1747422822,
+    "updatedAt": 1752119171,
+    "updatedHash": "272b429526a2cfbe8aedb93783446113"
+  },
+  {
+    "id": "684fbec2ea76b17af208b56c",
+    "customId": null,
+    "name": "JARC TECHNOLOGY SYSTEM SL.",
+    "code": "B66118621",
+    "vatnumber": "",
+    "tradeName": "JARC",
+    "email": "administracion@jarcts.com",
+    "mobile": null,
+    "phone": "934400000",
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000041,
+      "name": "JARC TECHNOLOGY SYSTEM SL."
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "CALLE CARDENAL REIG, 28 - BIS ENT",
+      "city": "BARCELONA",
+      "postalCode": "08028",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": "6492a7a895f67083dd058866",
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": "www.jarcts.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1750056642,
+    "updatedAt": 1752119771,
+    "updatedHash": "7a67a397ee6d0fde93e6cd7d0c908f08"
+  },
+  {
+    "id": "68667e363c3463ec480de512",
+    "customId": null,
+    "name": "Iolanda Cano Sáez",
+    "code": "46817856E",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": null,
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000042,
+      "name": "Iolanda Cano Sáez"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Lluís Companys, 2 Local 1",
+      "city": "Vallirana",
+      "postalCode": "08759",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 1,
+    "createdAt": 1751547446,
+    "updatedAt": 1752120233,
+    "updatedHash": "112ab80b851994c729028d5d2ecc4ab6"
+  },
+  {
+    "id": "686e101efabd97890a04d4ce",
+    "customId": null,
+    "name": "Anthropic, PBC",
+    "code": null,
+    "vatnumber": "",
+    "tradeName": "Claude",
+    "email": null,
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "548 Market Street, PMB 90375",
+      "city": "San Francisco",
+      "postalCode": "94104",
+      "province": "California",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_imp_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 1,
+    "createdAt": 1752043550,
+    "updatedAt": 1752120315,
+    "updatedHash": "82611cf6d8291da21eb33bbe0ed844d9"
+  },
+  {
+    "id": "686e24b288c009f5170eec07",
+    "customId": null,
+    "name": "OpenAI Ireland Limited",
+    "code": "IE4143435AH",
+    "vatnumber": "",
+    "tradeName": "OpenAI Teams",
+    "email": null,
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000074,
+      "name": "OpenAI Ireland Limited"
+    },
+    "billAddress": {
+      "address": "1st Floor, The Liffey Trust Center, 117 - 126 Sheriff Street Upper",
+      "city": "Dublin",
+      "postalCode": "D01 YC43",
+      "province": "Dublin",
+      "country": "Irlanda",
+      "countryCode": "IE",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_adqintras_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1752048818,
+    "updatedAt": 1752120318,
+    "updatedHash": "31d38fc82696179cfe9d5ea5cb65e2d0"
+  },
+  {
+    "id": "686e2afb6925d13b240fae81",
+    "customId": null,
+    "name": "VONAGE B V",
+    "code": "NL814599941B02",
+    "vatnumber": "NL814599941B02",
+    "tradeName": null,
+    "email": null,
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000075,
+      "name": "VONAGE B V"
+    },
+    "billAddress": {
+      "address": "Radarweg 29 A 12, Office 10.42 1043NX  The Netherlands",
+      "city": "Amsterdam",
+      "postalCode": "1043 NX",
+      "province": "Amsterdam",
+      "country": "Países Bajos",
+      "countryCode": "NL",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_adqintras_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": "https://www.vonage.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1752050428,
+    "updatedAt": 1752120322,
+    "updatedHash": "988c72d77f8e3b52b4cd28abed16f334"
+  },
+  {
+    "id": "686e2be2b379930fb50b591b",
+    "customId": null,
+    "name": "FREEPIK COMPANY SL",
+    "code": "B93183366",
+    "vatnumber": "B93183366",
+    "tradeName": null,
+    "email": null,
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000076,
+      "name": "FREEPIK COMPANY SL"
+    },
+    "billAddress": {
+      "address": "13 Molina Lario Street, 5th Floor Malaga, Andalucia  Spain",
+      "city": "Málaga",
+      "postalCode": "29015",
+      "province": "Málaga",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1752050658,
+    "updatedAt": 1752120328,
+    "updatedHash": "05f2ffb02e52b1cf754ad6de2b9e3847"
+  },
+  {
+    "id": "686e31a8324200034c0aa5bd",
+    "customId": null,
+    "name": "FUNNELLY INTERNATIONAL S R L",
+    "code": "RO46000661",
+    "vatnumber": "RO46000661",
+    "tradeName": "Whapi.cloud",
+    "email": "care@whapi.cloud",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000077,
+      "name": "FUNNELLY INTERNATIONAL S R L"
+    },
+    "billAddress": {
+      "address": "Sector 1, Intrarea Gheorghe Simionescu Nr. 19, Ap. B26  Bucharest Romania",
+      "city": "București",
+      "postalCode": "14155",
+      "province": "București",
+      "country": "Rumania",
+      "countryCode": "RO",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_adqintras_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1752052136,
+    "updatedAt": 1752120320,
+    "updatedHash": "3cb5abc84c178a655f340fe3b1a4cbfa"
+  },
+  {
+    "id": "686e4101d75d4327cd00ed40",
+    "customId": null,
+    "name": "ARASHI Systems SL",
+    "code": "B67536730",
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "aleon@arashi.io",
+    "mobile": null,
+    "phone": null,
+    "type": "client",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": {
+      "num": 43000043,
+      "name": "ARASHI Systems SL"
+    },
+    "supplierRecord": 0,
+    "billAddress": {
+      "address": "Camí de Can Minguet, 99",
+      "city": "San Cugat del Vallés",
+      "postalCode": "08173",
+      "province": "Barcelona",
+      "country": "España",
+      "countryCode": "ES",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [],
+      "accumulateInForm347": "yes"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1752056065,
+    "updatedAt": 1752120329,
+    "updatedHash": "2f6ea3331c8aa2d712c4baa488fcb89e"
+  },
+  {
+    "id": "6870db5a3c45b30c630430f5",
+    "customId": null,
+    "name": "PDF XCHANGE CO LTD",
+    "code": "GB285382669",
+    "vatnumber": "GB285382669",
+    "tradeName": null,
+    "email": "sales@pdf-xchange.com",
+    "mobile": null,
+    "phone": "+1 0",
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000078,
+      "name": "PDF XCHANGE CO LTD"
+    },
+    "billAddress": {
+      "address": "Horsmanshoad, Pickwell Lane, Bolney. . United Kingdom",
+      "city": "Haywards Heath",
+      "postalCode": "RH17 5RH",
+      "province": "West Sussex",
+      "country": "Reino Unido",
+      "countryCode": "GB",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": "https://www.pdf-xchange.com/support"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1752226650,
+    "updatedAt": 1752226771,
+    "updatedHash": "79873e4469c7b52c80edf633b2cda0f6"
+  },
+  {
+    "id": "6870de546d4aabdead0fb385",
+    "customId": null,
+    "name": "BITSUM LLC",
+    "code": "USEU372043113GB404018055",
+    "vatnumber": "USEU372043113GB404018055",
+    "tradeName": null,
+    "email": "support@bitsum.com",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000079,
+      "name": "BITSUM LLC"
+    },
+    "billAddress": {
+      "address": "PO BOX 1143 , TN  United States",
+      "city": "Talbott",
+      "postalCode": "37877",
+      "province": "Hamblen County",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 0,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_imp_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": "https://bitsum.com"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1752227412,
+    "updatedAt": 1752227460,
+    "updatedHash": "236d7f232b5e226e678159912b3ce98e"
+  },
+  {
+    "id": "6870dea0c2ac0faf6a047ee0",
+    "customId": null,
+    "name": "HEYGEN TECHNOLOGY INC",
+    "code": null,
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "support@heygen.com",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000080,
+      "name": "HEYGEN TECHNOLOGY INC"
+    },
+    "billAddress": {
+      "address": "12130 Millennium Drive Suite 300 Los Angeles, California 90094 United States",
+      "city": "Playa Vista",
+      "postalCode": "90094 3156",
+      "province": "Los Angeles County",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": "https://www.heygen.com/master-saas-agreement"
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1752227488,
+    "updatedAt": 1752227503,
+    "updatedHash": "45c0600c923d9759ceb1eace9f658cc4"
+  },
+  {
+    "id": "6870ea067267f48afd067540",
+    "customId": null,
+    "name": "LETS ENHANCE INC",
+    "code": null,
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "info@robustdatasolutions.com",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000081,
+      "name": "LETS ENHANCE INC"
+    },
+    "billAddress": {
+      "address": "1032 Irving street #607 , CA, 94122 United States",
+      "city": "San Francisco",
+      "postalCode": "94122 2216",
+      "province": "San Francisco County",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1752230406,
+    "updatedAt": 1752230418,
+    "updatedHash": "bcf953da6e09a411493e37d1abe4cd51"
+  },
+  {
+    "id": "6870f041c2fcf9e3ac044ace",
+    "customId": null,
+    "name": "RSS.APP",
+    "code": null,
+    "vatnumber": "",
+    "tradeName": null,
+    "email": null,
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000082,
+      "name": "RSS.APP"
+    },
+    "billAddress": {
+      "address": null,
+      "city": "Miami",
+      "postalCode": "",
+      "province": "Florida",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1752232001,
+    "updatedAt": 1752232011,
+    "updatedHash": "9d93045d7c59aded0014e920f7da2df2"
+  },
+  {
+    "id": "6870f0662796b3d2b9044176",
+    "customId": null,
+    "name": "LOVABLE LABS INCORPORATED",
+    "code": null,
+    "vatnumber": "",
+    "tradeName": null,
+    "email": "support@lovable.dev",
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000083,
+      "name": "LOVABLE LABS INCORPORATED"
+    },
+    "billAddress": {
+      "address": "1111b South Governors Avenue , Delaware 19904 United States",
+      "city": "Dover",
+      "postalCode": "19904 6903",
+      "province": "Kent County",
+      "country": "Estados Unidos",
+      "countryCode": "US",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "s_importacion0"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1752232039,
+    "updatedAt": 1752232047,
+    "updatedHash": "8595dd53d54d3a2d251c54e9de2c3ac3"
+  },
+  {
+    "id": "6870f09a7d68c7841d0ae7fe",
+    "customId": null,
+    "name": "TWILIO IRELAND LIMITED",
+    "code": "IE3335493BH",
+    "vatnumber": "IE3335493BH",
+    "tradeName": null,
+    "email": null,
+    "mobile": null,
+    "phone": null,
+    "type": "supplier",
+    "iban": "",
+    "swift": "",
+    "groupId": "",
+    "clientRecord": 0,
+    "supplierRecord": {
+      "num": 40000084,
+      "name": "TWILIO IRELAND LIMITED"
+    },
+    "billAddress": {
+      "address": "70 Sir John Rogerson's Quay  2  Ireland",
+      "city": "Dublin",
+      "postalCode": "D02 R296",
+      "province": "Dublin City",
+      "country": "Irlanda",
+      "countryCode": "IE",
+      "info": ""
+    },
+    "customFields": [],
+    "defaults": {
+      "salesChannel": 0,
+      "expensesAccount": 0,
+      "dueDays": 1,
+      "paymentDay": 0,
+      "paymentMethod": 0,
+      "discount": 0,
+      "language": "es",
+      "currency": "eur",
+      "salesTax": [],
+      "purchasesTax": [
+        "p_iva_adqintras_21"
+      ],
+      "accumulateInForm347": "no"
+    },
+    "socialNetworks": {
+      "website": ""
+    },
+    "tags": [],
+    "notes": [],
+    "contactPersons": [],
+    "shippingAddresses": [],
+    "isperson": 0,
+    "createdAt": 1752232090,
+    "updatedAt": 1752232206,
+    "updatedHash": "4396bc52e2eeb0217016ef18334c92bc"
+  }
+]
