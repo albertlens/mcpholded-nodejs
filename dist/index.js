@@ -1800,6 +1800,10 @@ if (process.env.NODE_ENV === 'production') {
             console.error(`[MCP] Request body:`, JSON.stringify(req.body, null, 2));
         }
         try {
+            // Forzar el header Accept para que sea compatible con MCP Streamable HTTP
+            if (req.headers.accept && !req.headers.accept.includes('text/event-stream')) {
+                req.headers.accept = 'text/event-stream, application/json';
+            }
             // Obtener la instancia singleton del servidor MCP
             const mcpServer = getMCPServer();
             // Crear un transporte Streamable HTTP para cada conexión
