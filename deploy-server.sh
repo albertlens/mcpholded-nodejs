@@ -25,6 +25,23 @@ rm -f main.zip
 # 3. Descargar código desde GitHub
 echo "📦 Descargando código desde GitHub..."
 wget $GITHUB_ZIP_URL -O main.zip
+
+# Verificar que unzip está instalado
+if ! command -v unzip &> /dev/null; then
+    echo "📦 Instalando unzip..."
+    if command -v apt-get &> /dev/null; then
+        sudo apt-get update && sudo apt-get install -y unzip
+    elif command -v yum &> /dev/null; then
+        sudo yum install -y unzip
+    elif command -v dnf &> /dev/null; then
+        sudo dnf install -y unzip
+    else
+        echo "❌ No se pudo instalar unzip automáticamente"
+        echo "   Instala unzip manualmente y ejecuta el script de nuevo"
+        exit 1
+    fi
+fi
+
 unzip -q main.zip
 mv mcpholded-nodejs-main $PROJECT_DIR
 rm main.zip
