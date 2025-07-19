@@ -2024,127 +2024,8 @@ if (process.env.NODE_ENV === 'production') {
         sessionTimestamps.set(sessionId, Date.now());
         console.error(`[MCP] Auto-created transport stored for session: ${sessionId}`);
         
-        // CRÍTICO: Forzar inicialización automática después de la conexión
-        setTimeout(async () => {
-          console.error(`[MCP] Auto-triggering initialization for session: ${sessionId}`);
-          try {
-            // Simular un mensaje de inicialización desde Claude.ai
-            const initMessage = {
-              jsonrpc: '2.0',
-              id: 1,
-              method: 'initialize',
-              params: {
-                protocolVersion: '2025-06-18',
-                capabilities: { sampling: {} },
-                clientInfo: {
-                  name: 'claude-ai-auto',
-                  version: '1.0.0'
-                }
-              }
-            };
-            
-            console.error(`[MCP] Sending auto-initialization message:`, JSON.stringify(initMessage, null, 2));
-            
-            // Crear un mock request/response más completo para la inicialización
-            const mockReq = {
-              method: 'POST',
-              url: '/mcp',
-              headers: { 
-                'content-type': 'application/json',
-                'accept': 'application/json'
-              },
-              body: initMessage,
-              on: () => {},
-              pipe: () => {},
-              socket: { remoteAddress: '127.0.0.1' }
-            };
-            
-            let responseData = '';
-            const mockRes = {
-              writeHead: (status: number, headers?: any) => {
-                console.error(`[MCP] Auto-init response status: ${status}`);
-                if (headers) console.error(`[MCP] Auto-init response headers:`, headers);
-              },
-              write: (data: string) => {
-                responseData += data;
-                console.error(`[MCP] Auto-init response chunk: ${data}`);
-              },
-              end: (data?: string) => {
-                if (data) {
-                  responseData += data;
-                  console.error(`[MCP] Auto-init response final: ${data}`);
-                }
-                console.error(`[MCP] Auto-initialization completed. Full response: ${responseData}`);
-                
-                // Después de completar initialize, ejecutar list_tools
-                setTimeout(async () => {
-                  console.error(`[MCP] Auto-triggering list_tools for session: ${sessionId}`);
-                  const listToolsMessage = {
-                    jsonrpc: '2.0',
-                    id: 2,
-                    method: 'tools/list',
-                    params: {}
-                  };
-                  
-                  const mockListReq = {
-                    method: 'POST',
-                    url: '/mcp',
-                    headers: { 
-                      'content-type': 'application/json',
-                      'accept': 'application/json'
-                    },
-                    body: listToolsMessage,
-                    on: () => {},
-                    pipe: () => {},
-                    socket: { remoteAddress: '127.0.0.1' }
-                  };
-                  
-                  let listResponseData = '';
-                  const mockListRes = {
-                    writeHead: (status: number, headers?: any) => {
-                      console.error(`[MCP] Auto-list_tools response status: ${status}`);
-                    },
-                    write: (data: string) => {
-                      listResponseData += data;
-                      console.error(`[MCP] Auto-list_tools response chunk: ${data.length > 200 ? data.substring(0, 200) + '...' : data}`);
-                    },
-                    end: (data?: string) => {
-                      if (data) {
-                        listResponseData += data;
-                      }
-                      console.error(`[MCP] Auto list_tools completed - tools should now be available to Claude.ai`);
-                      console.error(`[MCP] Tools response length: ${listResponseData.length} characters`);
-                    },
-                    setHeader: () => {},
-                    getHeader: () => undefined,
-                    removeHeader: () => {},
-                    headersSent: false,
-                    statusCode: 200,
-                    statusMessage: 'OK'
-                  };
-                  
-                  try {
-                    await transport.handleRequest(mockListReq as any, mockListRes as any);
-                  } catch (error) {
-                    console.error(`[MCP] Error in auto list_tools:`, error);
-                  }
-                }, 100);
-              },
-              setHeader: () => {},
-              getHeader: () => undefined,
-              removeHeader: () => {},
-              headersSent: false,
-              statusCode: 200,
-              statusMessage: 'OK'
-            };
-            
-            // Ejecutar la inicialización a través del transporte
-            await transport.handleRequest(mockReq as any, mockRes as any);
-            
-          } catch (error) {
-            console.error(`[MCP] Error in auto-initialization:`, error);
-          }
-        }, 50); // Muy rápido después de crear la sesión
+        // En lugar de forzar mensajes mock, permitir que el protocolo SSE nativo funcione
+        // El StreamableHTTPTransport enviará automáticamente eventos al cliente cuando esté listo
         
       } catch (error) {
         console.error(`[MCP] Error creating auto session for path ${pathSessionId}:`, error);
@@ -2173,11 +2054,20 @@ if (process.env.NODE_ENV === 'production') {
     console.error('Headers:', JSON.stringify(req.headers, null, 2));
     console.error('Body:', req.body ? JSON.stringify(req.body, null, 2) : 'No body');
     
-    // Usar path como parte del sessionId
-    const pathSessionId = `${req.params.path}_session`;
+    const pathSessionId = req.params.path;
     
-    // Redirigir a la lógica normal usando el path como sessionId
-    req.headers['mcp-session-id'] = pathSessionId;
+    // Verificar si ya existe una sesión para este path
+    if (transports.has(pathSessionId)) {
+      console.error(`[MCP] Using existing session for path: ${pathSessionId}`);
+      const transport = transports.get(pathSessionId)!;
+      await transport.handleRequest(req, res);
+      console.error(`[MCP] Path-based POST request handled successfully`);
+      return;
+    }
+    
+    // Si no existe, redirigir a la lógica normal usando el path como sessionId
+    const sessionIdForNormalFlow = `${pathSessionId}_session`;
+    req.headers['mcp-session-id'] = sessionIdForNormalFlow;
     
     // Llamar al handler normal
     return app._router.handle({ ...req, url: '/mcp' }, res, () => {});
