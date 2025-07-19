@@ -19,19 +19,44 @@ class HoldedClient {
   }
 
   private async request(method: string, endpoint: string, data?: any) {
+    const url = `${this.baseUrl}${endpoint}`;
+    const headers = {
+      'Content-Type': 'application/json',
+      'key': this.apiKey
+    };
+    
+    console.log(`🔥 HOLDED API REQUEST:`, {
+      method,
+      url,
+      headers: { ...headers, key: this.apiKey ? `[${this.apiKey.substring(0,8)}...]` : 'MISSING' },
+      dataLength: data ? JSON.stringify(data).length : 0
+    });
+
     try {
       const response = await axios({
         method,
-        url: `${this.baseUrl}${endpoint}`,
-        headers: {
-          'Content-Type': 'application/json',
-          'key': this.apiKey
-        },
+        url,
+        headers,
         data
       });
+      
+      console.log(`✅ HOLDED API RESPONSE:`, {
+        status: response.status,
+        statusText: response.statusText,
+        dataType: typeof response.data,
+        dataLength: JSON.stringify(response.data).length
+      });
+      
       return response.data;
     } catch (error: any) {
-      console.error(`Holded API error: ${error.message}`);
+      console.error(`❌ HOLDED API ERROR:`, {
+        url,
+        method,
+        status: error.response?.status,
+        statusText: error.response?.statusText,
+        errorMessage: error.message,
+        responseData: error.response?.data ? JSON.stringify(error.response.data).substring(0, 500) : 'No response data'
+      });
       throw error;
     }
   }
@@ -117,8 +142,10 @@ const getServer = () => {
   server.tool('get_contacts', 'Get all contacts from Holded', {
     page: z.number().optional().describe('Page number for pagination')
   }, async ({ page = 1 }): Promise<CallToolResult> => {
+    console.log(`🔧 MCP TOOL CALLED: get_contacts with page=${page}`);
     try {
       const contacts = await holdedClient.getContacts(page);
+      console.log(`✅ get_contacts SUCCESS: Got ${Array.isArray(contacts) ? contacts.length : 'unknown'} items`);
       return {
         content: [{
           type: 'text',
@@ -126,6 +153,7 @@ const getServer = () => {
         }]
       };
     } catch (error: any) {
+      console.error(`❌ get_contacts FAILED: ${error.message}`);
       return {
         content: [{
           type: 'text',
