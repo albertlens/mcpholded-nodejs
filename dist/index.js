@@ -1324,8 +1324,9 @@ if (process.env.NODE_ENV === 'production') {
             },
         });
         console.error(`[MCP] Configuring MCP server handlers...`);
-        server.setRequestHandler(ListToolsRequestSchema, async () => {
+        server.setRequestHandler(ListToolsRequestSchema, async (request) => {
             console.error(`[MCP] *** ListTools request received ***`);
+            console.error(`[MCP] Request details:`, JSON.stringify(request, null, 2));
             console.error(`[MCP] Returning ${13} tools to Claude.ai`);
             return {
                 tools: [
@@ -1818,8 +1819,10 @@ if (process.env.NODE_ENV === 'production') {
                 transport = transports.get(sessionId);
                 console.error(`[MCP] Reusing existing transport for session: ${sessionId}`);
                 console.error(`[MCP] Request method: ${req.body?.method || 'unknown'}`);
+                console.error(`[MCP] Request params:`, req.body?.params ? JSON.stringify(req.body.params, null, 2) : 'No params');
                 // Manejar request con transporte existente - no need to reconnect
                 await transport.handleRequest(req, res);
+                console.error(`[MCP] Existing transport request handled successfully`);
             }
             else if (!sessionId) {
                 // Nueva solicitud de inicialización - crear servidor MCP fresh  
@@ -1841,6 +1844,15 @@ if (process.env.NODE_ENV === 'production') {
                         transports.set(sessionId, transport);
                     }
                 });
+                // Interceptar todas las requests del transporte para debugging
+                const originalHandleRequest = transport.handleRequest.bind(transport);
+                transport.handleRequest = async (req, res) => {
+                    console.error(`[MCP] Transport handling request: ${req.method} ${req.url}`);
+                    console.error(`[MCP] Request body:`, req.body ? JSON.stringify(req.body, null, 2) : 'No body');
+                    const result = await originalHandleRequest(req, res);
+                    console.error(`[MCP] Transport request handled`);
+                    return result;
+                };
                 // Set up onclose handler to clean up transport when closed
                 mcpServer.onclose = async () => {
                     const sid = transport.sessionId;
@@ -1853,13 +1865,18 @@ if (process.env.NODE_ENV === 'production') {
                 };
                 // Connect the transport to the MCP server BEFORE handling the request
                 // so responses can flow back through the same transport
+                console.error(`[MCP] About to connect transport to MCP server...`);
                 await mcpServer.connect(transport);
+                console.error(`[MCP] Transport connected to MCP server successfully`);
                 // CRÍTICO: Inmediatamente después de connect, almacenar el transporte con el ID generado
                 // No esperar al callback onsessioninitialized que puede no ejecutarse
                 console.error(`[MCP] Force storing transport with sessionId: ${newSessionId}`);
                 transports.set(newSessionId, transport);
                 sessionTimestamps.set(newSessionId, Date.now()); // Trackear timestamp de creación
                 console.error(`[MCP] Transport stored successfully for session: ${newSessionId}`);
+                // Verificar que el transporte está funcionando
+                console.error(`[MCP] Transport sessionId: ${transport.sessionId}`);
+                console.error(`[MCP] Transport ready: ${transport.sessionId ? 'YES' : 'NO'}`);
                 // Añadir el session ID al header de respuesta para que Claude.ai lo use en requests futuros
                 res.setHeader('MCP-Session-Id', newSessionId);
                 res.setHeader('X-MCP-Session-Id', newSessionId); // Alternativo por si Claude usa X- prefix
