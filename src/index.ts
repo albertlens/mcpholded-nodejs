@@ -1998,15 +1998,23 @@ if (process.env.NODE_ENV === 'production') {
         console.error(`[MCP] Generated new session ID: ${newSessionId}`);
         
         transport = new StreamableHTTPServerTransport({
-          sessionIdGenerator: () => newSessionId, // Usar el ID generado
+          sessionIdGenerator: () => newSessionId, // Mantener el generador
           eventStore, // Habilitar resumabilidad
           onsessioninitialized: (sessionId: string) => {
             // Store the transport by session ID when session is initialized
-            // This avoids race conditions where requests might come in before the session is stored
-            console.error(`Session initialized with ID: ${sessionId}`);
+            console.error(`[MCP] Session initialized callback: ${sessionId}`);
             transports.set(sessionId, transport);
+            sessionTimestamps.set(sessionId, Date.now());
           }
         });
+
+        // CRÍTICO: Asignar manualmente el sessionId DESPUÉS de crear el transporte
+        // para asegurar que esté disponible inmediatamente
+        console.error(`[MCP] Manually setting transport sessionId to: ${newSessionId}`);
+        (transport as any).sessionId = newSessionId;
+        
+        // Verificar que se asignó correctamente
+        console.error(`[MCP] Verified transport sessionId: ${transport.sessionId}`);
 
         // Interceptar todas las requests del transporte para debugging
         const originalHandleRequest = transport.handleRequest.bind(transport);
@@ -2042,9 +2050,16 @@ if (process.env.NODE_ENV === 'production') {
         sessionTimestamps.set(newSessionId, Date.now()); // Trackear timestamp de creación
         console.error(`[MCP] Transport stored successfully for session: ${newSessionId}`);
 
-        // Verificar que el transporte está funcionando
-        console.error(`[MCP] Transport sessionId: ${transport.sessionId}`);
-        console.error(`[MCP] Transport ready: ${transport.sessionId ? 'YES' : 'NO'}`);
+        // Verificar que el transporte está funcionando después de la conexión
+        console.error(`[MCP] POST-CONNECT Transport sessionId: ${transport.sessionId}`);
+        console.error(`[MCP] POST-CONNECT Transport ready: ${transport.sessionId ? 'YES' : 'NO'}`);
+        
+        // Si aún no tiene sessionId, intentar forzarlo de nuevo
+        if (!transport.sessionId) {
+          console.error(`[MCP] WARNING: Transport sessionId still undefined, forcing again...`);
+          (transport as any).sessionId = newSessionId;
+          console.error(`[MCP] FORCED Transport sessionId: ${transport.sessionId}`);
+        }
 
         // Añadir el session ID al header de respuesta para que Claude.ai lo use en requests futuros
         res.setHeader('MCP-Session-Id', newSessionId);
